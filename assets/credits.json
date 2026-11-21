@@ -222,5 +222,29 @@
     "id": "bee_def",
     "source": "https://www.vogue.com/",
     "credit": "Production photo, as published by Vogue"
+  },
+  {
+    "id": "amnh",
+    "source": "https://www.getyourguide.com/",
+    "credit": "Photo as published by GetYourGuide",
+    "width": 1175,
+    "height": 578,
+    "bytes": 101484
+  },
+  {
+    "id": "guggenheim",
+    "source": "https://www.getyourguide.com/",
+    "credit": "Photo as published by GetYourGuide",
+    "width": 1175,
+    "height": 578,
+    "bytes": 40668
+  },
+  {
+    "id": "cloisters",
+    "source": "https://www.getyourguide.com/",
+    "credit": "Photo as published by GetYourGuide",
+    "width": 1175,
+    "height": 577,
+    "bytes": 73108
   }
 ]

@@ -44,7 +44,9 @@ const TRIP = {
           "link": "Music schedule",
           "note": "The EarRegulars are listed for Sunday 6 December. This is a plan, not a table reservation.",
           "teaser": "A historic little pub, a drink and the EarRegulars playing live jazz.",
-          "hint": "Music listed 8–11pm. Go if the journey leaves you enough energy."
+          "hint": "Music listed 8–11pm. Go if the journey leaves you enough energy.",
+          "cost": 45,
+          "costNote": "dinner and a pint"
         }
       ],
       "breathing": "If the journey wipes you out, make it dinner and bed. The rest of the week still has plenty of music.",
@@ -90,7 +92,9 @@ const TRIP = {
           "link": "Train information",
           "image": "grandcentral",
           "teaser": "Start at Grand Central and take the train north along the Hudson.",
-          "hint": "Allow roughly 1¼–1½ hours on the train."
+          "hint": "Allow roughly 1¼–1½ hours on the train.",
+          "cost": 34,
+          "costNote": "Metro-North return, off-peak, estimate"
         },
         {
           "time": "Late morning / lunchtime",
@@ -111,7 +115,9 @@ const TRIP = {
           "type": "flex",
           "map": "Cold Spring Waterfront Park NY",
           "image": "coldriver",
-          "teaser": "Lunch in the village, then some river air before the train back."
+          "teaser": "Lunch in the village, then some river air before the train back.",
+          "cost": 30,
+          "costNote": "lunch"
         }
       ],
       "breathing": "Keep the evening easy. City Island is the substitute for this excursion, not a second big trip to fit into the week.",
@@ -167,7 +173,9 @@ const TRIP = {
           "type": "flex",
           "image": "loveday",
           "teaser": "A few shops and lunch. Loveday 31 is a possible stop; the final shop list still decides the route.",
-          "hint": "Photo: Loveday 31, a candidate rather than a confirmed stop."
+          "hint": "Photo: Loveday 31, a candidate rather than a confirmed stop.",
+          "cost": 25,
+          "costNote": "lunch, before any shopping"
         },
         {
           "time": "Aim for 5pm arrival",
@@ -180,7 +188,9 @@ const TRIP = {
           "link": "Hours, menu & music",
           "note": "Walk-in only. Arriving at opening does not guarantee a table. The current weekday music sessions are 6–8:30pm and 9–11:30pm.",
           "teaser": "Japanese food, a drink and jazz in a tiny basement room.",
-          "hint": "Walk-in only. Aim for 5pm arrival for the 6pm music session."
+          "hint": "Walk-in only. Aim for 5pm arrival for the 6pm music session.",
+          "cost": 45,
+          "costNote": "food, drinks and any music charge"
         }
       ],
       "breathing": "This is also the easiest day to reshape around a daytime coffee. Tomi is the evening anchor; the rest can move.",
@@ -202,79 +212,101 @@ const TRIP = {
       "day": "Wednesday",
       "date": "9 December",
       "short": "9",
-      "label": "With Ken",
-      "title": "A day for the two of you.",
-      "subtitle": "Illustration, a very quiet beer and possibly a phone-booth cocktail.",
-      "image": "burp",
-      "imageAlt": "The colourful monastery murals inside Burp Castle",
-      "area": "Upper East Side · East Village",
+      "label": "Dinosaurs & a spiral",
+      "title": "Dinosaurs, a spiral, a very quiet beer.",
+      "subtitle": "Ken’s picks: the Natural History museum, across the park to the Guggenheim if there’s energy, then Burp Castle.",
+      "image": "amnh",
+      "imageAlt": "A dinosaur skeleton in the Roosevelt Rotunda at the American Museum of Natural History",
+      "area": "Upper West Side · Upper East Side · East Village",
       "company": "Ken’s day off",
       "route": [
-        "Society of Illustrators",
-        "Burp Castle",
-        "Dinner & maybe PDT"
+        "Natural History museum",
+        "Across Central Park to the Guggenheim",
+        "Burp Castle, maybe PDT"
       ],
-      "travel": "The Society of Illustrators is uptown; Burp Castle and PDT are downtown in the East Village. Make one deliberate move downtown after the museum, with time for a break. Burp Castle and PDT are near one another.",
+      "travel": "From Bayside: LIRR to Grand Central Madison (about 30 minutes), then the subway up to 81st Street. AMNH to the Guggenheim is a 20-minute walk straight across Central Park. Downtown to the East Village after on the 6 to Astor Place. Burp Castle and PDT are round the corner from each other.",
       "stops": [
         {
           "time": "Morning",
           "name": "Breakfast together, no rush",
-          "text": "Keep this part of Ken’s day off open. The first actual outing is early afternoon.",
+          "text": "Slow start. The museum opens at 10.",
           "type": "flex",
-          "teaser": "A relaxed start to Ken’s day off."
+          "teaser": "A slow start."
         },
         {
-          "time": "Early afternoon",
-          "name": "Society of Illustrators",
-          "image": "illustratorsgallery",
-          "text": "The shared museum/gallery visit you chose: illustration in a townhouse, with the 128 Bar & Bistro if you fancy a pause.",
+          "time": "11am–2pm",
+          "name": "American Museum of Natural History",
+          "image": "amnh",
+          "text": "The big one: the dinosaur halls, the blue whale in the ocean hall, the Rose Center. Three hours goes quick.",
           "status": "Planned",
-          "map": "Society of Illustrators 128 East 63rd Street New York",
-          "url": "https://societyillustrators.org/plan-your-visit/",
-          "link": "Plan your visit",
-          "note": "Currently open Wednesday–Saturday, 11am–5pm. This is a gallery visit, not a booked sketching event.",
-          "teaser": "Illustration galleries in a townhouse, with a bar for a pause afterwards.",
-          "hint": "Gallery reference photo; exhibitions change."
+          "map": "American Museum of Natural History 200 Central Park West New York",
+          "url": "https://www.amnh.org/plan-your-visit",
+          "link": "Tickets & hours",
+          "note": "Open daily 10am–5:30pm. Adult general admission for visitors from outside New York State is $37.",
+          "cost": 37,
+          "costNote": "entry, non-NY resident",
+          "teaser": "Dinosaurs, the blue whale, the Rose Center.",
+          "hint": "Book timed tickets online."
         },
         {
-          "time": "Around 5pm",
+          "time": "3–5:30pm, if there’s energy",
+          "name": "The Guggenheim",
+          "image": "guggenheim",
+          "text": "Twenty minutes across Central Park. Walk the spiral from the top down. Taryn Simon has the rotunda this winter.",
+          "status": "Optional",
+          "map": "Solomon R Guggenheim Museum 1071 Fifth Avenue New York",
+          "url": "https://www.guggenheim.org/plan-your-visit",
+          "link": "Plan your visit",
+          "note": "Open daily 10:30am–5:30pm. Adult admission $30.",
+          "cost": 30,
+          "costNote": "entry",
+          "teaser": "The spiral, across the park.",
+          "hint": "Optional. Drop it if the dinosaurs run long."
+        },
+        {
+          "time": "Around 7pm",
           "name": "Burp Castle",
           "image": "burp",
-          "text": "Belgian beer, absurd monk murals and the famous quiet-room atmosphere. A good little change of pace before dinner.",
+          "text": "Belgian beer, monk murals and everyone shushing each other. Ken wants this one locked in.",
           "status": "Planned",
           "map": "Burp Castle 41 East 7th Street New York",
+          "note": "Looks like a walk-in bar. Ring (212) 982-4576 to ask about holding a table.",
+          "cost": 30,
+          "costNote": "a few beers each",
           "teaser": "Belgian beer, monk murals and the famous shushing."
         },
         {
-          "time": "Around 7–7:30pm, if reserved",
+          "time": "After, if reserved",
           "name": "Please Don’t Tell",
           "image": "pdt",
-          "text": "The possible cocktail stop with Ken. Choose dinner around it once you know whether you have a reservation.",
+          "text": "Cocktails through the phone booth in a hot dog shop, round the corner on St Marks.",
           "status": "Optional",
           "map": "Please Dont Tell 113 Saint Marks Place New York",
           "url": "https://www.pdtnyc.com/",
           "link": "Official reservations",
-          "note": "Priority reservation if you want it. The exact booking release time still needs checking on the live reservation page.",
-          "teaser": "The phone-booth cocktail stop, if you decide to reserve it.",
-          "hint": "Optional with Ken. Check the reservation window."
+          "note": "Reservations open on the venue’s own site. Release time still needs checking.",
+          "cost": 45,
+          "costNote": "two cocktails each, roughly",
+          "teaser": "The phone-booth cocktail stop, if reserved.",
+          "hint": "Optional. Check the reservation window."
         }
       ],
-      "breathing": "The Jim Henson exhibition is closed on Wednesdays. Keep this day spacious rather than trying to force another museum into it.",
+      "breathing": "The Met and the Cloisters are both shut on Wednesdays, so they’re not on this day. The Guggenheim is the easy one to drop if the dinosaurs run long.",
       "gallery": [
         {
-          "image": "illustratorsgallery",
-          "title": "Society of Illustrators",
-          "caption": "An afternoon with Ken"
+          "image": "amnh",
+          "title": "Natural History",
+          "caption": "Dinosaurs first"
+        },
+        {
+          "image": "guggenheim",
+          "title": "The Guggenheim",
+          "caption": "If there’s energy"
         },
         {
           "image": "burp",
           "title": "Burp Castle",
           "caption": "A very quiet beer"
-        },
-        {
-          "image": "pdt",
-          "title": "Please Don’t Tell",
-          "caption": "Optional · if reserved"
         }
       ]
     },
@@ -284,18 +316,18 @@ const TRIP = {
       "date": "10 December",
       "short": "10",
       "label": "Joseph’s solo day",
-      "title": "Old trains. A purple afternoon.",
-      "subtitle": "The two solo picks, comfortably paired with a proper lunch break.",
+      "title": "Old trains, drawings, a purple evening.",
+      "subtitle": "The solo day: Transit Museum, the Society of Illustrators, then Dream House.",
       "image": "transit",
       "imageAlt": "A vintage blue subway carriage at the New York Transit Museum",
-      "area": "Downtown Brooklyn · Tribeca",
+      "area": "Downtown Brooklyn · Upper East Side · Tribeca",
       "company": "Solo Joseph",
       "route": [
         "Transit Museum",
-        "Tribeca lunch",
+        "Society of Illustrators",
         "Dream House"
       ],
-      "travel": "Allow about 30–45 minutes door to door from the Transit Museum to Dream House. Walk to Jay Street–MetroTech, take a Manhattan-bound A/C to Chambers Street, then walk up to Church Street. This is a planning allowance, not a live service check.",
+      "travel": "From Bayside: LIRR to Atlantic Terminal (about 40 minutes), five minutes’ walk to the Transit Museum. Then the 4/5 up to 59th Street for the Society of Illustrators. Back down to Tribeca on the 6 or N/R/W for Dream House, which is open till 10.",
       "stops": [
         {
           "time": "10am–noon",
@@ -308,18 +340,27 @@ const TRIP = {
           "link": "Admission & timed tickets",
           "note": "Currently Wednesday–Sunday, 10am–4pm. Adult admission $15. Advance tickets are strongly encouraged and release three weeks ahead.",
           "teaser": "Explore historic subway cars in a decommissioned station.",
-          "hint": "Advance timed tickets strongly encouraged. Target 10am."
+          "hint": "Advance timed tickets strongly encouraged. Target 10am.",
+          "cost": 15,
+          "costNote": "entry"
         },
         {
-          "time": "12:45–2pm, roughly",
-          "name": "Lunch & coffee in Tribeca",
-          "text": "Cross the river, find lunch and slow down. The gap is intentional: you don’t need to race from one entrance to the other.",
-          "type": "flex",
-          "map": "Tribeca New York",
-          "teaser": "Cross the river, eat something and slow down before Dream House."
+          "time": "1:30–4pm",
+          "name": "Society of Illustrators",
+          "image": "illustratorsgallery",
+          "text": "Illustration in an old Upper East Side townhouse, with the 128 Bar for a coffee halfway round. Grab lunch on the way up.",
+          "status": "Planned",
+          "map": "Society of Illustrators 128 East 63rd Street New York",
+          "url": "https://societyillustrators.org/plan-your-visit/",
+          "link": "Plan your visit",
+          "note": "Currently open Wednesday–Saturday, 11am–5pm.",
+          "cost": 15,
+          "costNote": "entry, roughly",
+          "teaser": "Illustration galleries in a townhouse.",
+          "hint": "Walk-in. Exhibitions change."
         },
         {
-          "time": "From 2pm",
+          "time": "From about 4:30pm",
           "name": "Dream House",
           "image": "dream",
           "text": "An afternoon inside continuous sound and saturated light. Allow roughly 60–90 minutes if you enjoy settling into it; leave whenever it feels right.",
@@ -329,7 +370,9 @@ const TRIP = {
           "link": "Dream House visitor details",
           "note": "275 Church Street, third floor. Currently Wednesday–Saturday, 2–10pm, $10 admission.",
           "teaser": "Continuous sound and saturated purple light. Stay as long as it feels good.",
-          "hint": "Opens at 2pm. Allow about 30–45 minutes to get here from the Transit Museum."
+          "hint": "Open 2–10pm. About 30 minutes down from the Society of Illustrators.",
+          "cost": 10,
+          "costNote": "entry"
         },
         {
           "time": "8–10pm music, if wanted",
@@ -342,10 +385,12 @@ const TRIP = {
           "link": "Hours & music",
           "note": "The venue advertises music 8–10pm every night except Monday. The specific performer still needs checking.",
           "teaser": "A Red Hook bar and a possible night of live music.",
-          "hint": "Optional extra journey. Check the performer and your energy."
+          "hint": "Optional extra journey. Check the performer and your energy.",
+          "cost": 25,
+          "costNote": "drinks"
         }
       ],
-      "breathing": "Transit Museum and Dream House fit well together. Sunny’s is the extra excursion; it can move or drop out without spoiling the solo day.",
+      "breathing": "Sunny’s is the extra. It can drop out without spoiling the day.",
       "gallery": [
         {
           "image": "transit",
@@ -401,7 +446,9 @@ const TRIP = {
           "link": "The Panorama",
           "note": "The museum currently opens at noon on Fridays. Leave time to get back to Manhattan for the 7pm show.",
           "teaser": "The giant miniature New York you wanted to see.",
-          "hint": "Currently opens at noon on Fridays. Leave plenty of time for the 7pm show."
+          "hint": "Currently opens at noon on Fridays. Leave plenty of time for the 7pm show.",
+          "cost": 8,
+          "costNote": "suggested entry"
         },
         {
           "time": "7pm, about four hours",
@@ -479,7 +526,9 @@ const TRIP = {
           "text": "The fun bit. Dumplings, the bend in Doyers Street, bakeries and tea shops on Mott and Pell. A short subway or a 25-minute walk up from Wall Street. Leave enough time to get home for the nap.",
           "status": "Planned",
           "map": "Doyers Street Chinatown New York",
-          "teaser": "Lunch and a proper wander in Chinatown."
+          "teaser": "Lunch and a proper wander in Chinatown.",
+          "cost": 25,
+          "costNote": "lunch"
         },
         {
           "time": "Afternoon",
@@ -550,7 +599,9 @@ const TRIP = {
           "link": "The Jim Henson Exhibition",
           "note": "Saturday hours are currently 11am–6pm. General admission walk-ups are welcome; screenings need their own tickets.",
           "teaser": "Muppets, Labyrinth and The Dark Crystal. A possible shared afternoon with Ken.",
-          "hint": "Optional. Confirm Ken is free before committing."
+          "hint": "Optional. Confirm Ken is free before committing.",
+          "cost": 20,
+          "costNote": "entry, estimate"
         },
         {
           "time": "Afterwards",
@@ -581,6 +632,18 @@ const TRIP = {
     }
   ],
   "alternatives": [
+    {
+      "id": "cloisters",
+      "image": "cloisters",
+      "title": "The Met Cloisters",
+      "tag": "Ken’s pick · not Wednesday",
+      "text": "Medieval cloisters and gardens up in Fort Tryon Park, with big Hudson views. Shut on Wednesdays, so it needs another day: the return Saturday works.",
+      "note": "Open 10am–4:30pm, closed Wednesdays. Adult $30, which also gets you into the Met on Fifth Avenue the same day.",
+      "map": "The Met Cloisters 99 Margaret Corbin Drive New York",
+      "url": "https://www.metmuseum.org/plan-your-visit/met-cloisters",
+      "link": "Plan your visit",
+      "imageAlt": "Stone arches and potted plants along a cloister walk"
+    },
     {
       "id": "cityisland",
       "image": "cityisland",
@@ -615,42 +678,147 @@ const TRIP = {
   ],
   "bookings": [
     {
+      "id": "burp",
+      "kind": "book",
+      "title": "Burp Castle",
+      "date": "Wed 9 Dec · around 7pm",
+      "text": "Ken wants it confirmed. It looks walk-in only, so ring (212) 982-4576 and ask if they’ll hold a table for two.",
+      "url": "https://www.nyctourism.com/nightlife/burp-castle1",
+      "action": "Venue details",
+      "image": "burp"
+    },
+    {
+      "id": "amnh",
+      "kind": "book",
+      "title": "Natural History tickets",
+      "date": "Wed 9 Dec · 11am entry",
+      "text": "Timed tickets online. $37 each for visitors from outside New York State.",
+      "url": "https://www.amnh.org/plan-your-visit",
+      "action": "Get tickets",
+      "image": "amnh",
+      "cost": 74
+    },
+    {
+      "id": "gugg",
+      "kind": "book",
+      "title": "Guggenheim tickets",
+      "date": "Wed 9 Dec · afternoon",
+      "text": "Only if you’re both up for a second museum. $30 each.",
+      "url": "https://www.guggenheim.org/plan-your-visit",
+      "action": "Plan your visit",
+      "image": "guggenheim",
+      "cost": 60
+    },
+    {
       "id": "pdt",
-      "priority": "Reserve if chosen",
+      "kind": "book",
       "title": "Please Don’t Tell",
-      "date": "Wednesday 9 December · around 7–7:30pm",
-      "text": "The highest-priority reservation if you want cocktails with Ken. Open the venue’s official reservation link. Guides give conflicting release windows, so check now and again around 2 December; the exact drop time is unverified.",
+      "date": "Wed 9 Dec · after Burp Castle",
+      "text": "Optional. Reservations open on the venue’s own site; the release time still needs checking.",
       "url": "https://www.pdtnyc.com/",
       "action": "Check reservations",
       "image": "pdt"
     },
     {
       "id": "transit",
-      "priority": "Ready to book",
-      "title": "New York Transit Museum",
-      "date": "Thursday 10 December · aim for 10am",
-      "text": "Timed tickets are strongly encouraged. The museum releases them three weeks ahead, so this date is already in the booking window. Adult admission is currently $15.",
+      "kind": "book",
+      "title": "Transit Museum",
+      "date": "Thu 10 Dec · 10am",
+      "text": "Timed tickets, released three weeks ahead. $15.",
       "url": "https://www.nytransitmuseum.org/know-before-you-visit/",
       "action": "Choose timed tickets",
-      "image": "transit"
+      "image": "transit",
+      "cost": 15
+    },
+    {
+      "id": "bee",
+      "kind": "book",
+      "title": "Balkan Erotic Epic",
+      "date": "Fri 11 Dec · 7pm",
+      "text": "Check with Ken how tickets work for the Friday showing.",
+      "url": "https://www.armoryonpark.org/",
+      "action": "The Armory",
+      "image": "bee_gods"
     },
     {
       "id": "charlie",
-      "priority": "Hold off: check Saturday’s timing",
-      "title": "Charlie Brown Christmas brunch",
-      "date": "Saturday 12 December · 11:30am or 1:30pm",
-      "text": "Alyssa’s morning outing and your afternoon nap now take priority. Leave this unbooked unless a set fits comfortably. If chosen, use the official venue’s TicketWeb link. Admission is separate from the $20 per-person minimum; no refunds or exchanges are listed.",
+      "kind": "book",
+      "title": "Charlie Brown brunch",
+      "date": "Sat 12 Dec",
+      "text": "Holding off. Only if it fits round Alyssa and Vin.",
       "url": "https://www.bluenotejazz.com/nyc/tm-event/the-cb-quintet-presents-a-jazz-tribute-to-vince-guaraldis-charlie-brown-christmas/",
       "action": "See the show",
       "image": "bluenote"
+    },
+    {
+      "id": "flight",
+      "kind": "do",
+      "title": "Check the flight and terminal",
+      "date": "Sat 12 Dec · night",
+      "text": "Leaves after midnight, so it’s technically Sunday 13th."
+    },
+    {
+      "id": "lift",
+      "kind": "do",
+      "title": "Sort the airport lift time",
+      "date": "Sat 12 Dec",
+      "text": "With whoever’s driving you to JFK."
+    },
+    {
+      "id": "saturday",
+      "kind": "do",
+      "title": "Meeting time with Alyssa and Vin",
+      "date": "Sat 12 Dec · morning",
+      "text": "1 Wall Street Court."
+    },
+    {
+      "id": "omny",
+      "kind": "do",
+      "title": "Pick one card or phone for OMNY",
+      "date": "Before Sunday",
+      "text": "Tap the same card or phone every time. After $35 in a week, the rest of the subway and bus rides are free."
+    },
+    {
+      "id": "trainapp",
+      "kind": "do",
+      "title": "Get the TrainTime app",
+      "date": "Before Sunday",
+      "text": "For LIRR and Metro-North tickets. Activate a ticket before you board."
+    },
+    {
+      "id": "vintage",
+      "kind": "do",
+      "title": "Vintage shop list",
+      "date": "Tue 8 Dec",
+      "text": "Still blank."
     }
   ],
   "unplaced": {
     "image": "reliquary",
     "title": "City Reliquary",
-    "text": "Still on the list. It needs a new slot after Saturday’s change; the return Saturday is one possibility.",
+    "text": "Ken’s pick too. Shut on Wednesdays, so it needs another slot: Thursday evening or the return Saturday.",
     "map": "City Reliquary 370 Metropolitan Avenue Brooklyn",
     "url": "https://www.cityreliquary.org/visit-the-museum/",
     "link": "Visit the museum"
+  },
+  "travel": {
+    "home": "Bayside, Queens (Bell Blvd)",
+    "lines": [
+      {
+        "label": "Subway & buses",
+        "amount": 35,
+        "note": "$3 a ride. OMNY stops charging after $35 in a 7-day stretch, so that’s the most you’ll pay a week."
+      },
+      {
+        "label": "LIRR in and out",
+        "amount": 52.5,
+        "note": "Bayside to Grand Central Madison or Penn is about 30 minutes. CityTicket is $5.25 off-peak each way. Five return days ≈ $52.50. The cheaper way is the Q13 or Q28 bus to Flushing and the 7 train, covered by the OMNY cap, but it’s nearer an hour."
+      },
+      {
+        "label": "JFK to Bayside, Sunday",
+        "amount": 45,
+        "note": "Taxi or Uber, roughly. JFK to Bayside isn’t a neat train ride."
+      }
+    ]
   }
 };

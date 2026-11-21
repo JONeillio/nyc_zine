@@ -21,21 +21,20 @@ const STORY={
   {img:'tomi',x:6,y:50,w:94,h:36,kind:'cutb',stop:2,time:'5 PM',label:'Tomi Jazz',lp:'big'},
   {note:'Walk-ins only. Early, or you’re queuing.',x:0,y:88,w:52,r:-2,kind:'sticker'},
   {note:'Coffee first with Ken’s mate.',x:56,y:89,w:43,r:1,kind:'hand'}]},
- wed:{kicker:'DAY OFF',tile:'Drawings & a quiet pint',cover:'illustratorsgallery',line:'Galleries, then a bar where everyone whispers.',pieces:[
-  {img:'illustratorsgallery',x:0,y:0,w:100,h:39,kind:'cut',stop:1,time:'AFTERNOON',label:'Society of Illustrators',lp:'big'},
-  {img:'soi_ext',fb:{img:'illustrators'},x:1,y:38,w:36,h:30,r:-3,kind:'border tape',cap:'128 East 63rd Street'},
-  {img:'burp',x:36,y:40,w:64,h:32,r:2,kind:'border',stop:2,time:'5 PM',label:'Burp Castle',lp:'right'},
-  {img:'pdt',x:50,y:73,w:48,h:25,r:-2,kind:'border',stop:3,label:'PDT · maybe',lp:'blue'},
-  {note:'Breakfast together. No rush.',x:2,y:73,w:42,r:-2,kind:'sticker'},
-  {note:'Monk murals, Belgian beer, everyone whispering.',x:2,y:86,w:44,r:0,kind:'hand'}]},
- thu:{kicker:'SOLO DAY',tile:'Trains & Dream House',cover:'transit',line:'Old trains. A purple afternoon.',pieces:[
-  {img:'transit',x:0,y:0,w:100,h:35,kind:'cut',stop:0,time:'10 AM',label:'Transit Museum',lp:'big'},
-  {img:'tm_r34',fb:{img:'transit',pos:'left center'},x:1,y:34,w:44,h:25,r:-2.5,kind:'border',stop:0},
-  {img:'tm_tokens',fb:{img:null,note:'A retired 1930s station. Old carriages you can sit in.',kind:'handl',h:null,w:52},x:47,y:36,w:25,h:17,r:3,kind:'border tape',cap:'Tokens at the Transit Museum'},
-  {img:'tm_court',fb:{skip:true},x:73,y:35,w:27,h:17,r:-2,kind:'border',cap:'Court Street, the retired station'},
-  {img:'dream',x:30,y:55,w:70,h:30,r:1.5,kind:'cutb',stop:2,time:'2 PM',label:'Dream House',lp:'big blue top'},
-  {note:'Lunch in Tribeca',x:0,y:63,w:30,r:-3,kind:'sticker'},
-  {img:'sunny',x:1,y:78,w:40,h:21,r:-2,kind:'border',stop:3,label:'Sunny’s · maybe',lp:'blue'},
+ wed:{kicker:'DAY OFF',tile:'Dinosaurs & a spiral',cover:'amnh',line:'Dinosaurs, a spiral, then a very quiet beer.',pieces:[
+  {img:'amnh',x:0,y:0,w:100,h:40,kind:'cut',stop:1,time:'11 AM',label:'Natural History',lp:'big'},
+  {img:'guggenheim',x:1,y:39,w:58,h:27,r:-2,kind:'border tape',stop:2,label:'Guggenheim · maybe',lp:'blue'},
+  {note:'Twenty minutes across the park. Spiral from the top down.',x:61,y:42,w:38,r:1.5,kind:'handl'},
+  {img:'burp',x:38,y:64,w:62,h:28,r:2,kind:'border',stop:3,time:'7 PM',label:'Burp Castle',lp:'right'},
+  {note:'Breakfast together. No rush.',x:1,y:70,w:36,r:-2,kind:'sticker'},
+  {note:'Monk murals, Belgian beer, everyone whispering.',x:0,y:84,w:38,r:0,kind:'hand'}]},
+ thu:{kicker:'SOLO DAY',tile:'Trains, drawings & Dream House',cover:'transit',line:'Old trains, drawings, a purple evening.',pieces:[
+  {img:'transit',x:0,y:0,w:100,h:33,kind:'cut',stop:0,time:'10 AM',label:'Transit Museum',lp:'big'},
+  {img:'illustratorsgallery',x:1,y:32,w:52,h:25,r:-2.5,kind:'border tape',stop:1,time:'1:30',label:'Illustrators',lp:'right'},
+  {note:'Coffee at the 128 Bar halfway round.',x:56,y:35,w:42,r:2,kind:'sticker'},
+  {img:'dream',x:30,y:56,w:70,h:30,r:1.5,kind:'cutb',stop:2,time:'4:30 PM',label:'Dream House',lp:'big blue top'},
+  {note:'Open till 10. No rush.',x:0,y:62,w:29,r:-3,kind:'handl'},
+  {img:'sunny',x:1,y:79,w:40,h:20,r:-2,kind:'border',stop:3,label:'Sunny’s · maybe',lp:'blue'},
   {note:'Sunny’s in Red Hook if you’ve still got legs. Music 8 till 10.',x:45,y:88,w:54,r:0,kind:'handl'}]},
  fri:{kicker:'BIG NIGHT',tile:'Tiny city, big night',cover:'bee_gods',line:'A tiny city by day. The big one at night.',pieces:[
   {img:'panorama',x:0,y:0,w:60,h:27,r:-1,kind:'border',stop:1,time:'NOON',label:'The Panorama'},
@@ -63,4 +62,4 @@ const STORY={
   {note:'Straight off the Nicaragua flight. Evening’s free.',x:52,y:76,w:46,r:1,kind:'hand'}]}
 };
 
-const PHOTOS=new Set(["bee_black", "bee_cast", "bee_def", "bee_gods", "bee_hero", "bee_knives", "bee_rehearse", "bluenote", "burp", "chinatown", "cityisland", "cold", "coldantiques", "coldriver", "continental", "dream", "ear", "earinside", "grandcentral", "henson", "hensongallery", "illustrators", "illustratorsgallery", "loveday", "movingimage", "panorama", "panoramadetail", "pdt", "reliquary", "sunny", "tomi", "transit"]);
+const PHOTOS=new Set(['amnh','bee_black','bee_cast','bee_def','bee_gods','bee_hero','bee_knives','bee_rehearse','bluenote','burp','chinatown','cityisland','cloisters','cold','coldantiques','coldriver','continental','dream','ear','earinside','grandcentral','guggenheim','henson','hensongallery','illustrators','illustratorsgallery','loveday','movingimage','panorama','panoramadetail','pdt','reliquary','sunny','tomi','transit']);
