@@ -1,0 +1,226 @@
+[
+  {
+    "id": "ear",
+    "source": "https://www.theearinn.com/",
+    "credit": "The Ear Inn",
+    "width": 1014,
+    "height": 1100,
+    "bytes": 130944
+  },
+  {
+    "id": "cold",
+    "source": "https://hvmag.com/things-to-do/cold-spring-24-hour-day-trip/",
+    "credit": "Hudson Valley Magazine / Adobe Stock",
+    "width": 1068,
+    "height": 712,
+    "bytes": 205290
+  },
+  {
+    "id": "transit",
+    "source": "https://www.nytransitmuseum.org/know-before-you-visit/",
+    "credit": "New York Transit Museum",
+    "width": 1000,
+    "height": 657,
+    "bytes": 78008
+  },
+  {
+    "id": "dream",
+    "source": "https://www.melafoundation.org/",
+    "credit": "MELA Foundation / Dream House",
+    "width": 1440,
+    "height": 1096,
+    "bytes": 27304
+  },
+  {
+    "id": "sunny",
+    "source": "https://secretnyc.co/best-dive-bars-in-america/",
+    "credit": "Secret NYC / Sunny’s Bar",
+    "width": 1024,
+    "height": 683,
+    "bytes": 81886
+  },
+  {
+    "id": "henson",
+    "source": "https://movingimage.org/event/the-jim-henson-exhibition/",
+    "credit": "Museum of the Moving Image",
+    "width": 1440,
+    "height": 812,
+    "bytes": 60920
+  },
+  {
+    "id": "illustrators",
+    "source": "https://commons.wikimedia.org/wiki/File:Society_of_Illustrators_(48064102492).jpg",
+    "credit": "Wikimedia Commons; original file and attribution",
+    "width": 1440,
+    "height": 810,
+    "bytes": 152198
+  },
+  {
+    "id": "burp",
+    "source": "https://www.theinfatuation.com/new-york/reviews/burp-castle",
+    "credit": "Alex Staniloff / The Infatuation",
+    "width": 1440,
+    "height": 960,
+    "bytes": 179568
+  },
+  {
+    "id": "pdt",
+    "source": "https://www.cntraveler.com/stories/2011-12-17/nyc-cocktail-crawl",
+    "credit": "Condé Nast Traveler",
+    "width": 1024,
+    "height": 768,
+    "bytes": 126356
+  },
+  {
+    "id": "tomi",
+    "source": "https://triple.guide/attractions/400c71a7-846b-43d9-afcb-56403a95126f",
+    "credit": "Triple Guide",
+    "width": 1024,
+    "height": 683,
+    "bytes": 61916
+  },
+  {
+    "id": "reliquary",
+    "source": "https://www.untappedcities.com/behind-the-scenes-tour-city-reliquary-museum/",
+    "credit": "Untapped New York",
+    "width": 700,
+    "height": 524,
+    "bytes": 117598
+  },
+  {
+    "id": "panorama",
+    "source": "https://queensmuseum.org/exhibition/panorama-of-the-city-of-new-york/",
+    "credit": "Queens Museum",
+    "width": 900,
+    "height": 600,
+    "bytes": 137796
+  },
+  {
+    "id": "chinatown",
+    "source": "https://viewing.nyc/media/0b29d983ee383789c06a4f868d121225/",
+    "credit": "@nyclovesnyc / Viewing NYC",
+    "width": 1080,
+    "height": 1039,
+    "bytes": 382552
+  },
+  {
+    "id": "cityisland",
+    "source": "https://www.nyctourism.com/new-york/the-bronx/city-island/",
+    "credit": "Alex Lopez / NYC Tourism",
+    "width": 1440,
+    "height": 960,
+    "bytes": 160072
+  },
+  {
+    "id": "continental",
+    "source": "https://www.komoot.com/highlight/6212033",
+    "credit": "Komoot community photo · original source",
+    "width": 768,
+    "height": 576
+  },
+  {
+    "id": "earinside",
+    "source": "https://www.ericfirestonegallery.com/press-news/financial-times-features-sari-dienes-the-wonky-wonder-of-new-yorks-ear-inn-its-filled-with-memorabilia-that-had-nowhere-else-to-go",
+    "credit": "Eric Firestone Gallery / Financial Times feature",
+    "width": 1000,
+    "height": 751
+  },
+  {
+    "id": "hensongallery",
+    "source": "https://www.brettrenfer.com/work/the-jim-henson-exhibition",
+    "credit": "Brett Renfer / Jim Henson Exhibition design",
+    "width": 1440,
+    "height": 961
+  },
+  {
+    "id": "movingimage",
+    "source": "https://hastingslibrary.org/museum-passes/",
+    "credit": "Hastings-on-Hudson Public Library / museum reference",
+    "width": 711,
+    "height": 516
+  },
+  {
+    "id": "grandcentral",
+    "source": "https://www.hotels.com/go/usa/grand-central-terminal-station",
+    "credit": "Hotels.com / Go Guides",
+    "width": 800,
+    "height": 533
+  },
+  {
+    "id": "coldriver",
+    "source": "https://www.getawaymavens.com/cold-spring-ny/",
+    "credit": "Getaway Mavens",
+    "width": 1440,
+    "height": 961
+  },
+  {
+    "id": "coldantiques",
+    "source": "https://sub.ireland724.info/s/explore/cold-spring-antiques-center-845-265-5050",
+    "credit": "Cold Spring Antiques Center listing / ireland724",
+    "width": 1024,
+    "height": 768
+  },
+  {
+    "id": "illustratorsgallery",
+    "source": "https://www.waug.com/en/activities/120383",
+    "credit": "WAUG / Society of Illustrators gallery reference",
+    "width": 900,
+    "height": 600
+  },
+  {
+    "id": "bluenote",
+    "source": "https://www.timeout.com/newyork/live-music/classiest-jazz-clubs",
+    "credit": "Time Out / Blue Note New York",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "id": "loveday",
+    "source": "https://www.timeout.com/newyork/shopping/loveday-31",
+    "credit": "Time Out / Loveday 31",
+    "width": 750,
+    "height": 422
+  },
+  {
+    "id": "panoramadetail",
+    "source": "https://queensmuseum.org/exhibition/panorama-of-the-city-of-new-york/",
+    "credit": "Queens Museum",
+    "width": 900,
+    "height": 600
+  },
+  {
+    "id": "bee_gods",
+    "source": "https://factoryinternational.org/whats-on/marina-abramovic/",
+    "credit": "Marco Anelli / Factory International"
+  },
+  {
+    "id": "bee_knives",
+    "source": "https://factoryinternational.org/whats-on/marina-abramovic/",
+    "credit": "Factory International"
+  },
+  {
+    "id": "bee_black",
+    "source": "https://factoryinternational.org/whats-on/marina-abramovic/",
+    "credit": "Factory International"
+  },
+  {
+    "id": "bee_hero",
+    "source": "https://factoryinternational.org/whats-on/marina-abramovic/",
+    "credit": "Marina Abramović / Factory International"
+  },
+  {
+    "id": "bee_cast",
+    "source": "https://factoryinternational.org/whats-on/marina-abramovic/",
+    "credit": "Marco Anelli / Factory International"
+  },
+  {
+    "id": "bee_rehearse",
+    "source": "https://factoryinternational.org/whats-on/marina-abramovic/",
+    "credit": "Factory International"
+  },
+  {
+    "id": "bee_def",
+    "source": "https://www.vogue.com/",
+    "credit": "Production photo, as published by Vogue"
+  }
+]

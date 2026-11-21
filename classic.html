@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132c45">
+  <meta name="description" content="A Few Good Detours: a visual New York itinerary for December 2026, with unusual museums, proper bars and room to wander.">
+  <title>A Few Good Detours · New York 2026</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to the plan</a>
+  <header class="site-header">
+    <a class="brand" href="#sun" aria-label="New York trip home"><span class="brand-mark">NY</span><span>A FEW GOOD DETOURS<small>NEW YORK · DECEMBER 2026</small></span></a>
+    <button class="share-button" id="share-button" type="button" aria-label="Share plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 13v7h14v-7"/></svg><span>Share plan</span></button>
+  </header>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy"><p class="eyebrow">6–12 DECEMBER · BACK ON THE 19TH</p><h1 id="hero-title">A few good<br><em>detours.</em></h1><p class="hero-deck">Tiny worlds, quiet beers<br>and late-night jazz.</p><a class="hero-link" href="#plan">Find your day</a></div>
+    <div class="hero-image"><img src="assets/panorama.webp" alt="The extraordinary miniature New York skyline at the Queens Museum" width="900" height="600" fetchpriority="high"><div class="photo-stamp">YES, THAT’S A MINIATURE.<br><span>Queens Museum · Friday’s plan</span></div></div>
+  </section>
+  <div class="plan-shell" id="plan">
+    <nav class="view-nav" aria-label="Explore the itinerary"><a href="#sun" data-view="day" class="active">Days</a><a href="#week" data-view="week">Week</a><a href="#bookings" data-view="bookings">Bookings <span class="nav-count">3</span></a><a href="#alternatives" data-view="alternatives">Alternatives</a></nav>
+    <div class="plan-note"><span class="note-line"></span><p>A working plan, with room to wander. <strong>See Bookings for what needs reserving.</strong></p></div>
+    <main id="content" tabindex="-1"></main>
+  </div>
+  <footer class="site-footer"><div><span class="brand-mark small">NY</span><p>A few good plans.<br><strong>Plenty of room between them.</strong></p></div><p class="footer-meta">Planned together · Updated 21 November 2026<br>All times are New York local time.</p><details class="credits"><summary>Photos & practical sources</summary><div id="credits-list"></div><p>Reference photos show the places, rather than conditions on your travel dates. Some were taken in warmer months. Prices, programmes and opening hours can change; use the linked venue pages before booking.</p></details></footer>
+  <dialog id="photo-dialog"><button class="dialog-close" type="button" aria-label="Close photo">×</button><img id="dialog-image" alt=""><div class="dialog-caption"><strong id="dialog-title"></strong><a id="dialog-source" target="_blank" rel="noopener noreferrer">Photo source & credit</a></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
