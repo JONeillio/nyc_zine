@@ -1,0 +1,5 @@
+/* Nicaragua issue: same zine, lake-and-jungle colours. */
+:root{--blue:#0e6b5c;--deep:#08332e;--orange:#ffb21c;--red:#e2402a}
+.contents-grid.six{grid-template-rows:repeat(3,1fr)}
+.practical h3{margin:.55em 0 .1em}
+.practical p{margin:0;font-size:max(12.5px,3.35cqw);line-height:1.3}

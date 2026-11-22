@@ -1,0 +1,170 @@
+[
+ {
+  "id": "calzada",
+  "source": "https://commons.wikimedia.org/wiki/File:Calzada_en_Granada_Nicaragua_2013-09-16_00-09.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 3.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "calzada_day",
+  "source": "https://commons.wikimedia.org/wiki/File:Calle_La_Calzada.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 4.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "cathedral",
+  "source": "https://commons.wikimedia.org/wiki/File:Catedral_de_Granada,_Nicaragua_2.jpg",
+  "credit": "Wikimedia Commons · CC BY 2.0",
+  "width": 960,
+  "height": 640
+ },
+ {
+  "id": "plaza",
+  "source": "https://commons.wikimedia.org/wiki/File:06.Plaza_de_la_Independencia_de_Granada.JPG",
+  "credit": "Wikimedia Commons · CC BY 3.0",
+  "width": 960,
+  "height": 696
+ },
+ {
+  "id": "merced",
+  "source": "https://commons.wikimedia.org/wiki/File:La_Merced_Church-Granada,_Nicaragua.jpg",
+  "credit": "Wikimedia Commons · CC BY 2.0",
+  "width": 960,
+  "height": 640
+ },
+ {
+  "id": "isletas",
+  "source": "https://commons.wikimedia.org/wiki/File:Nicaragua_-_Isletas_de_Granada_-_panoramio.jpg",
+  "credit": "Wikimedia Commons · CC BY 3.0",
+  "width": 960,
+  "height": 541
+ },
+ {
+  "id": "market",
+  "source": "https://commons.wikimedia.org/wiki/File:Mercado_de_Artesanías_de_Masaya.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 4.0",
+  "width": 960,
+  "height": 540
+ },
+ {
+  "id": "volcano",
+  "source": "https://commons.wikimedia.org/wiki/File:Masaya_Volcano_-_crater.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 4.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "rim",
+  "source": "https://commons.wikimedia.org/wiki/File:Cráter_Santiago_del_Volcán_Masaya.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 4.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "ferry",
+  "source": "https://commons.wikimedia.org/wiki/File:Harbour_Scene_with_Ometepe_Island-Concepcion_Volcano_-_San_Jorge_-_Near_Rivas_-_Nicaragua_(31750124675).jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 2.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "lake",
+  "source": "https://commons.wikimedia.org/wiki/File:Ometepe_Island_as_seen_from_the_ferry.JPG",
+  "credit": "Wikimedia Commons · CC BY-SA 3.0",
+  "width": 960,
+  "height": 640
+ },
+ {
+  "id": "fields",
+  "source": "https://commons.wikimedia.org/wiki/File:Fields_with_Concepcion_Volcano_-_Near_Santo_Domingo_-_Ometepe_Island_-_Nicaragua_-_01_(31796975315).jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 2.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "ojo",
+  "source": "https://commons.wikimedia.org/wiki/File:Ojo_de_Agua_Altagracia.jpg",
+  "credit": "Wikimedia Commons · CC BY 2.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "omeview",
+  "source": "https://commons.wikimedia.org/wiki/File:OmetepeView_06.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 3.0",
+  "width": 825,
+  "height": 1100
+ },
+ {
+  "id": "sunset",
+  "source": "https://commons.wikimedia.org/wiki/File:Nicaragua_Ometepe_Concepción_15.jpg",
+  "credit": "Wikimedia Commons · CC BY 3.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "catarina",
+  "source": "https://commons.wikimedia.org/wiki/File:Laguna-de-Apoyo-from-Catarina.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 4.0",
+  "width": 960,
+  "height": 525
+ },
+ {
+  "id": "apoyo",
+  "source": "https://commons.wikimedia.org/wiki/File:Laguna_de_Apoyo_-_seen_from_the_east_-_P1300135.JPG",
+  "credit": "Wikimedia Commons · CC BY 4.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "apoyo2",
+  "source": "https://commons.wikimedia.org/wiki/File:Laguna_de_Apoyo.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 2.0",
+  "width": 1100,
+  "height": 825
+ },
+ {
+  "id": "street",
+  "source": "https://commons.wikimedia.org/wiki/File:Street_in_Granada,_Nicaragua_2.jpg",
+  "credit": "Wikimedia Commons · CC BY 2.0",
+  "width": 960,
+  "height": 719
+ },
+ {
+  "id": "tona",
+  "source": "https://commons.wikimedia.org/wiki/File:Toña_Beer.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 4.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "leon",
+  "source": "https://commons.wikimedia.org/wiki/File:View_of_Cathedral_from_Roof_-_Leon_-_Nicaragua_(31548746806).jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 2.0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "boarding",
+  "source": "https://commons.wikimedia.org/wiki/File:Volcano_Boarding_Cerro_Negro.jpg",
+  "credit": "Wikimedia Commons · CC0",
+  "width": 960,
+  "height": 720
+ },
+ {
+  "id": "sanjuan",
+  "source": "https://commons.wikimedia.org/wiki/File:San_Juan_del_Sur,_taken_from_cross_on_hill_overlooking_bay.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 1.0",
+  "width": 825,
+  "height": 1100
+ },
+ {
+  "id": "mombacho",
+  "source": "https://commons.wikimedia.org/wiki/File:Mombacho_from_Granada.jpg",
+  "credit": "Wikimedia Commons · CC BY-SA 3.0",
+  "width": 960,
+  "height": 769
+ }
+]
