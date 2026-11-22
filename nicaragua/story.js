@@ -57,5 +57,5 @@ const SHORT={
  'Sunrise from camp':['DAWN','Sunrise'],'Swim in Lake Asososca':['MORNING','Lake Asososca'],'Back to León':['AFTERNOON','Back to León'],'An easy night with the group':['EVENING','Night with the group'],
  'Coffee with the group':['MORNING','Coffee with the group'],'Car to Las Peñitas':['14:00','Car to the coast'],'Check in at Mano a Mano':['LATE PM','Mano a Mano'],'See how the place feels':['EVENING','See how it feels'],
  'Breakfast, the beach, nothing much':['MORNING','The beach'],'Juan Venado mangroves':['LATE AM','Juan Venado'],'Surf, if you choose to':['AFTERNOON','Surf'],'Sunset, food, a flexible night':['SUNSET','Sunset & food'],
- 'Direct car to the airport':['~09:00','Car to the airport'],'At Managua airport':['~NOON','At the airport'],'AV397 to San Salvador':['15:40','Fly → JFK']
+ 'Direct car to the airport':['~09:00','Car to the airport'],'At Managua airport':['~NOON','At the airport'],'Fly to San Salvador':['15:40','Fly → JFK']
 };

@@ -20,7 +20,7 @@ const STORY={
   {note:'Loveday 31, maybe. Lunch on the way.',x:60,y:39,w:39,r:1,kind:'handl'},
   {img:'tomi',x:6,y:50,w:94,h:36,kind:'cutb',stop:2,time:'5 PM',label:'Tomi Jazz',lp:'big'},
   {note:'Walk-ins only. Early, or you’re queuing.',x:0,y:88,w:52,r:-2,kind:'sticker'},
-  {note:'Coffee first with Ken’s mate.',x:56,y:89,w:43,r:1,kind:'hand'}]},
+  {note:'Coffee first with K’s friend.',x:56,y:89,w:43,r:1,kind:'hand'}]},
  wed:{kicker:'DAY OFF',tile:'Dinosaurs & a spiral',cover:'amnh',line:'Dinosaurs, a spiral, then a very quiet beer.',pieces:[
   {img:'amnh',x:0,y:0,w:100,h:40,kind:'cut',stop:1,time:'11 AM',label:'Natural History',lp:'big'},
   {img:'guggenheim',x:1,y:39,w:58,h:27,r:-2,kind:'border tape',stop:2,label:'Guggenheim · maybe',lp:'blue'},
@@ -46,27 +46,27 @@ const STORY={
   {img:'bee_black',x:33,y:68.5,w:34,h:20,r:1.5,kind:'border tape',stop:2},
   {img:'bee_gods',x:66,y:67,w:34,h:21,r:-1.5,kind:'border',stop:2},
   {note:'Park Avenue Armory · 7pm · four hours · eat before',x:3,y:90,w:94,r:-1,kind:'ticket slim'}]},
- sat:{kicker:'NICARAGUA NIGHT',tile:'Wick, the Bull & Chinatown',cover:'chinatown',line:'Downtown with Alyssa and Vin, then a nap before the flight.',pieces:[
+ sat:{kicker:'NICARAGUA NIGHT',tile:'Wick, the Bull & Chinatown',cover:'chinatown',line:'Downtown with A and V, then a nap before the flight.',pieces:[
   {img:'continental',x:0,y:0,w:47,h:42,r:-1.5,kind:'border',stop:0,time:'MORNING',label:'The Continental'},
   {img:'bull',fb:{img:null,note:'The Charging Bull’s five minutes down Broadway. Bare tourists, worth it anyway.',kind:'hand',h:null,y:6},x:49,y:2,w:51,h:26,r:2.5,kind:'border tape',stop:1,label:'The Bull',lp:'right'},
-  {note:'Alyssa and Vin, all day.',x:52,y:29,w:46,r:-2,kind:'sticker'},
+  {note:'A and V, all day.',x:52,y:29,w:46,r:-2,kind:'sticker'},
   {img:'chinatown',x:0,y:44,w:100,h:34,kind:'cut',stop:2,time:'LUNCH',label:'Chinatown',lp:'big'},
   {img:'ct_2025',fb:{img:null,note:'Dumplings, the bend on Doyers, bakeries on Mott. The fun bit.',kind:'handl',h:null,w:52,y:80},x:0,y:75,w:34,h:20,r:-2.5,kind:'border',stop:2},
   {img:'doyers',fb:{skip:true},x:33,y:76,w:32,h:19,r:2,kind:'border tape',stop:2,cap:'Doyers Street'},
-  {note:'Night: JFK, then Nicaragua<small>AV567, 1:40am. Nap, pack, friends drive you.</small>',x:56,y:80,w:44,r:1.5,kind:'ticket'}]},
- return:{kicker:'BACK IN NYC',tile:'Back for one more',cover:'hensongallery',line:'Off the Nicaragua flight. Muppets, if Ken’s in.',pieces:[
+  {note:'Night: JFK, then Nicaragua<small>1:40am flight. Nap, pack, friends drive you.</small>',x:56,y:80,w:44,r:1.5,kind:'ticket'}]},
+ return:{kicker:'BACK IN NYC',tile:'Back for one more',cover:'hensongallery',line:'Off the Nicaragua flight. Muppets, if K’s in.',pieces:[
   {img:'hensongallery',x:0,y:0,w:100,h:40,kind:'cut',stop:1,time:'AFTERNOON',label:'Jim Henson',lp:'big'},
   {img:'henson',x:1,y:38,w:50,h:27,r:-2.5,kind:'border',stop:1,label:'Kermit & co'},
   {img:'momi_a',fb:{img:'movingimage'},x:50,y:40,w:50,h:25,r:2,kind:'border tape',cap:'Museum of the Moving Image, Astoria'},
   {img:'reliquary',x:52,y:67,w:47,h:21,r:-1.5,kind:'border',stop:2,label:'Reliquary · maybe',lp:'blue'},
   {note:'JFK 00:10. Taxi, bed, no alarm.',x:2,y:69,w:46,r:-2,kind:'sticker'},
-  {note:'Muppets and puppets. Ken, you in?',x:2,y:83,w:48,r:1,kind:'hand'}]},
+  {note:'Muppets and puppets. K, you in?',x:2,y:83,w:48,r:1,kind:'hand'}]},
  home:{kicker:'LAST DAY',tile:'Cloisters & home',cover:'cloisters',line:'Medieval gardens, then the flight home.',pieces:[
   {img:'cloisters',x:0,y:0,w:100,h:44,kind:'cut',stop:0,time:'10 AM',label:'The Met Cloisters',lp:'big'},
   {img:'cloister_h',x:1,y:42,w:56,h:28,r:-2,kind:'border tape',stop:0,cap:'Up on the hill over the Hudson'},
-  {note:'Unicorn tapestries inside. Gardens out back. Ken’s pick.',x:59,y:46,w:40,r:1.5,kind:'handl'},
+  {note:'Unicorn tapestries inside. Gardens out back. K’s pick.',x:59,y:46,w:40,r:1.5,kind:'handl'},
   {note:'Leave by 1:30. Bayside for 3.',x:55,y:71,w:43,r:1.5,kind:'sticker'},
-  {note:'EI108 · 19:25 → Dublin<small>Taxi from Bayside about 4:15. Manchester 9:15 Monday.</small>',x:3,y:81,w:94,r:-1,kind:'ticket'}]}
+  {note:'Flight home · 19:25<small>Taxi from Bayside about 4:15. Home Monday morning.</small>',x:3,y:81,w:94,r:-1,kind:'ticket'}]}
 };
 
 const PHOTOS=new Set(['amnh','bee_black','bee_cast','bee_def','bee_gods','bee_hero','bee_knives','bee_rehearse','bluenote','burp','chinatown','cityisland','cloisters','cold','coldantiques','coldriver','continental','dream','ear','earinside','grandcentral','guggenheim','henson','hensongallery','illustrators','illustratorsgallery','loveday','movingimage','panorama','panoramadetail','pdt','reliquary','cloister_h','sunny','tomi','transit']);

@@ -63,7 +63,7 @@ const TRIP = {
       "subtitle": "Land at 08:40, a car to León, find your friends, eat, settle in.",
       "travel": "Proposed: a private car from the airport, about $80 for the whole vehicle, paid by you. Link the pickup to the actual flight, not a fixed 08:45. The cheaper option is a $25 shared seat that leaves around 13:00, which means a long wait; check it runs on a Sunday first.",
       "stops": [
-        { "time": "08:40", "name": "Land in Managua", "text": "AV396 from San Salvador. Pay the $10 arrival tax in cash, fill in the customs form, then out to the car.", "status": "Booked", "map": "Augusto C. Sandino International Airport Managua", "price": "$10 arrival tax, cash (official)" },
+        { "time": "08:40", "name": "Land in Managua", "text": "The flight from San Salvador. Pay the $10 arrival tax in cash, fill in the customs form, then out to the car.", "status": "Booked", "map": "Augusto C. Sandino International Airport Managua", "price": "$10 arrival tax, cash (official)" },
         { "time": "Late morning", "name": "Car to León", "text": "About 1½–2 hours north. If friends are on the same flight or route and actually travel with you, the car splits; otherwise it’s all yours.", "status": "To book", "map": "Parque Central León Nicaragua", "url": "https://www.leontrekkersnicaragua.com/transfers", "link": "Leontrekkers tariffs", "price": "$80 allowance, whole vehicle" },
         { "time": "Lunch", "name": "Find the group, eat", "image": "leonFood", "text": "Join wherever your friends are staying if it suits you. Lunch somewhere ordinary: the market or a fritanga, chosen on the day.", "status": "Flexible", "map": "Mercado Central León Nicaragua" },
         { "time": "Afternoon", "name": "Walk central León", "image": "leonCentre", "text": "Parque Central, the cathedral, the streets around it. Drop into ViaVia to check Monday’s 08:00 start, the gear handover and where your bag stays.", "status": "Proposed", "map": "Catedral de León Nicaragua", "url": "https://leon.viavia.world/home/hotel/", "link": "ViaVia León" },
@@ -126,7 +126,7 @@ const TRIP = {
       "stops": [
         { "time": "~09:00", "name": "Direct car to the airport", "text": "Pickup time to be fixed when the transfer is quoted. No boat trip or detour this morning.", "status": "To quote", "map": "Augusto C. Sandino International Airport Managua", "url": "https://nicaraguataxi.com/rates", "link": "Reference tariffs", "price": "$100–130 allowance, whole vehicle" },
         { "time": "~Noon", "name": "At Managua airport", "text": "Leaves headroom for the road and check-in.", "status": "Proposed" },
-        { "time": "15:40", "name": "AV397 to San Salvador", "text": "Then AV566 at 18:25, landing at JFK at 00:10 on Saturday. Recheck the airline itinerary before fixing pickups.", "status": "Booked" }
+        { "time": "15:40", "name": "Fly to San Salvador", "text": "Then the 18:25 connection, landing at JFK at 00:10 on Saturday. Recheck the airline itinerary before fixing pickups.", "status": "Booked" }
       ],
       "breathing": "Spend the córdobas before the airport."
     }
@@ -178,10 +178,10 @@ const TRIP = {
     { "id": "mano", "kind": "book", "title": "Mano a Mano, Wed 16 – Fri 18", "date": "Third", "text": "Dorm, or a genuinely available private room nearby. Check taxes and cancellation terms.", "url": "https://www.beds24.com/book-manoamano", "action": "Mano calendar", "cost": 40 },
     { "id": "leon", "kind": "book", "title": "León beds, Sun 13 and Tue 15", "date": "Fourth", "text": "Somewhere that fits the group’s base. Ask if your bag can stay on Monday.", "url": "https://leon.viavia.world/home/hotel/", "action": "ViaVia León", "cost": 50 },
     { "id": "friday", "kind": "book", "title": "Friday coast → airport quote", "date": "Fifth", "text": "A direct pickup that gets you to MGA around noon for 15:40.", "url": "https://nicaraguataxi.com/rates", "action": "Reference rates", "cost": 130 },
-    { "id": "sunday", "kind": "book", "title": "Sunday airport → León", "date": "Then", "text": "Private car vs the 13:00 shared seat. Link the pickup to AV396.", "url": "https://www.leontrekkersnicaragua.com/transfers", "action": "Leontrekkers", "cost": 80 },
+    { "id": "sunday", "kind": "book", "title": "Sunday airport → León", "date": "Then", "text": "Private car vs the 13:00 shared seat. Link the pickup to the arrival flight.", "url": "https://www.leontrekkersnicaragua.com/transfers", "action": "Leontrekkers", "cost": 80 },
     { "id": "dollars", "kind": "do", "title": "US dollars in small notes", "date": "In New York", "text": "$10 arrival tax, $20 park fees, and small notes for taxis and food." },
     { "id": "ticket", "kind": "do", "title": "Check the ticket includes departure tax", "date": "Before 13 Dec", "text": "If not, add $35." },
-    { "id": "flights", "kind": "do", "title": "Recheck the Avianca itinerary", "date": "Before booking pickups", "text": "For schedule changes. Check in for AV567 online early." },
+    { "id": "flights", "kind": "do", "title": "Recheck the Avianca itinerary", "date": "Before booking pickups", "text": "For schedule changes. Check in for the Avianca flight online early." },
     { "id": "jabs", "kind": "do", "title": "Travel clinic", "date": "Soon", "text": "Usually hep A, typhoid and tetanus. Check fitfortravel." },
     { "id": "insurance", "kind": "do", "title": "Insurance covers the hike and boarding", "date": "Before 13 Dec", "text": "Check what you already hold." },
     { "id": "spray", "kind": "do", "title": "Repellent and suncream", "date": "Pack", "text": "Dengue mosquitoes bite in the day." }
@@ -202,7 +202,7 @@ const TRIP = {
     { "name": "Wise USD/GBP, 22 Nov 2026", "url": "https://wise.com/gb/currency-converter/usd-to-gbp-rate/history/22-11-2026", "what": "Rate reference; sums use a fixed 0.764" }
   ],
   "practical": [
-    { "head": "Entry", "text": "No visa on a British passport. $10 arrival tax in cash at Managua. Passport needs six months left. Have the AV397 return on your phone." },
+    { "head": "Entry", "text": "No visa on a British passport. $10 arrival tax in cash at Managua. Passport needs six months left. Have the return flight on your phone." },
     { "head": "Money", "text": "Córdobas, roughly C$36–37 to the dollar. Dollars work in tourist places; change comes back in córdobas. Taxis and the coast are mostly cash." },
     { "head": "Heat & the hike", "text": "León is hot, low to mid 30s. El Hoyo is a real uphill with overnight gear and 7–8 litres of water. Start hydrated." },
     { "head": "The sea", "text": "Strong Pacific currents at Las Peñitas. Swim where the locals swim and ask first." },
