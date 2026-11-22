@@ -2,10 +2,10 @@
    Code and pages: network first, so updates arrive whenever there's signal; the cached copy is used offline.
    Photos: cache first. Photos hosted by operators load from their own sites and are kept only in this
    phone's browser cache, never copied into the repository. */
-const SHELL = 'nic-shell-v1';
+const SHELL = 'nic-shell-v2';
 const PHOTOS = 'nic-photos-v1';
 const SHELL_FILES = [
-  './', 'index.html', 'list.html', 'data.js', 'story.js', 'book.js', 'nic.css', 'manifest.webmanifest', 'assets/credits.json',
+  './', 'index.html', 'list.html', 'data.js', 'story.js', 'route-geo.js', 'routemap.js', 'book.js', 'nic.css', 'manifest.webmanifest', 'assets/credits.json',
   '../book.css', '../assets/fonts/union_gothic-variable.ttf', '../assets/vendor/page-flip.browser.js', '../assets/favicon.svg', '../assets/icon-192.png'
 ];
 
