@@ -66,7 +66,7 @@ const STORY={
   {img:'cloister_h',x:1,y:42,w:56,h:28,r:-2,kind:'border tape',stop:0,cap:'Up on the hill over the Hudson'},
   {note:'Unicorn tapestries inside. Gardens out back. K’s pick.',x:59,y:46,w:40,r:1.5,kind:'handl'},
   {note:'Leave by 1:30. Bayside for 3.',x:55,y:71,w:43,r:1.5,kind:'sticker'},
-  {note:'Flight home · 19:25<small>Taxi from Bayside about 4:15. Home Monday morning.</small>',x:3,y:81,w:94,r:-1,kind:'ticket'}]}
+  {note:'Flight home · 19:25 → Dublin<small>Taxi from Bayside about 4:15. Manchester 9:15 Monday.</small>',x:3,y:81,w:94,r:-1,kind:'ticket'}]}
 };
 
 const PHOTOS=new Set(['amnh','bee_black','bee_cast','bee_def','bee_gods','bee_hero','bee_knives','bee_rehearse','bluenote','burp','chinatown','cityisland','cloisters','cold','coldantiques','coldriver','continental','dream','ear','earinside','grandcentral','guggenheim','henson','hensongallery','illustrators','illustratorsgallery','loveday','movingimage','panorama','panoramadetail','pdt','reliquary','cloister_h','sunny','tomi','transit']);

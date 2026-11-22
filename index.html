@@ -65,7 +65,7 @@ body{background:var(--night);color:var(--paper);font-family:Arial,Helvetica,sans
     <a class="slot" href="nicaragua/" data-zine="nic" aria-label="Open the Nicaragua zine, 13 to 18 December"><span class="clip" aria-hidden="true"></span><img src="assets/cover-nic.webp" alt="Nicaragua zine cover" draggable="false"><span class="tag">13–18 DEC</span></a>
    </div>
    <div class="counter">
-    <div class="paper"><small>The Daily Detour</small><strong id="headline">Two weeks till New York</strong><span id="subline">New York, Sun 6 Dec</span></div>
+    <div class="paper"><small>The Daily Detour</small><strong id="headline">Two weeks till New York</strong><span id="subline">Man → Dublin → JFK, Sun 6 Dec</span></div>
     <p class="hint">Pick an issue.<b>TAP A COVER</b></p>
    </div>
   </div>
@@ -77,7 +77,7 @@ body{background:var(--night);color:var(--paper);font-family:Arial,Helvetica,sans
  const day=(m,d)=>new Date(2026,m-1,d);const t=new Date();t.setHours(0,0,0,0);
  const n=d=>Math.round((d-t)/864e5);
  let h,s;
- if(t<day(12,6)){const k=n(day(12,6));h=k===1?'New York tomorrow':(k===14?'Two weeks':k===7?'One week':k+' days')+' till New York';s='New York, Sun 6 Dec';}
+ if(t<day(12,6)){const k=n(day(12,6));h=k===1?'New York tomorrow':(k===14?'Two weeks':k===7?'One week':k+' days')+' till New York';s='Manchester → Dublin → JFK, Sun 6 Dec';}
  else if(t<=day(12,12)){h='New York, day '+(n(day(12,6))*-1+1);s='Nicaragua next: 1:40am Sun 13';}
  else if(t<=day(12,18)){h='Nicaragua, day '+(n(day(12,13))*-1+1);s='Flight back to New York, Fri 18, 3:40pm';}
  else if(t<=day(12,20)){h='Back in New York';s='Flight home, Sun 20, 7:25pm';}

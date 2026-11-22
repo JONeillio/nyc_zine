@@ -701,7 +701,7 @@ const TRIP = {
         {
           "time": "About 4:15pm",
           "name": "Taxi to JFK for home",
-          "text": "Aer Lingus at 7:25pm, home on Monday morning.",
+          "text": "Aer Lingus at 7:25pm to Dublin, landing 7am Monday, then on to Manchester at 8:10, in at 9:15.",
           "type": "travel",
           "map": "John F Kennedy International Airport New York",
           "cost": 45,
