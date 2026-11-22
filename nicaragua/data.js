@@ -1,513 +1,199 @@
-/* Nicaragua, 13–18 December 2026. A proposed route, not a booking.
-   León → El Hoyo overnight / Laguna Asososca → Las Peñitas → León → Managua airport.
-   Flights are the only confirmed items. Every cost is for one person, in US dollars, checked 22 November 2026.
-   costType says what kind of number it is:
-     published  = the operator's own listed price
-     entrance   = a separate park or site fee
-     allowance  = a budget line for something not yet chosen (a bed, a meal, a taxi)
-     estimate   = a figure from guides or reviews, not the operator */
+/* Nicaragua, Sunday 13 – Friday 18 December 2026.
+   Source of truth: NICARAGUA_MASTER_README (updated 22 November 2026).
+   A proposed ground itinerary. Only the Avianca flights are booked.
+   Every price is for one person paying alone, in US dollars, with pounds at a fixed $1 = £0.764.
+   kind labels:
+     published = an operator's own listed price or fee
+     observed  = seen on a live booking calendar for these dates, not held or booked
+     allowance = a planning budget for something not yet chosen or quoted
+     official  = a government-published fee */
+
+/* Photos.
+   Remote photos come from the operators' and tourism board's own pages (see README §10).
+   No redistribution licence was established, and this repository is public, so these are
+   shown from their source URLs, never copied into the repo. Credit and source travel with each one.
+   Local photos (src without http) are Wikimedia Commons or drawn for this zine; see assets/credits.json. */
+const PHOTOS = {
+  cerroUp:   { src: "https://static.wixstatic.com/media/5fc1d5_96b66bd9d6794718a29b6230f3eccbd0~mv2.jpg", source: "https://www.holaholatours.com/tours-1/boarding,-camping,-lake", credit: "Hola Hola Tours", alt: "A group carrying volcano boards up the black gravel of Cerro Negro", caption: "Cerro Negro: carrying the boards up" },
+  cerroDown: { src: "https://static.wixstatic.com/media/5fc1d5_32e7c34489864a2f869fb336f29587ab~mv2.jpg", source: "https://www.holaholatours.com/tours-1/boarding,-camping,-lake", credit: "Hola Hola Tours", alt: "A rider sliding down the dark volcanic slope of Cerro Negro on a board", caption: "Cerro Negro: the way down" },
+  hoyo:      { src: "https://www.volcanodaynicaragua.com/img/el-hoyo.jpg", source: "https://www.volcanodaynicaragua.com/tours/el-hoyo/", credit: "Volcano Day Nicaragua", alt: "El Hoyo volcano, with the large hollow in its flank", caption: "El Hoyo, the hollow in the volcano" },
+  view:      { src: "https://static.wixstatic.com/media/5fc1d5_a9cce317f3814b40a79f0fc7a8b92c61~mv2.jpg", source: "https://www.holaholatours.com/tours-1/el-hoyo-camping", credit: "Hola Hola Tours", alt: "The view from the El Hoyo overnight route", caption: "From the overnight route. Conditions vary." },
+  campsite:  { src: "https://www.jackandjilltravel.com/wp-content/uploads/2013/05/IMG_6420.jpg", source: "https://www.jackandjilltravel.com/el-hoyo-trek-leon/", credit: "Jack and Jill Travel", alt: "Tents at the El Hoyo campsite, photographed in 2013", caption: "The El Hoyo campsite in 2013. Not your tent or pitch." },
+  asososca:  { src: "https://images.squarespace-cdn.com/content/v1/6a11ea05884b275a28b22403/453d56e8-94b6-48c4-923c-2356dba68c9d/IMG_8867_HEIC.jpg", source: "https://www.volcanolifenicaragua.com/el-hoyo-and-lake-asososca", credit: "Volcano Life Nicaragua", alt: "Lake Asososca, a crater lake below El Hoyo", caption: "Lake Asososca" },
+  leonCentre:{ src: "https://www.mapanicaragua.com/wp-content/uploads/2020/08/Parque-Central-Juan-Jos%C3%A9-Quezada_leon_arquitectura6.jpg", source: "https://www.mapanicaragua.com/en/municipio-de-leon/", credit: "Mapa Nacional de Turismo / Nicaragua", alt: "Parque Central in León with the white cathedral behind", caption: "León, Parque Central" },
+  leonFood:  { src: "https://www.mapanicaragua.com/wp-content/uploads/2020/08/Gallopinto-en-fritangas-de-Le%C3%B3n.jpg", source: "https://www.mapanicaragua.com/en/municipio-de-leon/", credit: "Mapa Nacional de Turismo / Nicaragua", alt: "Gallo pinto and fried food at a León fritanga", caption: "Fritanga food in León. No particular place booked." },
+  coast:     { src: "https://www.mapanicaragua.com/wp-content/uploads/2021/08/Isla-Juan-Venado-playa-Las-Penitas-600x402.jpg", source: "https://www.mapanicaragua.com/en/municipio-de-leon/", credit: "Mapa Nacional de Turismo / Nicaragua", alt: "The beach at Las Peñitas with Juan Venado island", caption: "Las Peñitas and Juan Venado" },
+  manoCommunal:{ src: "https://static.wixstatic.com/media/b547dc_c0458999488443598ed1035db10899b0~mv2.jpg", source: "https://www.manoamanoecohostel.com/the-hostel", credit: "Mano a Mano Hostel, Las Peñitas", alt: "Timber communal spaces at Mano a Mano hostel", caption: "Mano a Mano: the communal spaces" },
+  manoShared:{ src: "https://static.wixstatic.com/media/b547dc_ee811c03f9824637acde32c93767e01b~mv2.jpg", source: "https://www.manoamanoecohostel.com/the-hostel", credit: "Mano a Mano Hostel, Las Peñitas", alt: "The courtyard and shared spaces at Mano a Mano", caption: "Mano a Mano: the courtyard. A candidate, not a booking." },
+  manoBar:   { src: "https://static.wixstatic.com/media/b547dc_6fc82a4569384c5f8bb856dc4c2d744b~mv2_d_3632_5456_s_4_2.jpeg", source: "https://www.manoamanoecohostel.com/the-hostel", credit: "Mano a Mano Hostel, Las Peñitas", alt: "Mano a Mano's beach bar, a promotional image with menu text", caption: "Mano’s bar, a promo image with menu text. Not a crowd report.", portrait: true },
+  bigfoot:   { src: "https://static.wixstatic.com/media/f506f2_19e75c9eb8e04dcc88bf3eb1003fac41~mv2.png", source: "https://www.bigfoothostelleon.com/", credit: "Bigfoot Hostel León", alt: "Room photos from Bigfoot Hostel León", caption: "Bigfoot’s own room photos. Optional, not booked." },
+  boarding:  { src: "boarding", alt: "Volcano boarders on the slope of Cerro Negro", caption: "Cerro Negro" },
+  leon:      { src: "leon", alt: "León's rooftops and cathedral domes seen from the cathedral roof", caption: "León from the cathedral roof" },
+  tona:      { src: "tona", alt: "A cold bottle of Toña beer", caption: "A cold Toña" },
+  route:     { src: "route", alt: "A drawn map of the route: León, Cerro Negro, El Hoyo, Lake Asososca, back to León, Las Peñitas, then Managua airport", caption: "The route. Drawn map, not to scale." },
+  routecoast:{ src: "routecoast", alt: "A drawn close-up map of León, the volcanoes and Las Peñitas", caption: "León, the volcanoes and the coast. Drawn map." }
+};
+
 const TRIP = {
-  "fx": { "usdPerGbp": 1.32, "checked": "22 November 2026" },
-  "buckets": [
-    { "id": "beds", "label": "Beds", "note": "4 hostel nights. The camp night comes with the trek." },
-    { "id": "trek", "label": "The El Hoyo trek", "note": "Listed price, trail fee, water" },
-    { "id": "transport", "label": "Getting about", "note": "Airport shuttles and taxis" },
-    { "id": "food", "label": "Food", "note": "Trek meals taken out" },
-    { "id": "nights", "label": "Nights out", "note": "Drinks, four evenings" },
-    { "id": "entry", "label": "Fees & tickets", "note": "Tourist card, cathedral roof" }
+  "fx": { "gbpPerUsd": 0.764, "checked": "22 November 2026", "source": "https://wise.com/gb/currency-converter/usd-to-gbp-rate/history/22-11-2026" },
+  "flight": { "gbp": 783.80, "label": "Avianca return, already paid" },
+  "nights": [
+    { "day": "Sun 13", "where": "León", "what": "Bed, paid (night 1 of 2)", "kind": "paid" },
+    { "day": "Mon 14", "where": "El Hoyo", "what": "Tent, included in the tour", "kind": "camp" },
+    { "day": "Tue 15", "where": "León", "what": "Bed, paid (night 2 of 2)", "kind": "paid" },
+    { "day": "Wed 16", "where": "Mano a Mano", "what": "Dorm bed, paid (coast 1 of 2)", "kind": "paid" },
+    { "day": "Thu 17", "where": "Mano a Mano", "what": "Dorm bed, paid (coast 2 of 2)", "kind": "paid" },
+    { "day": "Fri 18", "where": "In the air", "what": "MGA 15:40 → JFK 00:10 Sat", "kind": "flight" }
   ],
   "days": [
     {
-      "id": "sun",
-      "day": "Sunday",
-      "date": "13 December",
-      "short": "13",
-      "label": "Land & León",
-      "title": "Off the red-eye, up to León.",
-      "subtitle": "Land at 8:40, two hours north, sleep, then a first wander and dinner.",
-      "image": "leon",
-      "area": "Managua airport · León",
-      "travel": "AV396 from San Salvador lands at Managua (MGA) at 8:40am. León is about 1½–2 hours north by road. Shared shuttles are priced per person; a private car or taxi is priced per vehicle, often $100–150. Only split a car if the driver quotes it that way.",
+      "id": "sun", "day": "Sunday", "date": "13 December", "short": "13", "label": "Land & León",
+      "subtitle": "Land at 08:40, a car to León, find your friends, eat, settle in.",
+      "travel": "Proposed: a private car from the airport, about $80 for the whole vehicle, paid by you. Link the pickup to the actual flight, not a fixed 08:45. The cheaper option is a $25 shared seat that leaves around 13:00, which means a long wait; check it runs on a Sunday first.",
       "stops": [
-        {
-          "time": "8:40am",
-          "name": "Land in Managua",
-          "bucket": "entry",
-          "text": "AV396 from San Salvador. Immigration wants your passport, the tourist card fee in cash dollars and the customs form from the plane. Have the return flight on your phone.",
-          "type": "travel",
-          "status": "Booked",
-          "map": "Augusto C. Sandino International Airport Managua",
-          "cost": 10,
-          "costType": "entrance",
-          "costNote": "tourist card, cash dollars",
-          "teaser": "AV396 lands 8:40am. Tourist card, customs form, out."
-        },
-        {
-          "time": "About 10am",
-          "name": "Shuttle to León",
-          "bucket": "transport",
-          "text": "About 1½–2 hours. Book a shared shuttle or a hostel pickup before you fly, so you’re not haggling after no sleep.",
-          "type": "travel",
-          "status": "To book",
-          "map": "Parque Central León Nicaragua",
-          "url": "https://www.suntransfers.com/managua-airport-to-leon-nicaragua",
-          "link": "Transfer prices",
-          "cost": 40,
-          "costType": "allowance",
-          "costNote": "shared shuttle, per person. Guides list $12–150 depending on the service",
-          "teaser": "Two hours north. Pre-book it."
-        },
-        {
-          "time": "Midday",
-          "name": "Hostel, shower, sleep",
-          "bucket": "beds",
-          "text": "You’ll have been up all night. Check in somewhere central, eat, lie down. Nothing before 4pm.",
-          "type": "flex",
-          "status": "To book",
-          "cost": 12,
-          "costType": "allowance",
-          "costNote": "one dorm bed in León. Guides put León dorms at $6–12",
-          "teaser": "Lunch and a proper nap."
-        },
-        {
-          "time": "Late afternoon",
-          "name": "First wander round León",
-          "bucket": "food",
-          "image": "leonstreet",
-          "text": "The cathedral square, the murals, whatever’s cooking on the corners. Pop into the trek operator’s office to check the 7am start and what to bring. The cathedral roof is closed on Sundays; Thursday is your day for that.",
-          "status": "Proposed",
-          "map": "Catedral de León Nicaragua",
-          "cost": 15,
-          "costType": "allowance",
-          "costNote": "lunch and dinner",
-          "teaser": "Walk, eat, check the trek kit list."
-        },
-        {
-          "time": "Evening",
-          "name": "Drinks, early-ish",
-          "bucket": "nights",
-          "text": "A couple of drinks if your friends are in town, then bed. Tomorrow starts at 7.",
-          "type": "flex",
-          "status": "Flexible",
-          "cost": 10,
-          "costType": "allowance",
-          "costNote": "a few beers",
-          "teaser": "See who’s around. Don’t go big."
-        }
+        { "time": "08:40", "name": "Land in Managua", "text": "AV396 from San Salvador. Pay the $10 arrival tax in cash, fill in the customs form, then out to the car.", "status": "Booked", "map": "Augusto C. Sandino International Airport Managua", "price": "$10 arrival tax, cash (official)" },
+        { "time": "Late morning", "name": "Car to León", "text": "About 1½–2 hours north. If friends are on the same flight or route and actually travel with you, the car splits; otherwise it’s all yours.", "status": "To book", "map": "Parque Central León Nicaragua", "url": "https://www.leontrekkersnicaragua.com/transfers", "link": "Leontrekkers tariffs", "price": "$80 allowance, whole vehicle" },
+        { "time": "Lunch", "name": "Find the group, eat", "image": "leonFood", "text": "Join wherever your friends are staying if it suits you. Lunch somewhere ordinary: the market or a fritanga, chosen on the day.", "status": "Flexible", "map": "Mercado Central León Nicaragua" },
+        { "time": "Afternoon", "name": "Walk central León", "image": "leonCentre", "text": "Parque Central, the cathedral, the streets around it. Drop into ViaVia to check Monday’s 08:00 start, the gear handover and where your bag stays.", "status": "Proposed", "map": "Catedral de León Nicaragua", "url": "https://leon.viavia.world/home/hotel/", "link": "ViaVia León" },
+        { "time": "Evening", "name": "A few drinks, not a big one", "text": "ViaVia’s bar is an easy place to meet. Bigfoot is there if the group wants it. You’ve flown overnight and start at 08:00, so this isn’t the night to go hard.", "status": "Flexible" }
       ],
-      "breathing": "If the flight wipes you out, skip the wander. The only thing that matters today is knowing where to be at 7am."
+      "breathing": "Nothing today is booked except the flight. If you’re wrecked, eat and sleep."
     },
     {
-      "id": "mon",
-      "day": "Monday",
-      "date": "14 December",
-      "short": "14",
-      "label": "Up El Hoyo",
-      "title": "Sleep on a volcano.",
-      "subtitle": "A truck out of León, a hike up El Hoyo, and a night at the camp.",
-      "image": "hoyo",
-      "area": "León · El Hoyo",
-      "travel": "The operator’s truck takes about an hour from León to the trailhead. Leave your main bag at the León hostel or the operator’s office. Ask which before you book.",
+      "id": "mon", "day": "Monday", "date": "14 December", "short": "14", "label": "Boarding & El Hoyo",
+      "subtitle": "Slide down Cerro Negro, hike El Hoyo, sleep in a tent on the mountain.",
+      "travel": "Volcano Day meets at ViaVia in León. Published start 08:00, to reconfirm. Transport, guide, tent, mat, sleeping bag, backpack and four meals are included; park fees are not. They ask for 7 litres of water (Hola Hola says 8). Ask which, and how the group carries the gear.",
       "stops": [
-        {
-          "time": "7am",
-          "name": "Meet at the trek office",
-          "bucket": "trek",
-          "text": "Pack the day bag with the guides. One third-party listing says the guides make breakfast here; Quetzaltrekkers’ own page doesn’t say, so eat something first if unsure.",
-          "type": "travel",
-          "status": "To book",
-          "map": "Quetzaltrekkers León Nicaragua",
-          "url": "https://quetzaltrekkersleon.rezdy.com/377129/2-day-volcan-el-hoyo",
-          "link": "The 2-day El Hoyo trek",
-          "cost": 60,
-          "costType": "published",
-          "costNote": "Quetzaltrekkers 2-day El Hoyo, listed price. Transport and borrowed camping gear included. Other operators list $50–95",
-          "teaser": "7am start. Breakfast, kit, truck."
-        },
-        {
-          "time": "Morning",
-          "name": "Up El Hoyo",
-          "bucket": "trek",
-          "image": "hoyo",
-          "text": "El Hoyo means ‘the hole’: a huge collapsed pit on the side of the volcano. It’s a real hike, uphill in the heat, carrying your own water. Tents, mats and sleeping bags come from the operator. The water, snacks and your own layers don’t.",
-          "status": "Proposed",
-          "map": "Volcán El Hoyo Nicaragua",
-          "cost": 10,
-          "costType": "entrance",
-          "costNote": "trail entrance. One operator says $10 is charged separately; check whether yours includes it",
-          "note": "Carry about 4–6 litres. Ask the operator for their exact number.",
-          "teaser": "A proper uphill. Bring the water."
-        },
-        {
-          "time": "Sunset",
-          "name": "Camp under the volcanoes",
-          "text": "Camp near the top, with the line of volcanoes running off towards the coast. Dinner comes with the trek. Then stars, and an early night for sunrise.",
-          "status": "Proposed",
-          "teaser": "The whole reason for the trip."
-        }
+        { "time": "08:00", "name": "Meet Volcano Day at ViaVia", "text": "Hand over the main bag for storage, pick up the gear, load up. Breakfast before this is on you.", "status": "To confirm", "map": "ViaVia León Nicaragua", "url": "https://www.volcanodaynicaragua.com/tours/el-hoyo/", "link": "Volcano Day: El Hoyo", "price": "$95 published + $10 Cerro Negro + $10 El Hoyo = $115" },
+        { "time": "Morning", "name": "Cerro Negro boarding", "image": "cerroDown", "text": "Walk the board up the black gravel cone, then slide down it. Part of the combo, so no second boarding charge.", "status": "Proposed", "map": "Cerro Negro Nicaragua" },
+        { "time": "Afternoon", "name": "Hike El Hoyo", "image": "hoyo", "text": "The operator calls it challenging: uphill in the heat, carrying overnight gear and a lot of water. Not a stroll to a serviced campsite.", "status": "Proposed", "map": "Volcán El Hoyo Nicaragua" },
+        { "time": "Sunset", "name": "Camp on the mountain", "image": "campsite", "text": "Sunset, dinner from the guides, a supplied tent. No hostel to pay for tonight.", "status": "Proposed" }
       ],
-      "breathing": "If the operator cancels for low numbers, ask about the next departure or a different one. Telica overnight runs from the same office."
+      "breathing": "The minimum is three people on the direct operator’s page. You can join an existing group; confirm the departure rather than assuming friends will come."
     },
     {
-      "id": "tue",
-      "day": "Tuesday",
-      "date": "15 December",
-      "short": "15",
-      "label": "Crater lake & coast",
-      "title": "Sunrise, a crater lake, the sea.",
-      "subtitle": "Down off El Hoyo to Laguna Asososca, back to León by 2, out to Las Peñitas.",
-      "image": "asososca",
-      "area": "El Hoyo · Laguna Asososca · Las Peñitas",
-      "travel": "The listing has you back at the León office around 2pm. Las Peñitas is 25 minutes by taxi from León (around C$250, about $7), or a cheap local bus that leaves when it’s full. The last bus back from the beach is about 6pm.",
+      "id": "tue", "day": "Tuesday", "date": "15 December", "short": "15", "label": "Lake & León",
+      "subtitle": "Sunrise, down to Lake Asososca, back to León for a shower and a relaxed night.",
+      "travel": "The published return is around midday. Keep the afternoon open for delays, heat and tired legs.",
       "stops": [
-        {
-          "time": "Dawn",
-          "name": "Sunrise from the camp",
-          "image": "hoyo",
-          "text": "The best light of the trip. Breakfast comes with the trek.",
-          "status": "Proposed",
-          "teaser": "Up for sunrise."
-        },
-        {
-          "time": "Morning",
-          "name": "Swim in Laguna Asososca",
-          "image": "asososca",
-          "text": "The trek finishes at the crater lake next door. Swim off the dust and the walk.",
-          "status": "Proposed",
-          "map": "Laguna de Asososca León Nicaragua",
-          "teaser": "Swim in a crater."
-        },
-        {
-          "time": "2pm",
-          "name": "Back to León, out to the beach",
-          "split": { "transport": 8, "food": 15 },
-          "text": "Grab the bag, eat lunch, then a taxi out to Las Peñitas.",
-          "type": "travel",
-          "status": "Proposed",
-          "map": "Las Peñitas León Nicaragua",
-          "cost": 23,
-          "costType": "allowance",
-          "costNote": "taxi about $8, plus lunch",
-          "teaser": "Bag, lunch, taxi to the coast."
-        },
-        {
-          "time": "Evening",
-          "name": "Fish dinner on the beach",
-          "bucket": "food",
-          "text": "Fried fish, rice, a cold Toña, watch the sun go into the Pacific. You’ve earned it.",
-          "status": "Proposed",
-          "cost": 15,
-          "costType": "allowance",
-          "costNote": "dinner",
-          "teaser": "Fried fish, sunset."
-        },
-        {
-          "time": "Late",
-          "name": "Olazul Tuesday night",
-          "bucket": "nights",
-          "text": "A regular Tuesday night at Olazul came up in planning. A recurring night doesn’t mean it runs on the 15th, and I couldn’t find a schedule, so it’s a lead: ask at the hostel on the day. Don’t plan around it.",
-          "status": "Lead",
-          "map": "Olazul Las Peñitas Nicaragua",
-          "cost": 20,
-          "costType": "allowance",
-          "costNote": "drinks, if it’s on",
-          "note": "Bigfoot in León runs its own Tuesday night. You can only do one, and on this route you’re at the beach.",
-          "teaser": "A lead, not a plan."
-        }
+        { "time": "Dawn", "name": "Sunrise from camp", "image": "view", "text": "Breakfast is one of the included meals.", "status": "Proposed" },
+        { "time": "Morning", "name": "Swim in Lake Asososca", "image": "asososca", "text": "Down off the mountain to the crater lake, conditions and the guides allowing.", "status": "Proposed", "map": "Laguna de Asososca León Nicaragua" },
+        { "time": "Afternoon", "name": "Back to León", "text": "Collect the bag, check into the second León bed, shower, laundry if needed.", "status": "To book", "map": "Parque Central León Nicaragua", "price": "In the León beds allowance" },
+        { "time": "Evening", "name": "An easy night with the group", "text": "Dinner (on your food allowance) and a bar or gig that’s actually on, found on the day. No pub crawl required.", "status": "Flexible" }
       ],
-      "breathing": "If the legs are gone, have dinner and sleep. The beach night isn’t going anywhere: you’ve got two."
+      "breathing": "If your legs are gone, this is a dinner-and-bed night. Nobody needs you out."
     },
     {
-      "id": "wed",
-      "day": "Wednesday",
-      "date": "16 December",
-      "short": "16",
-      "label": "Las Peñitas",
-      "title": "A whole day doing not much.",
-      "subtitle": "Sea, hammock, a boat into the mangroves if you fancy it, friends in the evening.",
-      "image": "penitas",
-      "area": "Las Peñitas · Juan Venado",
-      "travel": "Everything’s on foot along the beach road. Bring cash: small places don’t always take cards.",
+      "id": "wed", "day": "Wednesday", "date": "16 December", "short": "16", "label": "Friends, then the coast",
+      "subtitle": "The morning with friends in León, then out to Mano a Mano in the afternoon.",
+      "travel": "Leave around 14:00–15:00, adjusted to Mano’s check-in and reception hours. Allow about an hour as a planning slot. A private car is about $20–25 for the vehicle.",
       "stops": [
-        {
-          "time": "Morning",
-          "name": "Swim and breakfast",
-          "bucket": "food",
-          "image": "penitas",
-          "text": "The Pacific here has a proper pull. Swim where the locals swim and ask about currents.",
-          "status": "Proposed",
-          "map": "Las Peñitas Beach Nicaragua",
-          "cost": 8,
-          "costType": "allowance",
-          "costNote": "breakfast",
-          "teaser": "Swim. Ask about the currents."
-        },
-        {
-          "time": "Late morning",
-          "name": "Juan Venado mangroves by boat",
-          "bucket": "entry",
-          "image": "venado",
-          "text": "The nature reserve is the long sandbar behind the beach. Boats go up the channel through the mangroves: birds, maybe a crocodile, no effort.",
-          "status": "Optional",
-          "map": "Reserva Natural Isla Juan Venado Nicaragua",
-          "cost": 20,
-          "costType": "estimate",
-          "costNote": "boat trip. My guess; I couldn’t find a current price",
-          "teaser": "A gentle boat through the mangroves."
-        },
-        {
-          "time": "Afternoon",
-          "name": "Hammock, or a board",
-          "bucket": "entry",
-          "text": "Rent a surfboard if the waves are friendly. No lesson booked, nothing to sign up for.",
-          "status": "Optional",
-          "cost": 10,
-          "costType": "estimate",
-          "costNote": "board for a few hours, roughly",
-          "teaser": "Hammock or a borrowed board."
-        },
-        {
-          "time": "Evening",
-          "name": "Dinner and drinks with whoever’s around",
-          "split": { "food": 15, "nights": 15 },
-          "text": "If your friends are on the coast too, this is the night. If they’re not, the hostel bars are small and friendly.",
-          "type": "flex",
-          "status": "Flexible",
-          "cost": 30,
-          "costType": "allowance",
-          "costNote": "dinner $15, drinks $15",
-          "teaser": "See who’s on the beach."
-        },
-        {
-          "time": "Night",
-          "name": "Second night at the beach",
-          "bucket": "beds",
-          "text": "Mano a Mano is one hostel to look at. Book something with free cancellation until the trek is confirmed.",
-          "type": "flex",
-          "status": "To book",
-          "cost": 30,
-          "costType": "allowance",
-          "costNote": "two dorm nights at $15. Mano a Mano lists dorms from about $13",
-          "teaser": "Night two by the sea."
-        }
+        { "time": "Morning", "name": "Coffee with the group", "text": "Pan & Paz is one possible stop. Stay with your friends through lunch if their plans line up.", "status": "Flexible", "map": "Pan y Paz León Nicaragua", "url": "https://www.panypaz.com/", "link": "Pan & Paz" },
+        { "time": "14:00–15:00", "name": "Car to Las Peñitas", "text": "Leontrekkers lists $20 and Fun ’N’ Sun $25 for the whole car.", "status": "To book", "map": "Mano a Mano Eco Hostal Las Peñitas", "url": "https://www.funnsuntravels.com/transport/", "link": "Fun ’N’ Sun tariffs", "price": "$20–25 published, whole vehicle" },
+        { "time": "Late afternoon", "name": "Check in at Mano a Mano", "image": "manoCommunal", "text": "Dorm availability was seen on the live calendar; nothing is held. Have a look round, walk the beach.", "status": "Observed, unbooked", "url": "https://www.beds24.com/book-manoamano", "link": "Mano booking calendar", "price": "$30–40 allowance for both nights" },
+        { "time": "Evening", "name": "See how the place feels", "text": "Eat, then stay around the bar or head out with people you meet. No big night to manufacture.", "status": "Flexible" }
       ],
-      "breathing": "This is the slack day on purpose. If the group wants a different plan, this is the one to give up."
+      "breathing": "Your own two nights start here. If friends change plans, the coast still works on its own."
     },
     {
-      "id": "thu",
-      "day": "Thursday",
-      "date": "17 December",
-      "short": "17",
-      "label": "León, the big night",
-      "title": "Rooftops, then the late one.",
-      "subtitle": "Back to León, walk on the cathedral roof, then a proper night out.",
-      "image": "leon",
-      "area": "Las Peñitas · León",
-      "travel": "Taxi back from Las Peñitas, 25 minutes. Your flight’s not until 3:40pm tomorrow, so tonight’s the one to stay out.",
+      "id": "thu", "day": "Thursday", "date": "17 December", "short": "17", "label": "A whole coastal day",
+      "subtitle": "Sea air, a book, people to talk to. A boat into the mangroves if you fancy it.",
+      "travel": "No transfer today. Everything is on foot along the beach.",
       "stops": [
-        {
-          "time": "Morning",
-          "name": "Cerro Negro boarding",
-          "bucket": "entry",
-          "image": "boarding",
-          "text": "Hike up a black gravel volcano, slide down on a board. Only if you fancy it, and it means leaving the beach early: most trips leave León in the morning.",
-          "status": "Optional",
-          "map": "Cerro Negro Nicaragua",
-          "cost": 40,
-          "costType": "estimate",
-          "costNote": "boarding with transport, from older guides. Count it once: if your trek operator bundles it, skip this",
-          "teaser": "Only if you want the rush."
-        },
-        {
-          "time": "Late morning",
-          "name": "Taxi back to León",
-          "split": { "transport": 8, "beds": 12 },
-          "text": "Check back into a León hostel and drop the bag.",
-          "type": "travel",
-          "status": "To book",
-          "map": "Parque Central León Nicaragua",
-          "cost": 20,
-          "costType": "allowance",
-          "costNote": "taxi $8 plus a dorm bed $12",
-          "teaser": "Back to town."
-        },
-        {
-          "time": "2–4:30pm",
-          "name": "Walk the cathedral roof",
-          "bucket": "entry",
-          "image": "leon",
-          "text": "Shoes off, out across the white domes, volcanoes on the horizon. Listings give a 2–4:30 afternoon window; check before you go.",
-          "status": "Proposed",
-          "map": "Catedral de León Nicaragua",
-          "cost": 4,
-          "costType": "estimate",
-          "costNote": "roof entry, from a cost site",
-          "teaser": "Barefoot on the white roof."
-        },
-        {
-          "time": "Evening",
-          "name": "Live music in León",
-          "split": { "food": 15, "nights": 20 },
-          "text": "La Olla Quemada is the venue that comes up most for loud live shows. The Teatro Municipal for anything bigger. Ask the hostel what’s on tonight.",
-          "status": "Proposed",
-          "map": "La Olla Quemada León Nicaragua",
-          "cost": 35,
-          "costType": "allowance",
-          "costNote": "dinner $15, drinks $20",
-          "teaser": "Dinner, then wherever the band is."
-        },
-        {
-          "time": "Late",
-          "name": "Bigfoot, if the group’s going",
-          "bucket": "nights",
-          "text": "Big party hostel with drinking games and a party-bus vibe. It’s there if your friends end up there and you’re in the mood. It isn’t the plan, and it isn’t where you have to stay.",
-          "status": "Optional",
-          "map": "Bigfoot Hostel León Nicaragua",
-          "cost": 15,
-          "costType": "allowance",
-          "costNote": "extra drinks",
-          "teaser": "Optional. Party hostel bar."
-        }
+        { "time": "Morning", "name": "Breakfast, the beach, nothing much", "image": "coast", "text": "Read, walk, swim where the locals swim. Leave real free time.", "status": "Flexible", "map": "Las Peñitas Beach Nicaragua" },
+        { "time": "Late morning", "name": "Juan Venado mangroves", "image": "coast", "text": "Ask at Mano about a guided boat into the reserve behind the beach. Operator, launch point, group size and tide all matter.", "status": "Optional", "map": "Reserva Natural Isla Juan Venado Nicaragua", "price": "$30–60 extra, unquoted" },
+        { "time": "Afternoon", "name": "Surf, if you choose to", "text": "A board or a lesson needs its own quote. Not booked, not in the budget.", "status": "Optional" },
+        { "time": "Sunset", "name": "Sunset, food, a flexible night", "image": "manoBar", "text": "The hostel gives you a chance of company. It can’t promise a busy night or a crowd you’ll click with.", "status": "Flexible" }
       ],
-      "breathing": "If the night ends early, fine. If it doesn’t, you’ve got till late morning."
+      "breathing": "Sleep here again. There’s no Thursday transfer back to León."
     },
     {
-      "id": "fri",
-      "day": "Friday",
-      "date": "18 December",
-      "short": "18",
-      "label": "Homeward",
-      "title": "A slow León morning, then fly.",
-      "subtitle": "Breakfast, the market if there’s time, then two hours to the airport.",
-      "image": "leonstreet",
-      "area": "León · Managua airport",
-      "travel": "Allow two hours from León to the airport and aim to be there by 1:30pm. Leave by 11am.",
+      "id": "fri", "day": "Friday", "date": "18 December", "short": "18", "label": "Straight to the airport",
+      "subtitle": "Pickup around 09:00, at Managua by about noon, fly at 15:40.",
+      "travel": "Proposed: a direct private car from the coast. $100–130 is an allowance; no direct quote yet. A cheaper version is a taxi to León and a shared $18 seat at 09:30, but it needs four passengers and adds a connection.",
       "stops": [
-        {
-          "time": "Morning",
-          "name": "Breakfast and the market",
-          "bucket": "food",
-          "text": "Gallo pinto and coffee, then a walk through the central market if you’re up in time.",
-          "status": "Proposed",
-          "map": "Mercado Central León Nicaragua",
-          "cost": 8,
-          "costType": "allowance",
-          "costNote": "breakfast",
-          "teaser": "Gallo pinto, coffee, market."
-        },
-        {
-          "time": "11am",
-          "name": "Shuttle to the airport",
-          "bucket": "transport",
-          "text": "Same deal as Sunday: shared shuttle, or hostel pickup booked in advance.",
-          "type": "travel",
-          "status": "To book",
-          "map": "Augusto C. Sandino International Airport Managua",
-          "cost": 40,
-          "costType": "allowance",
-          "costNote": "shared shuttle, per person",
-          "teaser": "Leave by 11."
-        },
-        {
-          "time": "3:40pm",
-          "name": "AV397 to San Salvador",
-          "text": "Then AV566 to New York, landing at JFK at 00:10 on Saturday.",
-          "type": "travel",
-          "status": "Booked",
-          "teaser": "AV397 → AV566 → JFK."
-        }
+        { "time": "~09:00", "name": "Direct car to the airport", "text": "Pickup time to be fixed when the transfer is quoted. No boat trip or detour this morning.", "status": "To quote", "map": "Augusto C. Sandino International Airport Managua", "url": "https://nicaraguataxi.com/rates", "link": "Reference tariffs", "price": "$100–130 allowance, whole vehicle" },
+        { "time": "~Noon", "name": "At Managua airport", "text": "Leaves headroom for the road and check-in.", "status": "Proposed" },
+        { "time": "15:40", "name": "AV397 to San Salvador", "text": "Then AV566 at 18:25, landing at JFK at 00:10 on Saturday. Recheck the airline itinerary before fixing pickups.", "status": "Booked" }
       ],
-      "breathing": "Spend the córdobas before the airport. Nobody wants them in New York."
+      "breathing": "Spend the córdobas before the airport."
     }
   ],
-  "alternatives": [
-    {
-      "id": "granada",
-      "image": "calzada_day",
-      "title": "Granada",
-      "tag": "Instead of the beach nights",
-      "text": "The colonial lake town: Calle La Calzada, the Masaya market, the volcano at night. Prettier and more touristy than León. It’s three hours from Las Peñitas, so it doesn’t fit the short route without losing the beach.",
-      "map": "Calle La Calzada Granada Nicaragua",
-      "imageAlt": "Calle La Calzada in Granada in daylight"
-    },
-    {
-      "id": "masaya",
-      "image": "rim",
-      "title": "Masaya Volcano at night",
-      "tag": "With Granada only",
-      "text": "You drive up to the rim after dark. The lava lake was buried by a landslide in March 2024, so it’s a red glow from a vent now. The night session runs about 5–8pm, $10 cash, vehicle only.",
-      "map": "Masaya Volcano National Park Nicaragua",
-      "imageAlt": "Santiago crater of Masaya volcano by day"
-    },
-    {
-      "id": "sanjuan",
-      "image": "sanjuan",
-      "title": "San Juan del Sur",
-      "tag": "The big party coast",
-      "text": "The south-coast surf town: beach bars and the biggest backpacker scene. It’s 2½–3 hours from the airport and far from León, so it’s a different trip, not a swap.",
-      "map": "San Juan del Sur Nicaragua",
-      "imageAlt": "The bay at San Juan del Sur"
-    },
-    {
-      "id": "treehouse",
-      "image": "mombacho",
-      "title": "The Treehouse",
-      "tag": "Doesn’t fit this week",
-      "text": "A jungle hostel on Mombacho near Granada, famous for its Friday party (listed 4pm–3am). You fly out on Friday afternoon, so it can’t work without adding days, and they ask for a three-night minimum.",
-      "note": "The photo is Mombacho from Granada, not the hostel.",
-      "map": "The Treehouse Granada Nicaragua",
-      "imageAlt": "Mombacho volcano seen from Granada"
-    },
-    {
-      "id": "ometepe",
-      "image": "ferry",
-      "title": "Ometepe & Laguna de Apoyo",
-      "tag": "The old plan",
-      "text": "Two volcanoes in a lake, then a swim in a crater lake near the airport. Beautiful and quiet, but slow to reach and light on nights out. The first version of this zine.",
-      "map": "Ometepe Nicaragua",
-      "imageAlt": "Concepción volcano from the Ometepe ferry"
-    }
-  ],
-  "bookings": [
-    { "id": "trek", "kind": "book", "title": "El Hoyo overnight trek", "date": "Mon 14 – Tue 15 Dec", "text": "Ask before paying: does the 14th run (minimum numbers)? Is the trail entrance included? Which meals? Where does my main bag stay? What’s the cancellation policy?", "url": "https://quetzaltrekkersleon.rezdy.com/377129/2-day-volcan-el-hoyo", "action": "Quetzaltrekkers booking page", "cost": 60 },
-    { "id": "leon1", "kind": "book", "title": "León hostel, 1 night", "date": "Sun 13 – Mon 14 Dec", "text": "Central. Ask whether they’ll store your bag during the trek. Free cancellation.", "url": "https://www.hostelworld.com/hostels/north-america/nicaragua/leon/", "action": "Search León", "cost": 12 },
-    { "id": "penitas", "kind": "book", "title": "Las Peñitas hostel, 2 nights", "date": "Tue 15 – Thu 17 Dec", "text": "Mano a Mano is one to look at. Free cancellation until the trek is confirmed.", "url": "https://www.hostelworld.com/hostels/north-america/nicaragua/las-penitas/", "action": "Search Las Peñitas", "cost": 30 },
-    { "id": "leon2", "kind": "book", "title": "León hostel, 1 night", "date": "Thu 17 – Fri 18 Dec", "text": "The big night, so somewhere you can get back to easily.", "url": "https://www.hostelworld.com/hostels/north-america/nicaragua/leon/", "action": "Search León", "cost": 12 },
-    { "id": "shuttle", "kind": "book", "title": "Airport shuttles, both ways", "date": "Sun 13 · Fri 18", "text": "Ask whether the quote is per person or per car. Give them AV396 for the pickup.", "url": "https://www.suntransfers.com/managua-airport-to-leon-nicaragua", "action": "Compare transfers", "cost": 80 },
-    { "id": "group", "kind": "do", "title": "Ask the group where they’ll be", "date": "This week", "text": "Their route and dates aren’t settled. Don’t book around them; just know if they’ll be in León or on the coast." },
-    { "id": "olazul", "kind": "do", "title": "Is there anything on at Olazul, Tue 15?", "date": "Closer to the date", "text": "A lead only. Message them or ask at the hostel." },
-    { "id": "passport", "kind": "do", "title": "Passport has 6 months left", "date": "Now", "text": "Six months past the trip, and a couple of blank pages." },
-    { "id": "jabs", "kind": "do", "title": "Travel clinic for jabs", "date": "This week", "text": "Three weeks out, so go soon. Usually hep A, typhoid and tetanus. Check fitfortravel first." },
-    { "id": "dollars", "kind": "do", "title": "Get US dollars in small notes", "date": "In New York", "text": "$10–12 for the tourist card, the trail fee, plus $100 or so in 1s, 5s and 10s. Clean notes, no tears." },
-    { "id": "insurance", "kind": "do", "title": "Travel insurance covers trekking", "date": "Before 13 Dec", "text": "Check it covers an overnight volcano hike, and board sports if you do Cerro Negro." },
-    { "id": "card", "kind": "do", "title": "A card with no foreign fees", "date": "Before 13 Dec", "text": "For BAC and LAFISE ATMs. They give out dollars or córdobas." },
-    { "id": "offline", "kind": "do", "title": "Offline maps & Spanish", "date": "Before 13 Dec", "text": "Download Nicaragua in Google Maps and Spanish in Google Translate." },
-    { "id": "checkin", "kind": "do", "title": "Check in for AV567", "date": "Sat 12 Dec", "text": "Avianca may ask for extra details for Nicaragua at check-in. Do it online early." },
-    { "id": "spray", "kind": "do", "title": "DEET and suncream", "date": "Pack", "text": "Dengue mosquitoes bite in the day. Buy it in New York." }
-  ],
-  "travel": {
+  "budget": {
     "lines": [
-      { "label": "Water and snacks for the trek", "amount": 5, "costType": "allowance", "bucket": "trek", "note": "About 4–6 litres plus snacks, bought in León on Sunday." }
+      { "id": "leonBeds", "label": "León beds, Sun & Tue", "low": 30, "high": 50, "kind": "allowance", "note": "Two beds or your share. Property and room not chosen." },
+      { "id": "mano", "label": "Mano a Mano dorm, Wed & Thu", "low": 30, "high": 40, "kind": "observed", "note": "The live calendar showed $26 for one guest, two nights, before checkout. Allowance adds headroom; taxes unverified." },
+      { "id": "camp", "label": "Cerro Negro + El Hoyo + lake", "low": 115, "high": 115, "kind": "published", "note": "$95 package + $10 Cerro Negro + $10 El Hoyo. Date and group still to confirm." },
+      { "id": "arrive", "label": "Airport → León car, Sunday", "low": 80, "high": 80, "kind": "allowance", "note": "Based on the published León–airport whole-vehicle rate. Confirm the airport-pickup direction." },
+      { "id": "coastCar", "label": "León → Las Peñitas car, Wed", "low": 20, "high": 25, "kind": "published", "note": "Whole-vehicle tariffs from Leontrekkers and Fun ’N’ Sun." },
+      { "id": "depart", "label": "Coast → airport car, Friday", "low": 100, "high": 130, "kind": "allowance", "note": "No direct quote yet. Two published legs via León total about $100." },
+      { "id": "food", "label": "Meals, coffee, water", "low": 70, "high": 100, "kind": "allowance", "note": "Six days, minus the four camp meals." },
+      { "id": "drinks", "label": "Drinks and evening entry", "low": 40, "high": 70, "kind": "allowance", "note": "Personal spending, not a ticket price." },
+      { "id": "tax", "label": "Arrival tax", "low": 10, "high": 10, "kind": "official", "note": "GOV.UK. Cash. Departure tax is normally in the ticket." },
+      { "id": "buffer", "label": "Contingency", "low": 30, "high": 50, "kind": "allowance", "note": "Small extras, fees, bag storage, tips. Unspent if not needed." }
+    ],
+    "privateCoast": { "replaces": "mano", "low": 80, "high": 140, "note": "A private room around Las Peñitas for both nights, $40–70 a night. Unquoted. Mano had no private room free for both nights when checked." },
+    "extras": [
+      { "label": "Juan Venado boat outing", "range": "$30–60 · £23–46", "note": "Unquoted. Ask Mano." },
+      { "label": "Surf board or lesson", "range": "Not priced", "note": "Only after you choose it and get a quote." },
+      { "label": "Departure tax, if not in the ticket", "range": "$35 · £27", "note": "Check the ticket before adding it." },
+      { "label": "Private rooms in León instead", "range": "+$30–50 · £23–38", "note": "Pending a quote." }
+    ],
+    "savings": [
+      "Share the airport car only if friends actually travel with you. Four people under a four-person tariff makes $80 into $20 each.",
+      "Sunday shared shuttle: $25 seat at around 13:00, so a long wait after landing. Saves about £42. Check it runs on Sundays.",
+      "Friday taxi to León plus Fun ’N’ Sun’s $18 shared seat at 09:30 (minimum four). Roughly $38–43 all in, saving £44–70, but it adds a connection.",
+      "Camping without boarding: $75 + $10 El Hoyo fee = $85, saving $30. Don’t buy a separate boarding day as well."
     ]
   },
-  "packing": [
-    { "head": "Provided on the trek", "text": "Tent, mat and sleeping bag, borrowed from the operator. Confirm before you go." },
-    { "head": "You carry", "text": "4–6 litres of water, snacks, a warm layer for the night, head torch, sun hat, suncream, swimmers for the lake, toilet paper, cash for the trail fee." },
-    { "head": "On your feet", "text": "Trainers with grip or light boots. It’s loose and dusty." },
-    { "head": "Left in León", "text": "The main bag. Ask the hostel or the trek office to store it." }
+  "camping": {
+    "price": "$95 published + $10 Cerro Negro fee + $10 El Hoyo fee",
+    "included": ["Transport from León", "Guide", "Tent", "Sleeping mat", "Sleeping bag", "Backpack", "Four meals"],
+    "bring": ["7–8 litres of water (ask which)", "Walking shoes", "A warm layer", "Sun protection", "Head torch", "Swimwear", "Repellent", "Toiletries", "Charging essentials", "Cash for the park fees"],
+    "confirm": ["Monday 14 runs (minimum three people)", "Final price and whether fees are included", "Which meals: Monday breakfast and Tuesday dinner are on you", "Bag storage in León, and if it costs extra", "Whether Hola Hola’s $12 upfront payment is a deposit off the $95 or extra"]
+  },
+  "alternatives": [
+    { "id": "private", "image": "manoShared", "title": "A private room on the coast", "tag": "Swap for the Mano dorm", "text": "Mano’s calendar had no private room for both nights. A private room somewhere around Las Peñitas, same Wednesday and Thursday, is budgeted at $80–140 for two nights. Ground total becomes $575–770, about £439–588. First check Mano for cancellations; otherwise name a real nearby place with real availability before choosing it.", "note": "Unquoted. The photo is Mano’s courtyard, not a room you have." },
+    { "id": "noboard", "image": "view", "title": "Camping without boarding", "tag": "Saves $30", "text": "The El Hoyo + lake overnight on its own is $75 plus the $10 El Hoyo fee: $85 instead of $115. Skip Cerro Negro, keep the night on the mountain.", "url": "https://www.holaholatours.com/tours-1/el-hoyo-camping", "link": "Hola Hola: El Hoyo camping" },
+    { "id": "shared", "image": "routecoast", "title": "Shared transfers", "tag": "Only if they really run", "text": "Sunday: a $25 shared seat around 13:00 instead of the $80 car, after a long wait. Friday: a taxi to León and an $18 shared seat at 09:30 (minimum four) instead of the $100–130 car. Don’t count the saving until it’s confirmed.", "url": "https://www.roneeyshuttle.com/p_page.php?idc=19&idcd=9&idlang=EN&idp=NIC&idr=12", "link": "Roneey shuttle" },
+    { "id": "venado", "image": "coast", "title": "Juan Venado by boat", "tag": "Thursday, optional", "text": "A guided boat into the mangrove reserve behind the beach. $30–60 extra as an unquoted allowance. Ask Mano locally.", "map": "Reserva Natural Isla Juan Venado Nicaragua" },
+    { "id": "bigfoot", "image": "bigfoot", "title": "Bigfoot", "tag": "Optional evening or bed", "text": "A León party hostel with organised drinking games. Worth a look if the group’s there; not the centre of the trip, and not booked.", "url": "https://www.bigfoothostelleon.com/", "link": "Bigfoot León" },
+    { "id": "elsewhere", "image": "route", "title": "Granada, Ometepe, San Juan del Sur", "tag": "Not this time", "text": "All on the old plans. The flight home is Friday, so none of them fit without dropping the coast or the camp.", "note": "No extra nights or detours are priced." }
   ],
-  "verify": [
-    "The trek runs on Mon 14 (minimum numbers).",
-    "Final inclusions: meals, entrance fee, gear.",
-    "Where your bag stays during the trek.",
-    "Hostel cancellation terms.",
-    "Whether each shuttle quote is per person or per car."
+  "bookings": [
+    { "id": "group", "kind": "book", "title": "Ask where the group is staying", "date": "First", "text": "And what’s already planned Sunday to Wednesday. Join their base if it suits you." },
+    { "id": "camp", "kind": "book", "title": "Volcano Day, Mon 14 departure", "date": "Second", "text": "Group minimum, final price with park fees, meals, bag storage.", "url": "https://www.volcanodaynicaragua.com/tours/el-hoyo/", "action": "Volcano Day", "cost": 115 },
+    { "id": "mano", "kind": "book", "title": "Mano a Mano, Wed 16 – Fri 18", "date": "Third", "text": "Dorm, or a genuinely available private room nearby. Check taxes and cancellation terms.", "url": "https://www.beds24.com/book-manoamano", "action": "Mano calendar", "cost": 40 },
+    { "id": "leon", "kind": "book", "title": "León beds, Sun 13 and Tue 15", "date": "Fourth", "text": "Somewhere that fits the group’s base. Ask if your bag can stay on Monday.", "url": "https://leon.viavia.world/home/hotel/", "action": "ViaVia León", "cost": 50 },
+    { "id": "friday", "kind": "book", "title": "Friday coast → airport quote", "date": "Fifth", "text": "A direct pickup that gets you to MGA around noon for 15:40.", "url": "https://nicaraguataxi.com/rates", "action": "Reference rates", "cost": 130 },
+    { "id": "sunday", "kind": "book", "title": "Sunday airport → León", "date": "Then", "text": "Private car vs the 13:00 shared seat. Link the pickup to AV396.", "url": "https://www.leontrekkersnicaragua.com/transfers", "action": "Leontrekkers", "cost": 80 },
+    { "id": "dollars", "kind": "do", "title": "US dollars in small notes", "date": "In New York", "text": "$10 arrival tax, $20 park fees, and small notes for taxis and food." },
+    { "id": "ticket", "kind": "do", "title": "Check the ticket includes departure tax", "date": "Before 13 Dec", "text": "If not, add $35." },
+    { "id": "flights", "kind": "do", "title": "Recheck the Avianca itinerary", "date": "Before booking pickups", "text": "For schedule changes. Check in for AV567 online early." },
+    { "id": "jabs", "kind": "do", "title": "Travel clinic", "date": "Soon", "text": "Usually hep A, typhoid and tetanus. Check fitfortravel." },
+    { "id": "insurance", "kind": "do", "title": "Insurance covers the hike and boarding", "date": "Before 13 Dec", "text": "Check what you already hold." },
+    { "id": "spray", "kind": "do", "title": "Repellent and suncream", "date": "Pack", "text": "Dengue mosquitoes bite in the day." }
+  ],
+  "sources": [
+    { "name": "Volcano Day: El Hoyo", "url": "https://www.volcanodaynicaragua.com/tours/el-hoyo/", "what": "Combo $95, gear and meals, days, minimum three" },
+    { "name": "Hola Hola: boarding, camping, lake", "url": "https://www.holaholatours.com/tours-1/boarding,-camping,-lake", "what": "Park fees $10 + $10, upfront payment wording" },
+    { "name": "Hola Hola: El Hoyo camping", "url": "https://www.holaholatours.com/tours-1/el-hoyo-camping", "what": "$75 camping without boarding" },
+    { "name": "Leontrekkers transfers", "url": "https://www.leontrekkersnicaragua.com/transfers", "what": "$80 León–airport, $20 León–Las Peñitas, up to four" },
+    { "name": "Fun ’N’ Sun transport", "url": "https://www.funnsuntravels.com/transport/", "what": "$75 airport, $25 Las Peñitas, $18 shared seat" },
+    { "name": "Roneey airport shuttle", "url": "https://www.roneeyshuttle.com/p_page.php?idc=19&idcd=9&idlang=EN&idp=NIC&idr=12", "what": "$25 shared seat, 13:00" },
+    { "name": "Nicaragua Taxi rates", "url": "https://nicaraguataxi.com/rates", "what": "Upper reference for airport and coast" },
+    { "name": "Mano a Mano calendar", "url": "https://www.beds24.com/book-manoamano", "what": "Dorm availability seen 22 Nov" },
+    { "name": "Mano a Mano: the hostel", "url": "https://www.manoamanoecohostel.com/the-hostel", "what": "Photos and room types" },
+    { "name": "ViaVia León", "url": "https://leon.viavia.world/home/hotel/", "what": "Trek meeting point, possible base" },
+    { "name": "Pan & Paz", "url": "https://www.panypaz.com/", "what": "Possible coffee stop" },
+    { "name": "GOV.UK entry requirements", "url": "https://www.gov.uk/foreign-travel-advice/nicaragua/entry-requirements", "what": "$10 arrival tax, $35 departure tax" },
+    { "name": "Wise USD/GBP, 22 Nov 2026", "url": "https://wise.com/gb/currency-converter/usd-to-gbp-rate/history/22-11-2026", "what": "Rate reference; sums use a fixed 0.764" }
   ],
   "practical": [
-    { "head": "Entry", "text": "No visa on a British passport. You pay a tourist card on arrival, around $10 in cash dollars, and fill in a customs form on the plane. Passport needs six months left. Have the onward flight (AV397) to show if they ask." },
-    { "head": "Money", "text": "Córdobas (C$), roughly C$36–37 to the dollar. Dollars work in most tourist places, but change comes back in córdobas. León takes cards in some places; Las Peñitas and taxis are cash." },
-    { "head": "Heat & water", "text": "León is hot, low to mid 30s in December. The trek is the hard bit: start hydrated, carry more water than feels sensible, and eat salty food." },
-    { "head": "The sea", "text": "The Pacific at Las Peñitas has strong currents. Swim where locals swim and ask before going in." },
-    { "head": "Keep it low key", "text": "Politics is a touchy subject in Nicaragua. Don’t bring a drone, don’t photograph police or the army, and give any protests a wide berth. Check the FCDO page the week before." }
+    { "head": "Entry", "text": "No visa on a British passport. $10 arrival tax in cash at Managua. Passport needs six months left. Have the AV397 return on your phone." },
+    { "head": "Money", "text": "Córdobas, roughly C$36–37 to the dollar. Dollars work in tourist places; change comes back in córdobas. Taxis and the coast are mostly cash." },
+    { "head": "Heat & the hike", "text": "León is hot, low to mid 30s. El Hoyo is a real uphill with overnight gear and 7–8 litres of water. Start hydrated." },
+    { "head": "The sea", "text": "Strong Pacific currents at Las Peñitas. Swim where the locals swim and ask first." },
+    { "head": "Keep it low key", "text": "No drone, no photos of police or the army, give protests a wide berth. Check the FCDO page the week before." }
   ]
 };

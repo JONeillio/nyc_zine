@@ -166,5 +166,19 @@
   "credit": "Wikimedia Commons · CC BY-SA 3.0",
   "width": 960,
   "height": 769
+ },
+ {
+  "id": "route",
+  "source": "https://github.com/JONeillio/nyc_zine",
+  "credit": "Drawn for this zine from approximate coordinates. Not a photograph, not to scale.",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "id": "routecoast",
+  "source": "https://github.com/JONeillio/nyc_zine",
+  "credit": "Drawn for this zine. Not a photograph, not to scale.",
+  "width": 1200,
+  "height": 800
  }
 ]
