@@ -540,12 +540,12 @@ const TRIP = {
         {
           "time": "Saturday night",
           "name": "A lift to JFK for Nicaragua",
-          "text": "Your friends are taking you to the airport. Work backwards from a terminal arrival around 10:30pm for the discussed 1:40am Sunday departure, and agree a pickup time with them.",
+          "text": "Your friends are taking you to the airport. Avianca AV567 leaves at 1:40am, so it’s technically Sunday 13th. Aim to be at the terminal around 10:30pm and agree a pickup time with them.",
           "type": "travel",
           "map": "John F Kennedy International Airport New York",
-          "note": "Check the booked flight and terminal. The flight leaves after midnight on Sunday 13 December; the lift is on Saturday 12 December.",
+          "note": "AV567 JFK 01:40 → San Salvador 05:45, then AV396 to Managua, landing 08:40. Check the terminal in the Avianca app on the day.",
           "teaser": "Your friends take you to the airport on Saturday night.",
-          "hint": "Discussed departure: 1:40am Sunday. Aim for the terminal around 10:30pm; confirm against your booking."
+          "hint": "AV567 at 1:40am Sunday. Terminal around 10:30pm."
         }
       ],
       "breathing": "City Reliquary stays on the list, but needs another slot. The return Saturday is a possibility if it fits around Ken and Moving Image. Charlie Brown brunch would need to fit around the day with Alyssa and Vin and your nap, so leave it unbooked for now.",
@@ -567,26 +567,29 @@ const TRIP = {
       "day": "Saturday",
       "date": "19 December",
       "short": "19",
-      "label": "Back in New York",
+      "label": "Back from Nicaragua",
       "title": "One more shared adventure?",
-      "subtitle": "A possible Astoria afternoon after Nicaragua, if Ken is free.",
+      "subtitle": "Landed just after midnight. A lie-in, then the Henson exhibition in Astoria, if Ken is free.",
       "image": "henson",
       "imageAlt": "Jim Henson working with Kermit the Frog, from the Museum of the Moving Image exhibition",
       "area": "Astoria, Queens",
       "company": "Maybe with Ken",
       "route": [
-        "An easy start",
+        "A lie-in",
         "Moving Image & Jim Henson",
-        "Leave the evening open"
+        "City Reliquary, maybe"
       ],
-      "travel": "Treat this as a separate return-day possibility, not a booked continuation of the first week. Confirm both your return flight and Ken’s availability before committing.",
+      "travel": "AV566 lands at JFK at 00:10. Taxi or Uber to Bayside, about 30 minutes at that time of night. Moving Image is in Astoria: LIRR to Woodside then the M/R, or the Q13/Q28 to Flushing and the 7. City Reliquary is a separate trip into Williamsburg if you fancy it after.",
       "stops": [
         {
-          "time": "Morning",
-          "name": "Rest after the return journey",
-          "text": "The flight discussed reaches JFK just after midnight, so don’t build this around a heroic early start.",
-          "type": "flex",
-          "teaser": "Keep the morning easy after the overnight return."
+          "time": "00:10, then sleep",
+          "name": "Land at JFK, taxi to Bayside",
+          "text": "Avianca AV566 from San Salvador lands at 00:10. Through immigration, taxi to Bayside, bed. Don’t set an alarm.",
+          "type": "travel",
+          "map": "John F Kennedy International Airport New York",
+          "cost": 45,
+          "costNote": "taxi or Uber to Bayside",
+          "teaser": "Land 00:10. Taxi home. Sleep in."
         },
         {
           "time": "Late morning / afternoon",
@@ -604,6 +607,21 @@ const TRIP = {
           "costNote": "entry, estimate"
         },
         {
+          "time": "4–6pm, if there’s energy",
+          "name": "City Reliquary",
+          "image": "reliquary",
+          "text": "Ken’s other pick. A tiny museum of New York odds and ends: subway tokens, Statue of Liberty souvenirs, old signs. Small, so an hour is plenty.",
+          "status": "Optional",
+          "map": "City Reliquary 370 Metropolitan Avenue Brooklyn",
+          "url": "https://www.cityreliquary.org/visit-the-museum/",
+          "link": "Visit the museum",
+          "note": "Open Thursday–Sunday, noon–6pm. Around $10 entry.",
+          "cost": 10,
+          "costNote": "entry",
+          "teaser": "Ken’s pick: a museum of New York bits and bobs.",
+          "hint": "Optional. Shuts at 6."
+        },
+        {
           "time": "Afterwards",
           "name": "Keep the rest flexible",
           "text": "A meal together or an easy evening. Sunny’s could move here if the music and your energy line up, but it isn’t an extra commitment.",
@@ -611,7 +629,7 @@ const TRIP = {
           "teaser": "A meal together or an easy evening. No need to fill every hour."
         }
       ],
-      "breathing": "City Reliquary still needs a slot after the first Saturday changed. This day is one possibility, if it fits around Ken and Moving Image; don’t automatically make it a museum marathon.",
+      "breathing": "You’ll be knackered from the flight. Moving Image is the one to do; the Reliquary only if you’ve still got legs.",
       "gallery": [
         {
           "image": "hensongallery",
@@ -629,6 +647,70 @@ const TRIP = {
           "caption": "An image from the exhibition"
         }
       ]
+    },
+    {
+      "id": "home",
+      "day": "Sunday",
+      "date": "20 December",
+      "short": "20",
+      "label": "Cloisters & home",
+      "title": "Medieval gardens, then the flight home.",
+      "subtitle": "Ken’s Cloisters pick in the morning, back to Bayside for the bag, JFK by 5pm.",
+      "image": "cloisters",
+      "imageAlt": "Stone arches and potted plants along a cloister walk",
+      "area": "Fort Tryon Park · Bayside · JFK",
+      "company": "Last morning, with Ken if she’s free",
+      "route": [
+        "The Met Cloisters",
+        "Bag from Bayside",
+        "JFK"
+      ],
+      "travel": "Bayside to the Cloisters is a trek: LIRR to Penn, then the A train to 190th Street and a walk up through Fort Tryon Park, about 1½ hours. Leave the Cloisters by 1:30 to be back in Bayside for 3, then a taxi to JFK around 4:15 for the 7:25pm flight.",
+      "stops": [
+        {
+          "time": "10am–1pm",
+          "name": "The Met Cloisters",
+          "image": "cloisters",
+          "text": "Medieval cloisters and gardens on a hill over the Hudson, with the unicorn tapestries inside. Ken’s pick, and Sunday is one of the days it’s open.",
+          "status": "Planned",
+          "map": "The Met Cloisters 99 Margaret Corbin Drive New York",
+          "url": "https://www.metmuseum.org/plan-your-visit/met-cloisters",
+          "link": "Plan your visit",
+          "note": "Open 10am–4:30pm, shut Wednesdays. Adult $30 for visitors from outside New York State, which also gets you into the Met on Fifth Avenue the same day.",
+          "cost": 30,
+          "costNote": "entry",
+          "teaser": "Medieval cloisters and the unicorn tapestries.",
+          "hint": "Opens 10am. Leave by 1:30."
+        },
+        {
+          "time": "Lunch",
+          "name": "Lunch on the way back",
+          "text": "Something near 190th Street or back in Bayside on Bell Blvd. Don’t get stuck in Manhattan.",
+          "type": "flex",
+          "cost": 20,
+          "costNote": "lunch",
+          "teaser": "Something quick on the way."
+        },
+        {
+          "time": "3pm",
+          "name": "Back to Bayside for the bag",
+          "text": "Pick up the bag, say bye, check in for EI108 on the Aer Lingus app.",
+          "type": "flex",
+          "teaser": "Bag, goodbyes, check in."
+        },
+        {
+          "time": "About 4:15pm",
+          "name": "Taxi to JFK for home",
+          "text": "Aer Lingus EI108 at 7:25pm to Dublin, landing 7am Monday, then EI204 to Manchester at 8:10, in at 9:15.",
+          "type": "travel",
+          "map": "John F Kennedy International Airport New York",
+          "cost": 45,
+          "costNote": "taxi or Uber from Bayside",
+          "note": "Check the terminal in the Aer Lingus app.",
+          "teaser": "EI108 at 7:25pm. Home Monday morning."
+        }
+      ],
+      "breathing": "If the morning feels too tight, skip the Cloisters and have a slow breakfast on Bell Blvd instead. Missing the flight home isn’t worth it."
     }
   ],
   "alternatives": [
@@ -636,8 +718,8 @@ const TRIP = {
       "id": "cloisters",
       "image": "cloisters",
       "title": "The Met Cloisters",
-      "tag": "Ken’s pick · not Wednesday",
-      "text": "Medieval cloisters and gardens up in Fort Tryon Park, with big Hudson views. Shut on Wednesdays, so it needs another day: the return Saturday works.",
+      "tag": "Now on Sunday 20",
+      "text": "Medieval cloisters and gardens up in Fort Tryon Park, with big Hudson views. Shut on Wednesdays, so it’s on the last morning, Sunday 20 December.",
       "note": "Open 10am–4:30pm, closed Wednesdays. Adult $30, which also gets you into the Met on Fifth Avenue the same day.",
       "map": "The Met Cloisters 99 Margaret Corbin Drive New York",
       "url": "https://www.metmuseum.org/plan-your-visit/met-cloisters",
@@ -753,9 +835,9 @@ const TRIP = {
     {
       "id": "flight",
       "kind": "do",
-      "title": "Check the flight and terminal",
+      "title": "Check in for AV567",
       "date": "Sat 12 Dec · night",
-      "text": "Leaves after midnight, so it’s technically Sunday 13th."
+      "text": "1:40am Sunday, so it’s technically the 13th. Check the terminal in the Avianca app."
     },
     {
       "id": "lift",
@@ -791,12 +873,26 @@ const TRIP = {
       "title": "Vintage shop list",
       "date": "Tue 8 Dec",
       "text": "Still blank."
+    },
+    {
+      "id": "jfk19",
+      "kind": "do",
+      "title": "Airport taxis, 19th & 20th",
+      "date": "Sat 19 00:10 · Sun 20 4:15pm",
+      "text": "In from JFK after AV566 lands, out to JFK for EI108 at 7:25pm. About $45 each way."
+    },
+    {
+      "id": "ken19",
+      "kind": "do",
+      "title": "Is Ken free 19th–20th?",
+      "date": "Before Nicaragua",
+      "text": "For Moving Image on Saturday and the Cloisters on Sunday."
     }
   ],
   "unplaced": {
     "image": "reliquary",
     "title": "City Reliquary",
-    "text": "Ken’s pick too. Shut on Wednesdays, so it needs another slot: Thursday evening or the return Saturday.",
+    "text": "Ken’s pick too. Shut on Wednesdays, so it’s now an optional late afternoon on Saturday 19 December, after Moving Image.",
     "map": "City Reliquary 370 Metropolitan Avenue Brooklyn",
     "url": "https://www.cityreliquary.org/visit-the-museum/",
     "link": "Visit the museum"

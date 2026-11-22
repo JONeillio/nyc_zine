@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0e6b5c">
+<title>Nicaragua list · A Few Good Detours</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#211c27;--paper:#fff7e5;--green:#0e6b5c;--orange:#ffb21c;--muted:#5c5560}
+@media (prefers-color-scheme:dark){:root{--ink:#f3ecdc;--paper:#16201e;--muted:#b5aca0}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 Georgia,serif}
+main{max-width:640px;margin:0 auto;padding:16px}
+header{background:var(--green);color:#fff7e5;padding:20px 16px}header h1{margin:0;font:900 30px/1 Arial,sans-serif;letter-spacing:.02em}header p{margin:6px 0 0}
+header a{color:var(--orange)}
+h2{font:900 21px/1.1 Arial,sans-serif;margin:32px 0 2px;color:var(--green)}@media (prefers-color-scheme:dark){h2{color:var(--orange)}}
+.sub{margin:0 0 10px;color:var(--muted);font-style:italic}
+.stop{border-left:3px solid var(--orange);padding:4px 0 4px 12px;margin:12px 0}
+.stop b{display:block;font:700 13px Arial,sans-serif;letter-spacing:.05em;color:var(--muted)}
+.stop h3{margin:2px 0;font:700 17px Arial,sans-serif}.stop p{margin:4px 0}
+.note{font-size:14px;color:var(--muted)}a{color:inherit}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}nav a{background:#fff2;padding:4px 10px;border-radius:3px;text-decoration:none;color:#fff7e5}
+</style>
+<script defer src="data.js"></script>
+</head>
+<body>
+<header><h1>NICARAGUA · 13–18 DEC</h1><p>The list version. <a href="index.html">Back to the zine</a> · <a href="../classic.html">New York list</a></p><nav id="nav"></nav></header>
+<main id="main"></main>
+<script>
+addEventListener('DOMContentLoaded',()=>{
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const map=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+document.getElementById('nav').innerHTML=TRIP.days.map(d=>`<a href="#${d.id}">${d.day.slice(0,3)} ${d.short}</a>`).join('')+'<a href="#practical">Before you go</a><a href="#sort">To sort</a>';
+document.getElementById('main').innerHTML=TRIP.days.map(d=>`<section id="${d.id}"><h2>${d.day} ${d.date} · ${esc(d.label)}</h2><p class="sub">${esc(d.subtitle)}</p><p class="note">${esc(d.travel)}</p>${d.stops.map(s=>`<div class="stop"><b>${esc(s.time)}${s.status?' · '+esc(s.status):''}</b><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p>${s.note?`<p class="note">${esc(s.note)}</p>`:''}${s.cost?`<p class="note">≈ $${s.cost} · ${esc(s.costNote)}</p>`:''}${s.map?`<a href="${map(s.map)}" target="_blank" rel="noopener">Google Maps</a>`:''}</div>`).join('')}<p class="note">${esc(d.breathing)}</p></section>`).join('')
++`<section id="practical"><h2>Before you go</h2>${TRIP.practical.map(p=>`<div class="stop"><h3>${esc(p.head)}</h3><p>${esc(p.text)}</p></div>`).join('')}</section>`
++`<section id="sort"><h2>Still to sort</h2>${TRIP.bookings.map(b=>`<div class="stop"><b>${esc(b.date)}</b><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p>${b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.action)}</a>`:''}</div>`).join('')}</section>`;
+if(location.hash)document.querySelector(location.hash)?.scrollIntoView();
+});
+</script>
+</body></html>
