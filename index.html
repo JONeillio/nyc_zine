@@ -1,21 +1,107 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#fff7e5"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Detours">
-<meta name="description" content="A Few Good Detours: a New York travel zine with real photos, day plans and pages you can turn. December 2026.">
-<title>A Few Good Detours · The New York Zine</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="assets/icon-192.png"><link rel="stylesheet" href="book.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1b1a3a"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Detours">
+<meta name="description" content="A Few Good Detours: the newsstand. New York and Nicaragua travel zines, December 2026.">
+<title>Detours Newsstand</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="assets/icon-192.png">
 <link rel="preload" href="assets/fonts/union_gothic-variable.ttf" as="font" type="font/ttf" crossorigin>
-<script defer src="data.js"></script><script defer src="story.js"></script><script defer src="assets/vendor/page-flip.browser.js"></script><script defer src="book.js"></script>
+<script>
+/* Old links like /#wed or /#contents belonged to the New York zine. Send them there. */
+(function(){var h=location.hash;if(h&&h.length>1&&!/[?&]from=/.test(location.search))location.replace('new-york.html'+h);})();
+</script>
+<style>
+@font-face{font-family:Union;src:url('assets/fonts/union_gothic-variable.ttf') format('truetype');font-weight:100 1000;font-stretch:25% 200%;font-display:swap}
+:root{--night:#1b1a3a;--dusk:#3b2f6b;--glow:#ff9a4a;--paint:#14463d;--paint2:#0d322c;--blue:#2e33c4;--orange:#ffb21c;--red:#e2402a;--paper:#fff7e5;--ink:#211c27;--ui:Union,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--night);color:var(--paper);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+.street{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:calc(14px + env(safe-area-inset-top,0px)) 16px calc(18px + env(safe-area-inset-bottom,0px));
+ background:radial-gradient(120% 55% at 50% 100%,#e3693a 0,#8a3e5c 32%,transparent 70%),linear-gradient(#141331 0,var(--dusk) 60%,#5b3560 100%)}
+.skyline{position:fixed;left:0;right:0;bottom:0;height:46vh;pointer-events:none;opacity:.55;
+ background:#0d0c22;
+ clip-path:polygon(0 38%,7% 38%,7% 22%,9% 22%,9% 30%,16% 30%,16% 50%,19% 50%,19% 12%,24% 12%,24% 40%,27% 40%,27% 26%,37% 26%,37% 44%,39% 44%,39% 6%,45% 6%,45% 34%,47% 34%,47% 18%,58% 18%,58% 42%,60% 42%,60% 28%,67% 28%,67% 48%,70% 48%,70% 16%,80% 16%,80% 36%,82% 36%,82% 24%,90% 24%,90% 40%,92% 40%,92% 30%,100% 30%,100% 100%,0 100%)}
+.kiosk{position:relative;width:100%;max-width:520px;margin-top:6px;z-index:1}
+.awning{position:relative;height:58px;margin:0 -8px;background:repeating-linear-gradient(90deg,var(--orange) 0 34px,var(--paper) 34px 68px);border-radius:6px 6px 0 0;box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.awning:after{content:'';position:absolute;left:0;right:0;bottom:-16px;height:16px;
+ background:radial-gradient(circle at 17px 0,var(--orange) 16px,transparent 17px) 0 0/68px 16px repeat-x,radial-gradient(circle at 51px 0,var(--paper) 16px,transparent 17px) 0 0/68px 16px repeat-x}
+.sign{position:relative;margin:26px 10px 0;background:var(--ink);border:3px solid var(--orange);padding:7px 10px 6px;text-align:center;transform:rotate(-1.2deg);box-shadow:0 0 22px rgba(255,178,28,.35)}
+.sign h1{font-family:var(--ui);font-variation-settings:'wdth' 70,'wght' 950;font-size:clamp(30px,10vw,46px);line-height:.9;letter-spacing:.5px;color:var(--orange);text-shadow:0 0 12px rgba(255,178,28,.55)}
+.sign p{font-family:var(--ui);font-variation-settings:'wdth' 80,'wght' 700;font-size:13px;letter-spacing:2px;color:var(--paper);margin-top:3px}
+.booth{position:relative;margin-top:12px;background:linear-gradient(var(--paint),var(--paint2));border:4px solid #0a2723;border-radius:4px;padding:14px 10px 0;box-shadow:inset 0 0 0 2px #2a6a5c,0 14px 30px rgba(0,0,0,.45)}
+.booth:before,.booth:after{content:'';position:absolute;top:8px;width:7px;height:7px;border-radius:50%;background:#7fae9f;box-shadow:0 60px 0 #7fae9f,0 120px 0 #7fae9f,0 180px 0 #7fae9f,0 240px 0 #7fae9f}
+.booth:before{left:6px}.booth:after{right:6px}
+.rack{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 10px 16px;perspective:900px}
+.rack:after{content:'';position:absolute;left:4px;right:4px;bottom:10px;height:8px;border-radius:3px;background:linear-gradient(#cfd3d6,#7d8287);box-shadow:0 3px 4px rgba(0,0,0,.5)}
+.wire{position:absolute;left:4px;right:4px;bottom:34%;height:3px;background:#b9bec2;border-radius:2px;z-index:3;box-shadow:0 1px 2px rgba(0,0,0,.5)}
+.slot{position:relative;display:block;border:0;padding:0;background:none;cursor:pointer;text-decoration:none;color:inherit;transform-origin:50% 100%;transform:rotateX(7deg);transition:transform .25s}
+.slot:nth-child(1){transform:rotateX(7deg) rotate(-2deg)}.slot:nth-child(2){transform:rotateX(7deg) rotate(1.6deg)}
+.slot:active,.slot:focus-visible{transform:rotateX(0) translateY(-6px) scale(1.03)}
+.slot img{display:block;width:100%;aspect-ratio:768/1420;object-fit:cover;border-radius:2px;box-shadow:0 10px 16px rgba(0,0,0,.55),0 0 0 1px rgba(0,0,0,.25)}
+.clip{position:absolute;top:-7px;left:50%;width:30px;height:14px;margin-left:-15px;background:linear-gradient(#e9ecee,#9aa0a5);border-radius:3px 3px 6px 6px;z-index:4;box-shadow:0 2px 3px rgba(0,0,0,.4)}
+.tag{position:absolute;right:-4px;bottom:20px;z-index:4;font-family:var(--ui);font-variation-settings:'wdth' 75,'wght' 850;font-size:12px;line-height:1;background:var(--red);color:var(--paper);padding:5px 6px 4px;transform:rotate(-6deg);box-shadow:0 2px 3px rgba(0,0,0,.4)}
+.counter{position:relative;margin:0 -4px;background:#0a2723;padding:12px 12px 14px;display:flex;gap:12px;align-items:center}
+.paper{flex:0 0 46%;background:var(--paper);color:var(--ink);padding:7px 8px 8px;transform:rotate(-2.5deg);box-shadow:3px 3px 0 #d9cfb8,6px 6px 0 #c9bfa7,0 8px 14px rgba(0,0,0,.5)}
+.paper small{display:block;font-family:Georgia,serif;font-style:italic;font-size:10px;border-bottom:1px solid var(--ink);padding-bottom:2px;margin-bottom:4px}
+.paper strong{display:block;font-family:var(--ui);font-variation-settings:'wdth' 70,'wght' 950;font-size:clamp(19px,5.6vw,25px);line-height:.92;text-transform:uppercase}
+.paper span{display:block;font-size:11px;line-height:1.25;margin-top:4px}
+.hint{flex:1;font-family:Georgia,serif;font-style:italic;font-size:15px;line-height:1.25;color:var(--orange)}
+.hint b{display:block;font-style:normal;font-family:var(--ui);font-variation-settings:'wdth' 80,'wght' 800;font-size:12px;letter-spacing:1.5px;color:#9fc8bb;margin-top:6px}
+.zoomer{position:fixed;z-index:50;pointer-events:none;object-fit:cover;object-position:top;transition:all .55s cubic-bezier(.6,0,.2,1);box-shadow:0 20px 50px rgba(0,0,0,.6)}
+@media (prefers-reduced-motion:reduce){.zoomer,.slot{transition:none}}
+</style>
 </head>
 <body>
-<a class="skip" href="classic.html">Read the accessible list itinerary</a>
-<header class="reader-top chrome"><button class="wordmark" type="button" data-jump="0" aria-label="Open the magazine cover">A FEW GOOD <span>DETOURS</span></button><div class="top-actions"><button type="button" data-jump="1">Contents</button><button type="button" data-share aria-label="Share the itinerary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 16V3m-4 4 4-4 4 4M5 13v7h14v-7"/></svg></button></div></header>
-<main class="reading-room" aria-label="New York itinerary magazine"><div class="book-wrap"><div id="book" aria-label="Turnable magazine pages"></div></div></main>
-<nav class="reader-controls chrome" aria-label="Magazine controls"><button id="previous" type="button">Previous</button><div class="page-status"><span id="page-label" role="status" aria-live="polite">Cover</span><small id="page-count">01 / 22</small></div><button id="next" type="button">Turn page</button></nav>
-<div class="reader-bottom chrome"><p id="gesture-hint">Drag a corner or use the page buttons</p><a href="classic.html" id="list-link">Read as a list</a><button type="button" data-open="credits">Credits</button></div>
-<dialog id="details-dialog" aria-labelledby="dialog-heading"><div class="dialog-top"><span>THE DETOUR ISSUE</span><button type="button" class="close-dialog" aria-label="Close details">Close</button></div><div id="dialog-body"></div></dialog>
-<dialog id="photo-dialog"><button type="button" class="close-photo" aria-label="Close photo">Close</button><img id="large-photo" alt=""><div id="photo-caption"></div></dialog>
-<div id="toast" role="status" aria-live="polite"></div>
-<noscript><p class="no-script">Open the <a href="classic.html">list itinerary</a> to read the trip plan.</p></noscript>
-</body></html>
+<div class="street">
+ <div class="skyline" aria-hidden="true"></div>
+ <main class="kiosk">
+  <div class="awning" aria-hidden="true"></div>
+  <div class="sign"><h1>DETOURS NEWS</h1><p>ZINES · MAPS · DECEMBER 2026</p></div>
+  <div class="booth">
+   <div class="rack">
+    <div class="wire" aria-hidden="true"></div>
+    <a class="slot" href="new-york.html" data-zine="ny" aria-label="Open the New York zine, 6 to 12 and 19 to 20 December"><span class="clip" aria-hidden="true"></span><img src="assets/cover-ny.webp" alt="New York zine cover" draggable="false"><span class="tag">6–12 · 19–20 DEC</span></a>
+    <a class="slot" href="nicaragua/" data-zine="nic" aria-label="Open the Nicaragua zine, 13 to 18 December"><span class="clip" aria-hidden="true"></span><img src="assets/cover-nic.webp" alt="Nicaragua zine cover" draggable="false"><span class="tag">13–18 DEC</span></a>
+   </div>
+   <div class="counter">
+    <div class="paper"><small>The Daily Detour</small><strong id="headline">Two weeks till New York</strong><span id="subline">Man → Dublin → JFK, Sun 6 Dec</span></div>
+    <p class="hint">Pick an issue.<b>TAP A COVER</b></p>
+   </div>
+  </div>
+ </main>
+</div>
+<script>
+/* The paper on the counter: what's next on the trip, by today's date. */
+(function(){
+ const day=(m,d)=>new Date(2026,m-1,d);const t=new Date();t.setHours(0,0,0,0);
+ const n=d=>Math.round((d-t)/864e5);
+ let h,s;
+ if(t<day(12,6)){const k=n(day(12,6));h=k===1?'New York tomorrow':(k===14?'Two weeks':k===7?'One week':k+' days')+' till New York';s='Manchester → Dublin → JFK, Sun 6 Dec';}
+ else if(t<=day(12,12)){h='New York, day '+(n(day(12,6))*-1+1);s='Nicaragua next: AV567, 1:40am Sun 13';}
+ else if(t<=day(12,18)){h='Nicaragua, day '+(n(day(12,13))*-1+1);s='AV397 back to New York, Fri 18, 3:40pm';}
+ else if(t<=day(12,20)){h='Back in New York';s='EI108 home, Sun 20, 7:25pm';}
+ else{h='Home. What a December.';s='Both issues stay on the stand.';}
+ document.getElementById('headline').textContent=h;document.getElementById('subline').textContent=s;
+})();
+/* Tap a cover: it zooms up to fill the screen, then the zine opens. Coming back: it shrinks back onto the rack. */
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function zoomer(img){const z=img.cloneNode();z.className='zoomer';const r=img.getBoundingClientRect();Object.assign(z.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});document.body.append(z);return z;}
+const full={left:'0px',top:'0px',width:innerWidth+'px',height:innerHeight+'px'};
+document.querySelectorAll('.slot').forEach(a=>a.addEventListener('click',e=>{
+ if(reduce||e.metaKey||e.ctrlKey)return;e.preventDefault();
+ const z=zoomer(a.querySelector('img'));z.getBoundingClientRect();
+ Object.assign(z.style,{left:'0px',top:'0px',width:innerWidth+'px',height:innerHeight+'px',borderRadius:'0'});
+ setTimeout(()=>{location.href=a.href;},520);
+}));
+addEventListener('pageshow',e=>{if(e.persisted)document.querySelectorAll('.zoomer').forEach(z=>z.remove());});
+(function(){const from=new URLSearchParams(location.search).get('from');if(!from)return;
+ try{history.replaceState(null,'',location.pathname);}catch{}
+ const a=document.querySelector(`.slot[data-zine="${from}"]`);if(!a||reduce)return;
+ const img=a.querySelector('img');const z=img.cloneNode();z.className='zoomer';z.style.transition='none';Object.assign(z.style,{left:'0px',top:'0px',width:innerWidth+'px',height:innerHeight+'px'});document.body.append(z);
+ const go=()=>{const r=img.getBoundingClientRect();z.getBoundingClientRect();z.style.transition='';Object.assign(z.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});setTimeout(()=>z.remove(),600);};
+ img.complete?requestAnimationFrame(()=>requestAnimationFrame(go)):img.addEventListener('load',go,{once:true});
+})();
+</script>
+</body>
+</html>

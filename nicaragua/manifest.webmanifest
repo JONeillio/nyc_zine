@@ -2,7 +2,7 @@
   "name": "A Few Good Detours · Nicaragua",
   "short_name": "Detours",
   "description": "The Nicaragua travel zine, December 2026.",
-  "start_url": "index.html#cover",
+  "start_url": "index.html",
   "scope": "./",
   "display": "fullscreen",
   "display_override": [
