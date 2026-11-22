@@ -1,8 +1,8 @@
 {
-  "name": "A Few Good Detours · New York",
+  "name": "A Few Good Detours",
   "short_name": "Detours",
   "description": "The New York travel zine, December 2026.",
-  "start_url": "index.html#cover",
+  "start_url": "./",
   "scope": "./",
   "display": "fullscreen",
   "display_override": [
