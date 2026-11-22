@@ -23,16 +23,26 @@ nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}nav a{background:#fff2;p
 <script defer src="data.js"></script>
 </head>
 <body>
-<header><h1>NICARAGUA · 13–18 DEC</h1><p>The list version. <a href="index.html">Back to the zine</a> · <a href="../classic.html">New York list</a></p><nav id="nav"></nav></header>
+<header><h1>NICARAGUA · 13–18 DEC</h1><p>León, El Hoyo, Mano a Mano. A proposed route; only the flights are booked. <a href="index.html">Back to the zine</a> · <a href="../classic.html">New York list</a></p><nav id="nav"></nav></header>
 <main id="main"></main>
 <script>
 addEventListener('DOMContentLoaded',()=>{
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const map=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
-document.getElementById('nav').innerHTML=TRIP.days.map(d=>`<a href="#${d.id}">${d.day.slice(0,3)} ${d.short}</a>`).join('')+'<a href="#practical">Before you go</a><a href="#sort">To sort</a>';
-document.getElementById('main').innerHTML=TRIP.days.map(d=>`<section id="${d.id}"><h2>${d.day} ${d.date} · ${esc(d.label)}</h2><p class="sub">${esc(d.subtitle)}</p><p class="note">${esc(d.travel)}</p>${d.stops.map(s=>`<div class="stop"><b>${esc(s.time)}${s.status?' · '+esc(s.status):''}</b><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p>${s.note?`<p class="note">${esc(s.note)}</p>`:''}${s.cost?`<p class="note">≈ $${s.cost} · ${esc(s.costNote)}</p>`:''}${s.map?`<a href="${map(s.map)}" target="_blank" rel="noopener">Google Maps</a>`:''}</div>`).join('')}<p class="note">${esc(d.breathing)}</p></section>`).join('')
+const G=TRIP.fx.gbpPerUsd,usd=n=>'$'+n,gbp=n=>'£'+Math.round(n*G),span=(l,h,f)=>l===h?f(l):f(l)+'–'+f(h).slice(1);
+const KIND={published:'Published',observed:'Seen on calendar',allowance:'Allowance',official:'Official fee'};
+const B=TRIP.budget,lo=B.lines.reduce((t,l)=>t+l.low,0),hi=B.lines.reduce((t,l)=>t+l.high,0);
+const link=(u,t)=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`;
+document.getElementById('nav').innerHTML='<a href="#route">Route</a>'+TRIP.days.map(d=>`<a href="#${d.id}">${d.day.slice(0,3)} ${d.short}</a>`).join('')+'<a href="#camp">Camp</a><a href="#budget">Budget</a><a href="#sort">To sort</a><a href="#maybes">Alternatives</a><a href="#practical">Before you go</a><a href="#sources">Sources</a>';
+document.getElementById('main').innerHTML=
+`<section id="route"><h2>Six days, five nights</h2><p class="sub">Four paid beds and one tent included in the tour. Only the flights are booked.</p>${TRIP.nights.map(n=>`<div class="stop"><b>${esc(n.day)}</b><h3>${esc(n.where)}</h3><p>${esc(n.what)}</p></div>`).join('')}</section>`
++TRIP.days.map(d=>`<section id="${d.id}"><h2>${d.day} ${d.date} · ${esc(d.label)}</h2><p class="sub">${esc(d.subtitle)}</p><p class="note">${esc(d.travel)}</p>${d.stops.map(s=>`<div class="stop"><b>${esc(s.time)}${s.status?' · '+esc(s.status):''}</b><h3>${esc(s.name)}</h3><p>${esc(s.text)}</p>${s.price?`<p class="note">${esc(s.price)}</p>`:''}${s.map?`<a href="${map(s.map)}" target="_blank" rel="noopener">Google Maps</a> `:''}${s.url?link(s.url,s.link||'Details'):''}</div>`).join('')}<p class="note">${esc(d.breathing)}</p></section>`).join('')
++`<section id="camp"><h2>The El Hoyo overnight</h2><p>${esc(TRIP.camping.price)} = $115 (${gbp(115)}).</p><div class="stop"><h3>Included</h3><ul>${TRIP.camping.included.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="stop"><h3>You bring</h3><ul>${TRIP.camping.bring.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="stop"><h3>Confirm before paying</h3><ul>${TRIP.camping.confirm.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></section>`
++`<section id="budget"><h2>Budget, just you</h2><p class="sub">Pounds at $1 = £${G}, ${esc(TRIP.fx.checked)}.</p>${B.lines.map(l=>`<div class="stop"><b>${KIND[l.kind]}</b><h3>${esc(l.label)}: ${span(l.low,l.high,usd)} · ${span(l.low,l.high,gbp)}</h3><p class="note">${esc(l.note)}</p></div>`).join('')}<div class="stop"><h3>On the ground: ${span(lo,hi,usd)} · ${span(lo,hi,gbp)}</h3><p>Avianca return already paid: £${TRIP.flight.gbp.toFixed(2)}. Flight + ground: £${Math.round(lo*G+TRIP.flight.gbp)}–${Math.round(hi*G+TRIP.flight.gbp)}.</p><p class="note">${esc(B.privateCoast.note)} Ground then ${span(lo-30+80,hi-40+140,usd)} · ${span(lo-30+80,hi-40+140,gbp)}.</p></div>${B.extras.map(x=>`<div class="stop"><b>Extra, not in the total</b><h3>${esc(x.label)}: ${esc(x.range)}</h3><p class="note">${esc(x.note)}</p></div>`).join('')}</section>`
++`<section id="sort"><h2>Still to sort</h2>${TRIP.bookings.map(b=>`<div class="stop"><b>${esc(b.date)}</b><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p>${b.url?link(b.url,b.action):''}</div>`).join('')}</section>`
++`<section id="maybes"><h2>Alternatives, not in the plan</h2>${TRIP.alternatives.map(a=>`<div class="stop"><b>${esc(a.tag)}</b><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p>${a.note?`<p class="note">${esc(a.note)}</p>`:''}${a.url?link(a.url,a.link||'Details'):''}</div>`).join('')}</section>`
 +`<section id="practical"><h2>Before you go</h2>${TRIP.practical.map(p=>`<div class="stop"><h3>${esc(p.head)}</h3><p>${esc(p.text)}</p></div>`).join('')}</section>`
-+`<section id="sort"><h2>Still to sort</h2>${TRIP.bookings.map(b=>`<div class="stop"><b>${esc(b.date)}</b><h3>${esc(b.title)}</h3><p>${esc(b.text)}</p>${b.url?`<a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.action)}</a>`:''}</div>`).join('')}</section>`;
++`<section id="sources"><h2>Sources</h2>${TRIP.sources.map(s=>`<div class="stop"><h3>${link(s.url,s.name)}</h3><p class="note">${esc(s.what)}</p></div>`).join('')}<p class="note">Photos in the zine load from the operators’ and tourism board’s own sites; credits are with each photo.</p></section>`;
 if(location.hash)document.querySelector(location.hash)?.scrollIntoView();
 });
 </script>

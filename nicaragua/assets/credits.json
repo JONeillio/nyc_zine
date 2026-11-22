@@ -1,138 +1,5 @@
 [
  {
-  "id": "calzada",
-  "source": "https://commons.wikimedia.org/wiki/File:Calzada_en_Granada_Nicaragua_2013-09-16_00-09.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 3.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "calzada_day",
-  "source": "https://commons.wikimedia.org/wiki/File:Calle_La_Calzada.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 4.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "cathedral",
-  "source": "https://commons.wikimedia.org/wiki/File:Catedral_de_Granada,_Nicaragua_2.jpg",
-  "credit": "Wikimedia Commons · CC BY 2.0",
-  "width": 960,
-  "height": 640
- },
- {
-  "id": "plaza",
-  "source": "https://commons.wikimedia.org/wiki/File:06.Plaza_de_la_Independencia_de_Granada.JPG",
-  "credit": "Wikimedia Commons · CC BY 3.0",
-  "width": 960,
-  "height": 696
- },
- {
-  "id": "merced",
-  "source": "https://commons.wikimedia.org/wiki/File:La_Merced_Church-Granada,_Nicaragua.jpg",
-  "credit": "Wikimedia Commons · CC BY 2.0",
-  "width": 960,
-  "height": 640
- },
- {
-  "id": "isletas",
-  "source": "https://commons.wikimedia.org/wiki/File:Nicaragua_-_Isletas_de_Granada_-_panoramio.jpg",
-  "credit": "Wikimedia Commons · CC BY 3.0",
-  "width": 960,
-  "height": 541
- },
- {
-  "id": "market",
-  "source": "https://commons.wikimedia.org/wiki/File:Mercado_de_Artesanías_de_Masaya.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 4.0",
-  "width": 960,
-  "height": 540
- },
- {
-  "id": "volcano",
-  "source": "https://commons.wikimedia.org/wiki/File:Masaya_Volcano_-_crater.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 4.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "rim",
-  "source": "https://commons.wikimedia.org/wiki/File:Cráter_Santiago_del_Volcán_Masaya.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 4.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "ferry",
-  "source": "https://commons.wikimedia.org/wiki/File:Harbour_Scene_with_Ometepe_Island-Concepcion_Volcano_-_San_Jorge_-_Near_Rivas_-_Nicaragua_(31750124675).jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 2.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "lake",
-  "source": "https://commons.wikimedia.org/wiki/File:Ometepe_Island_as_seen_from_the_ferry.JPG",
-  "credit": "Wikimedia Commons · CC BY-SA 3.0",
-  "width": 960,
-  "height": 640
- },
- {
-  "id": "fields",
-  "source": "https://commons.wikimedia.org/wiki/File:Fields_with_Concepcion_Volcano_-_Near_Santo_Domingo_-_Ometepe_Island_-_Nicaragua_-_01_(31796975315).jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 2.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "ojo",
-  "source": "https://commons.wikimedia.org/wiki/File:Ojo_de_Agua_Altagracia.jpg",
-  "credit": "Wikimedia Commons · CC BY 2.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "omeview",
-  "source": "https://commons.wikimedia.org/wiki/File:OmetepeView_06.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 3.0",
-  "width": 825,
-  "height": 1100
- },
- {
-  "id": "sunset",
-  "source": "https://commons.wikimedia.org/wiki/File:Nicaragua_Ometepe_Concepción_15.jpg",
-  "credit": "Wikimedia Commons · CC BY 3.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "catarina",
-  "source": "https://commons.wikimedia.org/wiki/File:Laguna-de-Apoyo-from-Catarina.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 4.0",
-  "width": 960,
-  "height": 525
- },
- {
-  "id": "apoyo",
-  "source": "https://commons.wikimedia.org/wiki/File:Laguna_de_Apoyo_-_seen_from_the_east_-_P1300135.JPG",
-  "credit": "Wikimedia Commons · CC BY 4.0",
-  "width": 960,
-  "height": 720
- },
- {
-  "id": "apoyo2",
-  "source": "https://commons.wikimedia.org/wiki/File:Laguna_de_Apoyo.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 2.0",
-  "width": 1100,
-  "height": 825
- },
- {
-  "id": "street",
-  "source": "https://commons.wikimedia.org/wiki/File:Street_in_Granada,_Nicaragua_2.jpg",
-  "credit": "Wikimedia Commons · CC BY 2.0",
-  "width": 960,
-  "height": 719
- },
- {
   "id": "tona",
   "source": "https://commons.wikimedia.org/wiki/File:Toña_Beer.jpg",
   "credit": "Wikimedia Commons · CC BY-SA 4.0",
@@ -154,17 +21,105 @@
   "height": 720
  },
  {
-  "id": "sanjuan",
-  "source": "https://commons.wikimedia.org/wiki/File:San_Juan_del_Sur,_taken_from_cross_on_hill_overlooking_bay.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 1.0",
-  "width": 825,
-  "height": 1100
+  "id": "route",
+  "source": "https://github.com/JONeillio/nyc_zine",
+  "credit": "Drawn for this zine from approximate coordinates. Not a photograph, not to scale.",
+  "width": 1200,
+  "height": 800
  },
  {
-  "id": "mombacho",
-  "source": "https://commons.wikimedia.org/wiki/File:Mombacho_from_Granada.jpg",
-  "credit": "Wikimedia Commons · CC BY-SA 3.0",
-  "width": 960,
-  "height": 769
+  "id": "routecoast",
+  "source": "https://github.com/JONeillio/nyc_zine",
+  "credit": "Drawn for this zine. Not a photograph, not to scale.",
+  "width": 1200,
+  "height": 800
+ },
+ {
+  "id": "penitasbeach",
+  "source": "https://www.flickr.com/photos/99385068@N00/52259041400",
+  "credit": "SheepGuardingLlama on Flickr · CC BY-NC-SA 2.0",
+  "title": "Simple Surf Bar at Las Peñitas Nicaragua",
+  "width": 1024,
+  "height": 768
+ },
+ {
+  "id": "penitassunset",
+  "source": "https://www.flickr.com/photos/99385068@N00/51759953653",
+  "credit": "SheepGuardingLlama on Flickr · CC BY-NC-SA 2.0",
+  "title": "Sunset View at El Simple in Las Peñitas, Nicaragua",
+  "width": 1024,
+  "height": 683
+ },
+ {
+  "id": "fishhaul",
+  "source": "https://www.flickr.com/photos/99385068@N00/51903239150",
+  "credit": "SheepGuardingLlama on Flickr · CC BY-NC-SA 2.0",
+  "title": "Fish Haul in Las Peñitas, Nicaragua",
+  "width": 683,
+  "height": 1024
+ },
+ {
+  "id": "breakfast",
+  "source": "https://www.flickr.com/photos/99385068@N00/52258569508",
+  "credit": "SheepGuardingLlama on Flickr · CC BY-NC-SA 2.0",
+  "title": "Nica Breakfast at the Simple Beach Lodge, Las Peñitas, Nicaragua",
+  "width": 1024,
+  "height": 768
+ },
+ {
+  "id": "venadosunrise",
+  "source": "https://www.flickr.com/photos/99385068@N00/51816214011",
+  "credit": "SheepGuardingLlama on Flickr · CC BY-NC-SA 2.0",
+  "title": "Sunrise on the Estuary and Isla Juan Venado in Las Peñitas",
+  "width": 1024,
+  "height": 768
+ },
+ {
+  "id": "viaviaband",
+  "source": "https://www.flickr.com/photos/99385068@N00/54357251807",
+  "credit": "SheepGuardingLlama on Flickr · CC BY-NC-SA 2.0",
+  "title": "P3010466",
+  "width": 1024,
+  "height": 768
+ },
+ {
+  "id": "viaviaband2",
+  "source": "https://www.flickr.com/photos/99385068@N00/54315012075",
+  "credit": "SheepGuardingLlama on Flickr · CC BY-NC-SA 2.0",
+  "title": "DSC_0328",
+  "width": 1024,
+  "height": 683
+ },
+ {
+  "id": "leonnight",
+  "source": "https://www.flickr.com/photos/37912373962@N01/16552979671",
+  "credit": "ashabot on Flickr · CC BY-NC-SA 2.0",
+  "title": "Evening in León - Nicaragua 2015",
+  "width": 1024,
+  "height": 768
+ },
+ {
+  "id": "leonpark",
+  "source": "https://www.flickr.com/photos/15001405@N06/13937254343",
+  "credit": "Zenia Núñez on Flickr · CC BY 2.0",
+  "title": "Parque Central León. León's Central Park",
+  "width": 1024,
+  "height": 768
+ },
+ {
+  "id": "leonfruit",
+  "source": "https://www.flickr.com/photos/57395929@N02/9255865819",
+  "credit": "iaramburu on Flickr · CC BY 2.0",
+  "title": "Puesto de frutas en León, Nicaragua",
+  "width": 1024,
+  "height": 683
+ },
+ {
+  "id": "leonmural",
+  "source": "https://www.flickr.com/photos/110608682@N04/24822853147",
+  "credit": "hansbirger on Flickr · CC BY-SA 2.0",
+  "title": "Bar el Mirador and the wall painting",
+  "width": 1024,
+  "height": 712
  }
 ]

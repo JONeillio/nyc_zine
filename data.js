@@ -161,7 +161,7 @@ const TRIP = {
       "stops": [
         {
           "time": "Morning",
-          "name": "Coffee with one of Ken’s friends",
+          "name": "Coffee with one of K’s friends",
           "text": "A deliberately movable slot. Use it for whoever is free, rather than pinning the whole day to a guessed meeting time.",
           "type": "flex",
           "teaser": "Keep the morning movable for whoever is free."
@@ -214,11 +214,11 @@ const TRIP = {
       "short": "9",
       "label": "Dinosaurs & a spiral",
       "title": "Dinosaurs, a spiral, a very quiet beer.",
-      "subtitle": "Ken’s picks: the Natural History museum, across the park to the Guggenheim if there’s energy, then Burp Castle.",
+      "subtitle": "K’s picks: the Natural History museum, across the park to the Guggenheim if there’s energy, then Burp Castle.",
       "image": "amnh",
       "imageAlt": "A dinosaur skeleton in the Roosevelt Rotunda at the American Museum of Natural History",
       "area": "Upper West Side · Upper East Side · East Village",
-      "company": "Ken’s day off",
+      "company": "K’s day off",
       "route": [
         "Natural History museum",
         "Across Central Park to the Guggenheim",
@@ -267,7 +267,7 @@ const TRIP = {
           "time": "Around 7pm",
           "name": "Burp Castle",
           "image": "burp",
-          "text": "Belgian beer, monk murals and everyone shushing each other. Ken wants this one locked in.",
+          "text": "Belgian beer, monk murals and everyone shushing each other. K wants this one locked in.",
           "status": "Planned",
           "map": "Burp Castle 41 East 7th Street New York",
           "note": "Looks like a walk-in bar. Ring (212) 982-4576 to ask about holding a table.",
@@ -315,13 +315,13 @@ const TRIP = {
       "day": "Thursday",
       "date": "10 December",
       "short": "10",
-      "label": "Joseph’s solo day",
+      "label": "Your solo day",
       "title": "Old trains, drawings, a purple evening.",
       "subtitle": "The solo day: Transit Museum, the Society of Illustrators, then Dream House.",
       "image": "transit",
       "imageAlt": "A vintage blue subway carriage at the New York Transit Museum",
       "area": "Downtown Brooklyn · Upper East Side · Tribeca",
-      "company": "Solo Joseph",
+      "company": "Solo",
       "route": [
         "Transit Museum",
         "Society of Illustrators",
@@ -416,7 +416,7 @@ const TRIP = {
       "short": "11",
       "label": "Miniatures & the show",
       "title": "A tiny city. A big evening.",
-      "subtitle": "The Panorama in daylight, then leave room for Ken’s performance.",
+      "subtitle": "The Panorama in daylight, then leave room for K’s performance.",
       "image": "panorama",
       "imageAlt": "A sweeping view over the giant miniature city inside the Queens Museum",
       "area": "Queens · Park Avenue Armory",
@@ -424,7 +424,7 @@ const TRIP = {
       "route": [
         "An easy morning",
         "Queens Museum",
-        "Ken’s performance"
+        "K’s performance"
       ],
       "travel": "Balkan Erotic Epic starts at 7pm at Park Avenue Armory (Park Avenue at 67th Street, Upper East Side) and runs about four hours. Keep the Queens Museum visit short enough to get back across, eat and get there without rushing.",
       "stops": [
@@ -452,7 +452,7 @@ const TRIP = {
         },
         {
           "time": "7pm, about four hours",
-          "name": "Ken’s performance",
+          "name": "K’s performance",
           "image": "bee_gods",
           "text": "Balkan Erotic Epic, Marina Abramović’s biggest performance work, in its North American premiere at Park Avenue Armory’s Wade Thompson Drill Hall. Nearly 50 dancers, musicians and singers across thirteen scenes, drawing on Balkan folklore and ritual. General admission and you move around the hall as it happens. 18+, with full nudity. Eat beforehand: it runs about four hours.",
           "map": "Park Avenue Armory, 643 Park Avenue, New York",
@@ -485,11 +485,11 @@ const TRIP = {
       "short": "12",
       "label": "John Wick & a nap",
       "title": "The Continental, then a nap.",
-      "subtitle": "Downtown with Alyssa and Vin: the John Wick hotel, the Bull, then lunch in Chinatown. Nap before Nicaragua.",
+      "subtitle": "Downtown with A and V: the John Wick hotel, the Bull, then lunch in Chinatown. Nap before Nicaragua.",
       "image": "continental",
       "imageAlt": "The curved facade of the Beaver Building, used as the Continental exterior in John Wick",
       "area": "Financial District · Chinatown · JFK",
-      "company": "With Alyssa and Vin",
+      "company": "With A and V",
       "route": [
         "The Continental and the Charging Bull",
         "Chinatown for lunch",
@@ -499,17 +499,17 @@ const TRIP = {
       "travel": "The John Wick exterior is the Beaver Building / Cocoa Exchange at 1 Wall Street Court, in the Financial District. It is a street-side exterior stop, rather than a hotel tour. Keep the afternoon for going back, napping and packing. Your friends are taking you to the airport that night; agree the pickup time once the starting address and booked flight details are checked.",
       "stops": [
         {
-          "time": "Saturday morning · with Alyssa and Vin",
+          "time": "Saturday morning · with A and V",
           "name": "John Wick’s Continental exterior",
           "image": "continental",
-          "text": "Alyssa’s showing you the wedge-shaped building the films use as the Continental. Get the photos; it’s an exterior, not a hotel you can walk into.",
+          "text": "A’s showing you the wedge-shaped building the films use as the Continental. Get the photos; it’s an exterior, not a hotel you can walk into.",
           "status": "Planned",
           "map": "Beaver Building 1 Wall Street Court New York",
           "url": "https://www.syfy.com/syfy-wire/where-is-the-continental-hotel-located-in-new-york-city",
           "link": "The filming location",
           "note": "Use 1 Wall Street Court in Maps. The actual building’s facade will differ from the film’s hotel dressing.",
-          "teaser": "Alyssa and Vin show you the real John Wick hotel.",
-          "hint": "1 Wall Street Court. Meeting time to sort with Alyssa and Vin."
+          "teaser": "A and V show you the real John Wick hotel.",
+          "hint": "1 Wall Street Court. Meeting time to sort with A and V."
         },
         {
           "time": "Late morning",
@@ -521,7 +521,7 @@ const TRIP = {
         },
         {
           "time": "Lunch",
-          "name": "Chinatown with Alyssa and Vin",
+          "name": "Chinatown with A and V",
           "image": "chinatown",
           "text": "The fun bit. Dumplings, the bend in Doyers Street, bakeries and tea shops on Mott and Pell. A short subway or a 25-minute walk up from Wall Street. Leave enough time to get home for the nap.",
           "status": "Planned",
@@ -540,20 +540,20 @@ const TRIP = {
         {
           "time": "Saturday night",
           "name": "A lift to JFK for Nicaragua",
-          "text": "Your friends are taking you to the airport. Avianca AV567 leaves at 1:40am, so it’s technically Sunday 13th. Aim to be at the terminal around 10:30pm and agree a pickup time with them.",
+          "text": "Your friends are taking you to the airport. Avianca leaves at 1:40am, so it’s technically Sunday 13th. Aim to be at the terminal around 10:30pm and agree a pickup time with them.",
           "type": "travel",
           "map": "John F Kennedy International Airport New York",
-          "note": "AV567 JFK 01:40 → San Salvador 05:45, then AV396 to Managua, landing 08:40. Check the terminal in the Avianca app on the day.",
+          "note": "JFK 01:40 → San Salvador 05:45, then on to Managua, landing 08:40. Check the terminal in the Avianca app on the day.",
           "teaser": "Your friends take you to the airport on Saturday night.",
-          "hint": "AV567 at 1:40am Sunday. Terminal around 10:30pm."
+          "hint": "The flight’s at 1:40am Sunday. Terminal around 10:30pm."
         }
       ],
-      "breathing": "City Reliquary stays on the list, but needs another slot. The return Saturday is a possibility if it fits around Ken and Moving Image. Charlie Brown brunch would need to fit around the day with Alyssa and Vin and your nap, so leave it unbooked for now.",
+      "breathing": "City Reliquary stays on the list, but needs another slot. The return Saturday is a possibility if it fits around K and Moving Image. Charlie Brown brunch would need to fit around the day with A and V and your nap, so leave it unbooked for now.",
       "gallery": [
         {
           "image": "continental",
           "title": "The Continental exterior",
-          "caption": "Morning with Alyssa"
+          "caption": "Morning with A"
         },
         {
           "image": "chinatown",
@@ -569,22 +569,22 @@ const TRIP = {
       "short": "19",
       "label": "Back from Nicaragua",
       "title": "One more shared adventure?",
-      "subtitle": "Landed just after midnight. A lie-in, then the Henson exhibition in Astoria, if Ken is free.",
+      "subtitle": "Landed just after midnight. A lie-in, then the Henson exhibition in Astoria, if K is free.",
       "image": "henson",
       "imageAlt": "Jim Henson working with Kermit the Frog, from the Museum of the Moving Image exhibition",
       "area": "Astoria, Queens",
-      "company": "Maybe with Ken",
+      "company": "Maybe with K",
       "route": [
         "A lie-in",
         "Moving Image & Jim Henson",
         "City Reliquary, maybe"
       ],
-      "travel": "AV566 lands at JFK at 00:10. Taxi or Uber to Bayside, about 30 minutes at that time of night. Moving Image is in Astoria: LIRR to Woodside then the M/R, or the Q13/Q28 to Flushing and the 7. City Reliquary is a separate trip into Williamsburg if you fancy it after.",
+      "travel": "The flight lands at JFK at 00:10. Taxi or Uber to Bayside, about 30 minutes at that time of night. Moving Image is in Astoria: LIRR to Woodside then the M/R, or the Q13/Q28 to Flushing and the 7. City Reliquary is a separate trip into Williamsburg if you fancy it after.",
       "stops": [
         {
           "time": "00:10, then sleep",
           "name": "Land at JFK, taxi to Bayside",
-          "text": "Avianca AV566 from San Salvador lands at 00:10. Through immigration, taxi to Bayside, bed. Don’t set an alarm.",
+          "text": "Avianca from San Salvador lands at 00:10. Through immigration, taxi to Bayside, bed. Don’t set an alarm.",
           "type": "travel",
           "map": "John F Kennedy International Airport New York",
           "cost": 45,
@@ -601,8 +601,8 @@ const TRIP = {
           "url": "https://movingimage.org/event/the-jim-henson-exhibition/",
           "link": "The Jim Henson Exhibition",
           "note": "Saturday hours are currently 11am–6pm. General admission walk-ups are welcome; screenings need their own tickets.",
-          "teaser": "Muppets, Labyrinth and The Dark Crystal. A possible shared afternoon with Ken.",
-          "hint": "Optional. Confirm Ken is free before committing.",
+          "teaser": "Muppets, Labyrinth and The Dark Crystal. A possible shared afternoon with K.",
+          "hint": "Optional. Confirm K is free before committing.",
           "cost": 20,
           "costNote": "entry, estimate"
         },
@@ -610,7 +610,7 @@ const TRIP = {
           "time": "4–6pm, if there’s energy",
           "name": "City Reliquary",
           "image": "reliquary",
-          "text": "Ken’s other pick. A tiny museum of New York odds and ends: subway tokens, Statue of Liberty souvenirs, old signs. Small, so an hour is plenty.",
+          "text": "K’s other pick. A tiny museum of New York odds and ends: subway tokens, Statue of Liberty souvenirs, old signs. Small, so an hour is plenty.",
           "status": "Optional",
           "map": "City Reliquary 370 Metropolitan Avenue Brooklyn",
           "url": "https://www.cityreliquary.org/visit-the-museum/",
@@ -618,7 +618,7 @@ const TRIP = {
           "note": "Open Thursday–Sunday, noon–6pm. Around $10 entry.",
           "cost": 10,
           "costNote": "entry",
-          "teaser": "Ken’s pick: a museum of New York bits and bobs.",
+          "teaser": "K’s pick: a museum of New York bits and bobs.",
           "hint": "Optional. Shuts at 6."
         },
         {
@@ -634,7 +634,7 @@ const TRIP = {
         {
           "image": "hensongallery",
           "title": "The Jim Henson Exhibition",
-          "caption": "Maybe with Ken"
+          "caption": "Maybe with K"
         },
         {
           "image": "movingimage",
@@ -655,11 +655,11 @@ const TRIP = {
       "short": "20",
       "label": "Cloisters & home",
       "title": "Medieval gardens, then the flight home.",
-      "subtitle": "Ken’s Cloisters pick in the morning, back to Bayside for the bag, JFK by 5pm.",
+      "subtitle": "K’s Cloisters pick in the morning, back to Bayside for the bag, JFK by 5pm.",
       "image": "cloisters",
       "imageAlt": "Stone arches and potted plants along a cloister walk",
       "area": "Fort Tryon Park · Bayside · JFK",
-      "company": "Last morning, with Ken if she’s free",
+      "company": "Last morning, with K if she’s free",
       "route": [
         "The Met Cloisters",
         "Bag from Bayside",
@@ -671,7 +671,7 @@ const TRIP = {
           "time": "10am–1pm",
           "name": "The Met Cloisters",
           "image": "cloisters",
-          "text": "Medieval cloisters and gardens on a hill over the Hudson, with the unicorn tapestries inside. Ken’s pick, and Sunday is one of the days it’s open.",
+          "text": "Medieval cloisters and gardens on a hill over the Hudson, with the unicorn tapestries inside. K’s pick, and Sunday is one of the days it’s open.",
           "status": "Planned",
           "map": "The Met Cloisters 99 Margaret Corbin Drive New York",
           "url": "https://www.metmuseum.org/plan-your-visit/met-cloisters",
@@ -694,20 +694,20 @@ const TRIP = {
         {
           "time": "3pm",
           "name": "Back to Bayside for the bag",
-          "text": "Pick up the bag, say bye, check in for EI108 on the Aer Lingus app.",
+          "text": "Pick up the bag, say bye, check in on the Aer Lingus app.",
           "type": "flex",
           "teaser": "Bag, goodbyes, check in."
         },
         {
           "time": "About 4:15pm",
           "name": "Taxi to JFK for home",
-          "text": "Aer Lingus EI108 at 7:25pm to Dublin, landing 7am Monday, then EI204 to Manchester at 8:10, in at 9:15.",
+          "text": "Aer Lingus at 7:25pm to Dublin, landing 7am Monday, then on to Manchester at 8:10, in at 9:15.",
           "type": "travel",
           "map": "John F Kennedy International Airport New York",
           "cost": 45,
           "costNote": "taxi or Uber from Bayside",
           "note": "Check the terminal in the Aer Lingus app.",
-          "teaser": "EI108 at 7:25pm. Home Monday morning."
+          "teaser": "Flight home at 7:25pm. Home Monday morning."
         }
       ],
       "breathing": "If the morning feels too tight, skip the Cloisters and have a slow breakfast on Bell Blvd instead. Missing the flight home isn’t worth it."
@@ -742,7 +742,7 @@ const TRIP = {
       "id": "charlie",
       "title": "A Charlie Brown Christmas at Blue Note",
       "tag": "Only if Saturday’s new plan allows",
-      "text": "The CB Quintet’s Vince Guaraldi tribute remains a maybe. Saturday 12 December has listed sets at 11:30am and 1:30pm, but Alyssa’s John Wick outing and your afternoon nap take priority. Leave this unbooked unless the timing genuinely fits.",
+      "text": "The CB Quintet’s Vince Guaraldi tribute remains a maybe. Saturday 12 December has listed sets at 11:30am and 1:30pm, but A’s John Wick outing and your afternoon nap take priority. Leave this unbooked unless the timing genuinely fits.",
       "note": "Tickets are an advance commitment. The venue lists a $20 per-person minimum on top of admission; live availability has not been checked.",
       "map": "Blue Note Jazz Club 131 West 3rd Street New York",
       "url": "https://www.bluenotejazz.com/nyc/tm-event/the-cb-quintet-presents-a-jazz-tribute-to-vince-guaraldis-charlie-brown-christmas/",
@@ -764,7 +764,7 @@ const TRIP = {
       "kind": "book",
       "title": "Burp Castle",
       "date": "Wed 9 Dec · around 7pm",
-      "text": "Ken wants it confirmed. It looks walk-in only, so ring (212) 982-4576 and ask if they’ll hold a table for two.",
+      "text": "K wants it confirmed. It looks walk-in only, so ring (212) 982-4576 and ask if they’ll hold a table for two.",
       "url": "https://www.nyctourism.com/nightlife/burp-castle1",
       "action": "Venue details",
       "image": "burp"
@@ -817,7 +817,7 @@ const TRIP = {
       "kind": "book",
       "title": "Balkan Erotic Epic",
       "date": "Fri 11 Dec · 7pm",
-      "text": "Check with Ken how tickets work for the Friday showing.",
+      "text": "Check with K how tickets work for the Friday showing.",
       "url": "https://www.armoryonpark.org/",
       "action": "The Armory",
       "image": "bee_gods"
@@ -827,7 +827,7 @@ const TRIP = {
       "kind": "book",
       "title": "Charlie Brown brunch",
       "date": "Sat 12 Dec",
-      "text": "Holding off. Only if it fits round Alyssa and Vin.",
+      "text": "Holding off. Only if it fits round A and V.",
       "url": "https://www.bluenotejazz.com/nyc/tm-event/the-cb-quintet-presents-a-jazz-tribute-to-vince-guaraldis-charlie-brown-christmas/",
       "action": "See the show",
       "image": "bluenote"
@@ -835,7 +835,7 @@ const TRIP = {
     {
       "id": "flight",
       "kind": "do",
-      "title": "Check in for AV567",
+      "title": "Check in for the Avianca flight",
       "date": "Sat 12 Dec · night",
       "text": "1:40am Sunday, so it’s technically the 13th. Check the terminal in the Avianca app."
     },
@@ -849,7 +849,7 @@ const TRIP = {
     {
       "id": "saturday",
       "kind": "do",
-      "title": "Meeting time with Alyssa and Vin",
+      "title": "Meeting time with A and V",
       "date": "Sat 12 Dec · morning",
       "text": "1 Wall Street Court."
     },
@@ -879,12 +879,12 @@ const TRIP = {
       "kind": "do",
       "title": "Airport taxis, 19th & 20th",
       "date": "Sat 19 00:10 · Sun 20 4:15pm",
-      "text": "In from JFK after AV566 lands, out to JFK for EI108 at 7:25pm. About $45 each way."
+      "text": "In from JFK after the Avianca flight lands, out to JFK for the Aer Lingus flight at 7:25pm. About $45 each way."
     },
     {
       "id": "ken19",
       "kind": "do",
-      "title": "Is Ken free 19th–20th?",
+      "title": "Is K free 19th–20th?",
       "date": "Before Nicaragua",
       "text": "For Moving Image on Saturday and the Cloisters on Sunday."
     }
@@ -892,7 +892,7 @@ const TRIP = {
   "unplaced": {
     "image": "reliquary",
     "title": "City Reliquary",
-    "text": "Ken’s pick too. Shut on Wednesdays, so it’s now an optional late afternoon on Saturday 19 December, after Moving Image.",
+    "text": "K’s pick too. Shut on Wednesdays, so it’s now an optional late afternoon on Saturday 19 December, after Moving Image.",
     "map": "City Reliquary 370 Metropolitan Avenue Brooklyn",
     "url": "https://www.cityreliquary.org/visit-the-museum/",
     "link": "Visit the museum"
