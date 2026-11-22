@@ -3,3 +3,17 @@
 .contents-grid.six{grid-template-rows:repeat(3,1fr)}
 .practical h3{margin:.55em 0 .1em}
 .practical p{margin:0;font-size:max(12.5px,3.35cqw);line-height:1.3}
+/* León / El Hoyo / Las Peñitas edition */
+.cover-photo{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.cover-photo:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+.cover-photo img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.cost-row em small{font-size:.72em;opacity:.75;margin-left:.25em}
+.cost-kind{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--blue);color:var(--paper);padding:2px 6px;margin-right:6px;vertical-align:2px}
+.button-pair{display:flex;gap:6px;flex-wrap:wrap}.button-pair .special-button{flex:1 1 0;min-width:0}
+.verify-list{margin:.3em 0 0;padding-left:1.2em}.verify-list li{margin:.25em 0}
+.dialog-cost em{font-style:normal;color:var(--deep)}
+.photo-zoom{all:unset;display:block;cursor:zoom-in;width:100%}
+.photo-zoom:focus-visible{outline:3px solid var(--orange)}
+.kind-table{margin-top:6px}.kind-table .tracker-head{margin:4px 0 2px}
+.kind-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px dotted currentColor;padding:2px 0;font-size:max(11.5px,3cqw)}
+.kind-row span{min-width:0}.kind-row small{display:block;opacity:.7;font-size:.85em;line-height:1.15}.kind-row em{font-style:normal;font-family:var(--ui);font-variation-settings:"wdth" 80,"wght" 900}
