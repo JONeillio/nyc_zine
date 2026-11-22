@@ -27,6 +27,17 @@ const PHOTOS = {
   manoShared:{ src: "https://static.wixstatic.com/media/b547dc_ee811c03f9824637acde32c93767e01b~mv2.jpg", source: "https://www.manoamanoecohostel.com/the-hostel", credit: "Mano a Mano Hostel, Las Peñitas", alt: "The courtyard and shared spaces at Mano a Mano", caption: "Mano a Mano: the courtyard. A candidate, not a booking." },
   manoBar:   { src: "https://static.wixstatic.com/media/b547dc_6fc82a4569384c5f8bb856dc4c2d744b~mv2_d_3632_5456_s_4_2.jpeg", source: "https://www.manoamanoecohostel.com/the-hostel", credit: "Mano a Mano Hostel, Las Peñitas", alt: "Mano a Mano's beach bar, a promotional image with menu text", caption: "Mano’s bar, a promo image with menu text. Not a crowd report.", portrait: true },
   bigfoot:   { src: "https://static.wixstatic.com/media/f506f2_19e75c9eb8e04dcc88bf3eb1003fac41~mv2.png", source: "https://www.bigfoothostelleon.com/", credit: "Bigfoot Hostel León", alt: "Room photos from Bigfoot Hostel León", caption: "Bigfoot’s own room photos. Optional, not booked." },
+  penitasbeach: { src: "penitasbeach", alt: "The long beach at Las Peñitas under an evening sky", caption: "Las Peñitas beach" },
+  penitassunset:{ src: "penitassunset", alt: "Sunset over the Pacific from a thatched beach bar with a hammock", caption: "Sunset from a Las Peñitas beach bar (not Mano)" },
+  fishhaul:  { src: "fishhaul", alt: "Freshly landed fish laid out in a crate in Las Peñitas", caption: "The day’s catch, Las Peñitas" },
+  breakfast: { src: "breakfast", alt: "Gallo pinto, fried cheese and two fried eggs", caption: "Gallo pinto breakfast, Las Peñitas" },
+  venadosunrise:{ src: "venadosunrise", alt: "Sunrise over the estuary behind Las Peñitas, with a boat pulled up on the bank", caption: "Sunrise on the estuary and Juan Venado" },
+  viaviaband:{ src: "viaviaband", alt: "A rock band with electric guitars playing in front of a painted wall at ViaVia, León", caption: "A band at ViaVia, León, on a past night. Not a listing for your dates." },
+  viaviaband2:{ src: "viaviaband2", alt: "An acoustic band playing to a crowd at ViaVia, León", caption: "Another past night at ViaVia" },
+  leonnight: { src: "leonnight", alt: "People out on a León street in the evening, under street lights", caption: "An evening in León (2015)" },
+  leonpark:  { src: "leonpark", alt: "Parque Central in León at night, lit up and busy", caption: "Parque Central at night" },
+  leonfruit: { src: "leonfruit", alt: "A fruit stall piled with bananas and melons in León", caption: "Fruit stall, León" },
+  leonmural: { src: "leonmural", alt: "A long painted mural beside a corner bar in León", caption: "A León mural, beside Bar el Mirador (2017)" },
   boarding:  { src: "boarding", alt: "Volcano boarders on the slope of Cerro Negro", caption: "Cerro Negro" },
   leon:      { src: "leon", alt: "León's rooftops and cathedral domes seen from the cathedral roof", caption: "León from the cathedral roof" },
   tona:      { src: "tona", alt: "A cold bottle of Toña beer", caption: "A cold Toña" },
@@ -55,7 +66,7 @@ const TRIP = {
         { "time": "Late morning", "name": "Car to León", "text": "About 1½–2 hours north. If friends are on the same flight or route and actually travel with you, the car splits; otherwise it’s all yours.", "status": "To book", "map": "Parque Central León Nicaragua", "url": "https://www.leontrekkersnicaragua.com/transfers", "link": "Leontrekkers tariffs", "price": "$80 allowance, whole vehicle" },
         { "time": "Lunch", "name": "Find the group, eat", "image": "leonFood", "text": "Join wherever your friends are staying if it suits you. Lunch somewhere ordinary: the market or a fritanga, chosen on the day.", "status": "Flexible", "map": "Mercado Central León Nicaragua" },
         { "time": "Afternoon", "name": "Walk central León", "image": "leonCentre", "text": "Parque Central, the cathedral, the streets around it. Drop into ViaVia to check Monday’s 08:00 start, the gear handover and where your bag stays.", "status": "Proposed", "map": "Catedral de León Nicaragua", "url": "https://leon.viavia.world/home/hotel/", "link": "ViaVia León" },
-        { "time": "Evening", "name": "A few drinks, not a big one", "text": "ViaVia’s bar is an easy place to meet. Bigfoot is there if the group wants it. You’ve flown overnight and start at 08:00, so this isn’t the night to go hard.", "status": "Flexible" }
+        { "time": "Evening", "name": "A few drinks, not a big one", "image": "viaviaband2", "text": "ViaVia’s bar is an easy place to meet. Bigfoot is there if the group wants it. You’ve flown overnight and start at 08:00, so this isn’t the night to go hard.", "status": "Flexible" }
       ],
       "breathing": "Nothing today is booked except the flight. If you’re wrecked, eat and sleep."
     },
@@ -79,7 +90,7 @@ const TRIP = {
         { "time": "Dawn", "name": "Sunrise from camp", "image": "view", "text": "Breakfast is one of the included meals.", "status": "Proposed" },
         { "time": "Morning", "name": "Swim in Lake Asososca", "image": "asososca", "text": "Down off the mountain to the crater lake, conditions and the guides allowing.", "status": "Proposed", "map": "Laguna de Asososca León Nicaragua" },
         { "time": "Afternoon", "name": "Back to León", "text": "Collect the bag, check into the second León bed, shower, laundry if needed.", "status": "To book", "map": "Parque Central León Nicaragua", "price": "In the León beds allowance" },
-        { "time": "Evening", "name": "An easy night with the group", "text": "Dinner (on your food allowance) and a bar or gig that’s actually on, found on the day. No pub crawl required.", "status": "Flexible" }
+        { "time": "Evening", "name": "An easy night with the group", "image": "viaviaband", "text": "Dinner (on your food allowance) and a bar or gig that’s actually on, found on the day. ViaVia has live bands some nights; check what’s on rather than counting on it. No pub crawl required.", "status": "Flexible" }
       ],
       "breathing": "If your legs are gone, this is a dinner-and-bed night. Nobody needs you out."
     },
@@ -88,7 +99,7 @@ const TRIP = {
       "subtitle": "The morning with friends in León, then out to Mano a Mano in the afternoon.",
       "travel": "Leave around 14:00–15:00, adjusted to Mano’s check-in and reception hours. Allow about an hour as a planning slot. A private car is about $20–25 for the vehicle.",
       "stops": [
-        { "time": "Morning", "name": "Coffee with the group", "text": "Pan & Paz is one possible stop. Stay with your friends through lunch if their plans line up.", "status": "Flexible", "map": "Pan y Paz León Nicaragua", "url": "https://www.panypaz.com/", "link": "Pan & Paz" },
+        { "time": "Morning", "name": "Coffee with the group", "image": "leonmural", "text": "Pan & Paz is one possible stop. Stay with your friends through lunch if their plans line up.", "status": "Flexible", "map": "Pan y Paz León Nicaragua", "url": "https://www.panypaz.com/", "link": "Pan & Paz" },
         { "time": "14:00–15:00", "name": "Car to Las Peñitas", "text": "Leontrekkers lists $20 and Fun ’N’ Sun $25 for the whole car.", "status": "To book", "map": "Mano a Mano Eco Hostal Las Peñitas", "url": "https://www.funnsuntravels.com/transport/", "link": "Fun ’N’ Sun tariffs", "price": "$20–25 published, whole vehicle" },
         { "time": "Late afternoon", "name": "Check in at Mano a Mano", "image": "manoCommunal", "text": "Dorm availability was seen on the live calendar; nothing is held. Have a look round, walk the beach.", "status": "Observed, unbooked", "url": "https://www.beds24.com/book-manoamano", "link": "Mano booking calendar", "price": "$30–40 allowance for both nights" },
         { "time": "Evening", "name": "See how the place feels", "text": "Eat, then stay around the bar or head out with people you meet. No big night to manufacture.", "status": "Flexible" }
@@ -100,10 +111,10 @@ const TRIP = {
       "subtitle": "Sea air, a book, people to talk to. A boat into the mangroves if you fancy it.",
       "travel": "No transfer today. Everything is on foot along the beach.",
       "stops": [
-        { "time": "Morning", "name": "Breakfast, the beach, nothing much", "image": "coast", "text": "Read, walk, swim where the locals swim. Leave real free time.", "status": "Flexible", "map": "Las Peñitas Beach Nicaragua" },
-        { "time": "Late morning", "name": "Juan Venado mangroves", "image": "coast", "text": "Ask at Mano about a guided boat into the reserve behind the beach. Operator, launch point, group size and tide all matter.", "status": "Optional", "map": "Reserva Natural Isla Juan Venado Nicaragua", "price": "$30–60 extra, unquoted" },
+        { "time": "Morning", "name": "Breakfast, the beach, nothing much", "image": "breakfast", "text": "Read, walk, swim where the locals swim. Leave real free time.", "status": "Flexible", "map": "Las Peñitas Beach Nicaragua" },
+        { "time": "Late morning", "name": "Juan Venado mangroves", "image": "venadosunrise", "text": "Ask at Mano about a guided boat into the reserve behind the beach. Operator, launch point, group size and tide all matter.", "status": "Optional", "map": "Reserva Natural Isla Juan Venado Nicaragua", "price": "$30–60 extra, unquoted" },
         { "time": "Afternoon", "name": "Surf, if you choose to", "text": "A board or a lesson needs its own quote. Not booked, not in the budget.", "status": "Optional" },
-        { "time": "Sunset", "name": "Sunset, food, a flexible night", "image": "manoBar", "text": "The hostel gives you a chance of company. It can’t promise a busy night or a crowd you’ll click with.", "status": "Flexible" }
+        { "time": "Sunset", "name": "Sunset, food, a flexible night", "image": "penitassunset", "text": "The hostel gives you a chance of company. It can’t promise a busy night or a crowd you’ll click with.", "status": "Flexible" }
       ],
       "breathing": "Sleep here again. There’s no Thursday transfer back to León."
     },
@@ -124,9 +135,9 @@ const TRIP = {
       { "id": "leonBeds", "label": "León beds, Sun & Tue", "low": 30, "high": 50, "kind": "allowance", "note": "Two beds or your share. Property and room not chosen." },
       { "id": "mano", "label": "Mano a Mano dorm, Wed & Thu", "low": 30, "high": 40, "kind": "observed", "note": "The live calendar showed $26 for one guest, two nights, before checkout. Allowance adds headroom; taxes unverified." },
       { "id": "camp", "label": "Cerro Negro + El Hoyo + lake", "low": 115, "high": 115, "kind": "published", "note": "$95 package + $10 Cerro Negro + $10 El Hoyo. Date and group still to confirm." },
-      { "id": "arrive", "label": "Airport → León car, Sunday", "low": 80, "high": 80, "kind": "allowance", "note": "Based on the published León–airport whole-vehicle rate. Confirm the airport-pickup direction." },
-      { "id": "coastCar", "label": "León → Las Peñitas car, Wed", "low": 20, "high": 25, "kind": "published", "note": "Whole-vehicle tariffs from Leontrekkers and Fun ’N’ Sun." },
-      { "id": "depart", "label": "Coast → airport car, Friday", "low": 100, "high": 130, "kind": "allowance", "note": "No direct quote yet. Two published legs via León total about $100." },
+      { "id": "arrive", "label": "Airport → León car, Sunday", "low": 80, "high": 80, "kind": "allowance", "share": { "capLow": 4, "capHigh": 4, "why": "Leontrekkers’ tariff covers up to four" }, "note": "Based on the published León–airport whole-vehicle rate. Confirm the airport-pickup direction." },
+      { "id": "coastCar", "label": "León → Las Peñitas car, Wed", "low": 20, "high": 25, "kind": "published", "share": { "capLow": 4, "capHigh": 3, "why": "$20 Leontrekkers up to four; $25 Fun ’N’ Sun up to three" }, "note": "Whole-vehicle tariffs from Leontrekkers and Fun ’N’ Sun." },
+      { "id": "depart", "label": "Coast → airport car, Friday", "low": 100, "high": 130, "kind": "allowance", "share": { "capLow": 4, "capHigh": 4, "why": "No quote yet; four is an assumption to confirm" }, "note": "No direct quote yet. Two published legs via León total about $100." },
       { "id": "food", "label": "Meals, coffee, water", "low": 70, "high": 100, "kind": "allowance", "note": "Six days, minus the four camp meals." },
       { "id": "drinks", "label": "Drinks and evening entry", "low": 40, "high": 70, "kind": "allowance", "note": "Personal spending, not a ticket price." },
       { "id": "tax", "label": "Arrival tax", "low": 10, "high": 10, "kind": "official", "note": "GOV.UK. Cash. Departure tax is normally in the ticket." },
@@ -156,7 +167,7 @@ const TRIP = {
     { "id": "private", "image": "manoShared", "title": "A private room on the coast", "tag": "Swap for the Mano dorm", "text": "Mano’s calendar had no private room for both nights. A private room somewhere around Las Peñitas, same Wednesday and Thursday, is budgeted at $80–140 for two nights. Ground total becomes $575–770, about £439–588. First check Mano for cancellations; otherwise name a real nearby place with real availability before choosing it.", "note": "Unquoted. The photo is Mano’s courtyard, not a room you have." },
     { "id": "noboard", "image": "view", "title": "Camping without boarding", "tag": "Saves $30", "text": "The El Hoyo + lake overnight on its own is $75 plus the $10 El Hoyo fee: $85 instead of $115. Skip Cerro Negro, keep the night on the mountain.", "url": "https://www.holaholatours.com/tours-1/el-hoyo-camping", "link": "Hola Hola: El Hoyo camping" },
     { "id": "shared", "image": "routecoast", "title": "Shared transfers", "tag": "Only if they really run", "text": "Sunday: a $25 shared seat around 13:00 instead of the $80 car, after a long wait. Friday: a taxi to León and an $18 shared seat at 09:30 (minimum four) instead of the $100–130 car. Don’t count the saving until it’s confirmed.", "url": "https://www.roneeyshuttle.com/p_page.php?idc=19&idcd=9&idlang=EN&idp=NIC&idr=12", "link": "Roneey shuttle" },
-    { "id": "venado", "image": "coast", "title": "Juan Venado by boat", "tag": "Thursday, optional", "text": "A guided boat into the mangrove reserve behind the beach. $30–60 extra as an unquoted allowance. Ask Mano locally.", "map": "Reserva Natural Isla Juan Venado Nicaragua" },
+    { "id": "venado", "image": "venadosunrise", "title": "Juan Venado by boat", "tag": "Thursday, optional", "text": "A guided boat into the mangrove reserve behind the beach. $30–60 extra as an unquoted allowance. Ask Mano locally.", "map": "Reserva Natural Isla Juan Venado Nicaragua" },
     { "id": "bigfoot", "image": "bigfoot", "title": "Bigfoot", "tag": "Optional evening or bed", "text": "A León party hostel with organised drinking games. Worth a look if the group’s there; not the centre of the trip, and not booked.", "url": "https://www.bigfoothostelleon.com/", "link": "Bigfoot León" },
     { "id": "elsewhere", "image": "route", "title": "Granada, Ometepe, San Juan del Sur", "tag": "Not this time", "text": "All on the old plans. The flight home is Friday, so none of them fit without dropping the coast or the camp.", "note": "No extra nights or detours are priced." }
   ],

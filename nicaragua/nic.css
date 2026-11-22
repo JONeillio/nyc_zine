@@ -63,3 +63,9 @@
 .budget-row.grand .b-gbp{grid-column:auto}
 .budget-alt{margin-top:8px;padding:6px 8px;border:2px dashed var(--ink);font-size:max(11.5px,3.1cqw);line-height:1.3;transform:rotate(-.4deg)}
 .contents-tile .img-missing{left:0;right:0;top:0;bottom:0;color:#6f634b;font:700 10px/1.2 Arial,sans-serif;text-transform:none;padding:34px 8px 40px;align-items:flex-start;z-index:1}
+.offline-button{margin-top:6px;background:var(--blue)!important;color:var(--paper)!important}
+.offline-button:disabled{opacity:.8}
+.calc-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:6px 0}
+.calc-controls select{font:inherit;padding:6px 8px;border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+.calc-check{display:flex;align-items:center;gap:6px}
+.calc-check input{width:20px;height:20px}
