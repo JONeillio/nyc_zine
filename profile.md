@@ -1,38 +1,34 @@
-# Who the zines are for
+# Travel taste
 
-The short version of Joseph's travel taste, for the scouting stage. This repo is public, so it stays deliberately brief and leaves out anything personal. Correct it whenever it drifts.
+A short sketch of the kind of trip these zines are for. It's used in the scouting stage.
 
 ## The test for a place
-- It comes back as a story: something found, a meal, an odd person or place, a great night. Friends should say "you went *there*? Why? That's cool."
+- It comes back as a story: something found, a meal, an odd place, a great night.
 - It needs a real reason to go there, and then enough nearby to fill an afternoon and an evening.
 - A few anchors and room to wander. Not a timed checklist.
 
 ## Bourdain era
 - Local institutions, street food, markets, neighbourhood bars, everyday life. Character beats prestige.
-- Say yes: try things, dance, talk to people, get involved.
-- Places with visible personality, history and contradictions. Grim, weird, slightly anthropological is fine.
-- Visual taste for the zines: gritty, editorial, documentary, travel journal.
+- Say yes: try things, dance, talk to people.
+- Places with personality, history and contradictions. Weird and slightly anthropological is good.
+- Zine look: gritty, editorial, travel journal.
 
-## What pulls him in
-- **Music.** Rock, pop-punk, emo, metal, hardcore. Also Steely Dan, the Bee Gees, RHCP. Plays guitar, likes twinkly lead parts. A venue, a local scene or a gig can justify a whole trip. Keep it broad; he's not emo-only.
-- **Odd places.** Dive bars, old taverns, neon, diners, eccentric collections, small strange museums, kitsch, roadside weirdness, vintage and thrift, record shops.
-- **Film and design.** Film locations, illustration, miniatures, transport history.
-- **Outdoors.** Scenic walks of up to about four hours (no scrambling), waterfalls, birdwatching. Has surfed before (Taghazout) and is keen to do it again.
-- **Nights out.** Up for dancing and the occasional chaotic night, but a trip shouldn't be all partying.
-- **Football.** Crystal Palace. A football pub can be a good anchor.
+## What pulls
+- Music: rock, pop-punk, emo, metal, plus some classic rock and funk. Venues, local scenes, gigs.
+- Dive bars, old taverns, neon, diners, odd collections, small strange museums, kitsch, vintage and record shops.
+- Film locations, illustration, miniatures, transport history.
+- Scenic walks of up to about four hours, waterfalls, birds, surfing.
+- Dancing and the odd big night, but not a party trip.
+- Football pubs.
 
-## How he travels
-- Happy on local buses, trains and the metro. Will pay a bit more to avoid a transport nightmare.
-- Prefers a few bases over moving every day. Travels light with a backpack.
-- Hostels are fine, especially ones with a good atmosphere. Wants to meet people but keep his independence.
+## How
+- Local transport is fine. Pay a bit more to avoid a transport nightmare.
+- A few bases, not moving every day. Travel light.
+- Sociable hostels or guesthouses. Meet people, keep independence.
 - Price-conscious, but will pay for a clearly better experience.
-- Wants some solo exploring even on shared trips.
 
 ## Avoid
-- Resorts, pool days, beach clubs as the main event.
-- Gap-year party scenes, compulsory group dinners, "school trip" setups.
+- Resorts, pool days and beach clubs as the main event.
+- Gap-year party scenes and compulsory group dinners.
 - Long transfers that eat a short trip.
-- Thin places dressed up in polished copy. Say honestly what's there.
-
-## Travel companions
-- Ken (partner) is vegetarian and doesn't drive. Shared meals need good veggie options.
+- Thin places dressed up in polished copy.
