@@ -16,18 +16,17 @@ const STORY={
   {note:'7–8 litres of water. That bit’s on you.',x:54,y:73,w:44,r:1,kind:'handl'},
   {note:'$95 + $10 + $10 = $115<small>Published, to confirm for Mon 14 · minimum three</small>',x:3,y:86,w:94,r:-1,kind:'ticket'}]},
  tue:{kicker:'LAKE & LEÓN',tile:'Lake & León',cover:'leonnight',line:'Sunrise on the mountain, a crater lake, a León night.',pieces:[
-  {img:'asososca',x:0,y:0,w:100,h:40,kind:'cut',stop:1,time:'MORNING',label:'Lake Asososca',lp:'big'},
-  {img:'viaviaband',x:46,y:38,w:54,h:32,r:2,kind:'border tape',stop:3,time:'EVENING',label:'León night',lp:'right'},
-  {img:'view',x:1,y:41,w:44,h:26,r:-2.5,kind:'border',stop:0,time:'DAWN',label:'From camp'},
-  {note:'Back around midday. Bag, shower, laundry.',x:2,y:70,w:44,r:-2,kind:'sticker'},
-  {note:'Bands play ViaVia some nights. Check what’s on; don’t count on it.',x:48,y:74,w:50,r:1,kind:'handl'},
-  {note:'León bed, night 2 of 2.',x:2,y:86,w:44,r:-1,kind:'hand'}]},
+  {img:'asososca',x:0,y:0,w:100,h:42,kind:'cut',stop:1,time:'MORNING',label:'Lake Asososca',lp:'big'},
+  {img:'view',x:1,y:40,w:46,h:36,r:-2.5,kind:'border',stop:0,time:'DAWN',label:'From camp'},
+  {img:'viaviaband',x:47,y:42,w:53,h:39,r:2,kind:'border tape',stop:3,time:'EVENING',label:'León night',lp:'right'},
+  {note:'Back around midday. Bag, shower, laundry.',x:2,y:80,w:44,r:-2,kind:'sticker'},
+  {note:'Bands play ViaVia some nights. Check what’s on.',x:50,y:85,w:48,r:1,kind:'handl'}]},
  wed:{kicker:'TO THE COAST',tile:'Friends, then the coast',cover:'penitasbeach',line:'A morning with friends, then out to Las Peñitas.',pieces:[
   {img:'manoCommunal',x:0,y:0,w:100,h:42,kind:'cut',stop:2,time:'LATE AFTERNOON',label:'Mano a Mano',lp:'big'},
-  {img:'leonmural',x:1,y:40,w:46,h:27,r:-2.5,kind:'border',stop:0,time:'MORNING',label:'León'},
-  {img:'penitasbeach',x:50,y:42,w:50,h:28,r:2,kind:'border tape',stop:3,time:'EVENING',label:'The beach',lp:'right'},
-  {note:'Leave 14:00–15:00. Car $20–25 for the whole thing.',x:2,y:71,w:46,r:1.5,kind:'sticker'},
-  {note:'Dorm seen free on the calendar. Not held. No big night to manufacture.',x:50,y:74,w:48,r:-1,kind:'handl'}]},
+  {img:'leonmural',x:1,y:40,w:47,h:36,r:-2.5,kind:'border',stop:0,time:'MORNING',label:'León'},
+  {img:'penitasbeach',x:49,y:42,w:51,h:38,r:2,kind:'border tape',stop:3,time:'EVENING',label:'The beach',lp:'right'},
+  {note:'Leave 14:00–15:00. Car $20–25 for the whole thing.',x:2,y:80,w:46,r:1.5,kind:'sticker'},
+  {note:'No big night to manufacture.',x:52,y:85,w:46,r:-1,kind:'handl'}]},
  thu:{kicker:'THE SLOW DAY',tile:'A whole coastal day',cover:'venadosunrise',line:'Sea air, a book, people to talk to.',pieces:[
   {img:'venadosunrise',x:0,y:0,w:100,h:40,kind:'cut',stop:1,time:'LATE AM',label:'Juan Venado',lp:'big'},
   {img:'breakfast',x:1,y:38,w:44,h:26,r:-2.5,kind:'border',stop:0,time:'MORNING',label:'Breakfast'},
@@ -36,19 +35,26 @@ const STORY={
   {note:'Boat into the mangroves? Ask at Mano. $30–60, unquoted.',x:46,y:41,w:26,r:1.5,kind:'handl'},
   {note:'Mano night 2. No transfer today.',x:2,y:90,w:60,r:-1,kind:'sticker'}]},
  fri:{kicker:'HOMEWARD',tile:'Straight to the airport',cover:'route',line:'Pickup around 09:00, Managua by noon, fly at 15:40.',pieces:[
-  {img:'route',x:0,y:0,w:100,h:46,kind:'cut',stop:0,time:'~09:00',label:'Coast → airport',lp:'big'},
-  {img:'penitasbeach',x:2,y:44,w:48,h:28,r:-2.5,kind:'border',cap:'One last look'},
-  {note:'Direct car, $100–130 allowance. No quote yet.',x:53,y:47,w:45,r:1.5,kind:'sticker'},
-  {note:'No boat, no surf, no detour this morning.',x:52,y:64,w:46,r:-1,kind:'handl'},
-  {note:'MGA 15:40 → San Salvador<small>18:25 → JFK, lands 00:10 Saturday · booked</small>',x:3,y:79,w:94,r:-1,kind:'ticket'}]},
+  {img:'route',x:0,y:0,w:100,h:46,kind:'cut',stop:0,time:'~09:00',label:'Coast → airport',lp:'big',pos:'center 60%'},
+  {img:'penitasbeach',x:1,y:44,w:50,h:31,r:-2.5,kind:'border',cap:'One last look'},
+  {note:'Direct car, $100–130 allowance. No quote yet.',x:54,y:47,w:44,r:1.5,kind:'sticker'},
+  {note:'No boat, no surf, no detour this morning.',x:54,y:64,w:44,r:-1,kind:'handl'},
+  {note:'MGA 15:40 → San Salvador<small>18:25 → JFK, lands 00:10 Saturday · booked</small>',x:3,y:81,w:94,r:-1,kind:'ticket'}]},
  camping:{pieces:[
-  {img:'view',x:0,y:0,w:100,h:56,kind:'cut',label:'The overnight route',lp:'big'},
-  {img:'campsite',x:2,y:50,w:48,h:44,r:-2.5,kind:'border',label:'2013 photo'},
-  {img:'cerroUp',x:52,y:52,w:46,h:42,r:2,kind:'border tape',label:'Boards up'}]},
+  {img:'view',x:0,y:0,w:100,h:40,kind:'cut',label:'The overnight route',lp:'big'},
+  {img:'campsite',x:1,y:37,w:49,h:29,r:-2.5,kind:'border',label:'Camp, 2013 photo'},
+  {img:'cerroUp',x:51,y:39,w:48,h:29,r:2,kind:'border tape',label:'Boards up Cerro Negro',lp:'right'},
+  {note:'Supplied: transport, guide, tent, mat, sleeping bag, backpack, four meals.',x:2,y:69,w:52,r:-1.5,kind:'sticker'},
+  {note:'You carry 7–8 litres of water. It’s a real climb in the heat.',x:56,y:70,w:42,r:1.5,kind:'handl'},
+  {note:'$95 + $10 + $10 = $115 · £88<small>Published · confirm Mon 14 runs · minimum three people</small>',x:3,y:86,w:94,r:-1,kind:'ticket'}]},
  mano:{pieces:[
-  {img:'manoShared',x:0,y:0,w:64,h:56,r:-1,kind:'border',label:'The courtyard'},
-  {img:'manoBar',x:62,y:0,w:38,h:72,r:2.5,kind:'border tape',label:'The bar',lp:'right',pos:'center 35%'},
-  {img:'penitasbeach',x:0,y:56,w:60,h:40,r:1.5,kind:'border',label:'The beach'}]}
+  {img:'manoShared',x:0,y:0,w:62,h:40,r:-1,kind:'border',label:'The courtyard'},
+  {img:'manoBar',x:60,y:0,w:40,h:54,r:2.5,kind:'border tape',label:'The bar',lp:'right',pos:'center 35%'},
+  {img:'penitasbeach',x:1,y:41,w:57,h:28,r:1.5,kind:'border',label:'The beach'},
+  {note:'Dorm seen free Wed–Thu. $26 for both nights before checkout. Not held.',x:60,y:57,w:39,r:2,kind:'sticker'},
+  {note:'No Mano private room free both nights. One nearby: $80–140, unquoted.',x:2,y:72,w:56,r:-1,kind:'handl'},
+  {note:'Mano a mano: hand to hand.',x:60,y:80,w:38,r:1,kind:'hand'},
+  {note:'Dorm budget $30–40 · £23–31<small>Wed 16 – Fri 18 · one guest · taxes to confirm</small>',x:3,y:89,w:94,r:-1,kind:'ticket'}]}
 };
 /* Short rundown labels: [time tag, name] */
 const SHORT={
